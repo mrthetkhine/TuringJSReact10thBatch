@@ -1,0 +1,17 @@
+<html>
+    <script>
+        
+        let a = 0.3;
+        let b = 0.2;
+        let c= a -b;
+        console.log('c ',c);//0.1
+        console.log('a-b ',a-b ==0.1);
+        console.log('EPSILON ',Number.EPSILON);
+        console.log('with EPSILON ',Math.abs(a - b) < Number.EPSILON); 
+        
+        let string = "1" + "0".repeat(100);
+        let bigNum = BigInt(string);
+        bigNum = bigNum + 1n;
+        console.log('BigNum ',bigNum);
+    </script>
+</html>
