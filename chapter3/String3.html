@@ -1,0 +1,30 @@
+<html>
+    <script>
+        let str = 'Hello;World;Hi;Who';
+        let items = str.split(';');
+
+        console.log('Items ',items);
+
+        str = 'Hello,World,Hi,Who';
+        items = str.split(',');
+        console.log('Items ',items);
+
+        console.log('split() ',str.split());
+
+        str = "Hello World";
+        console.log('str ',str);
+        console.log('IndexOf("Hell") ',str.indexOf('Hell'));
+        console.log('IndexOf("hell") ',str.indexOf('hell'));
+        console.log('IndexOf("W") ',str.indexOf('W'));
+        console.log('IndexOf("K") ',str.indexOf('K'));
+        console.log('IndexOf("l") ',str.indexOf('l'));
+        console.log('IndexOf("l",5) ',str.indexOf('l',5));
+
+        console.log('lastIndexOf("l") ',str.lastIndexOf('l'));
+        console.log('includes("Hello") ', str.includes('Hello'));
+
+        console.log('startWith ', str.startsWith('Hello'));
+        console.log('endWith ', str.endsWith('World'));
+        console.log('startWith Hi ', str.startsWith('Hi'));
+    </script>
+</html>
