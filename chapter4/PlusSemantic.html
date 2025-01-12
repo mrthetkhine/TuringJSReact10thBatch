@@ -1,0 +1,69 @@
+<html>
+    <script>
+        let obj = {
+            data:200,
+            
+            valueOf()
+            {
+                console.log('Valueof called');
+                return 3;
+            },
+            toString()
+            {
+                console.log('toString called');
+                return 10;
+            }
+        };
+        let b = 2;
+        let data = obj + b;
+        /*
+            obj->primitive
+                obj->valueOf
+                     if valueOf return primitive
+                        use value
+                      else 
+                        toString
+                            value->primitive
+                                return value
+                            throw error
+        */
+        console.log('Data ',data);
+        //console.log('Obj valueOf ',obj.valueOf());
+        //console.log('Obj toString ',obj.toString());
+
+        obj = {
+            data:200,
+            
+            valueOf()
+            {
+                console.log('Valueof called');
+                return {};
+            },
+            toString()
+            {
+                console.log('toString called');
+                return 10;
+            }
+        };
+        data = obj + b;
+
+        console.log('Data ',data);
+        obj = {
+            data:200,
+            
+            valueOf()
+            {
+                console.log('Valueof called');
+                return {};
+            },
+            toString() //[object Object]
+            {
+                console.log('toString called');
+                return {};
+            }
+        };
+        data = obj + b;
+
+        console.log('Data ',data);
+    </script>    
+</html>
