@@ -1,0 +1,14 @@
+<html>
+    <script>
+        let myan = +window.prompt("Enter Myanmar");
+        let eng = +window.prompt("Enter Eng");
+        let math = +window.prompt("Enter math");
+       
+        let isPass = myan >= 40 && eng >= 40 && math >= 40;
+        let gotDistinction = isPass && ( myan>=80 || eng >=80 || math>=80);
+        
+        console.log('Is pass ',isPass);
+        console.log('Got distinction ',gotDistinction);
+
+    </script>    
+</html>

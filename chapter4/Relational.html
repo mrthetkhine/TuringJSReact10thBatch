@@ -1,0 +1,54 @@
+<html>
+    <script>
+        let a = 10;
+        let b = '10';
+
+        console.log('a === b ',a === b);
+        console.log('a == b ',a == b);
+
+        console.log('1 == 1', 1 == 1);
+        console.log('null === undefined ', null === undefined);
+        console.log('null == undefined ', null == undefined);
+
+        console.log(' "10" == 10 ', "10" == 10);
+        // "10"->number, 10 == 10->true
+
+        a = 0
+        b = '';
+        console.log('a == b ',a == b);
+        // b=> ''=>number = 0
+
+        console.log(' true == 1 ', true == 1);
+        //true ->number = 1
+
+        //false -> number ->0 
+        // 0 == ''
+        // 0 == toNumber('')
+        // 0 == 0
+        console.log(' false == "" ', false == '');
+
+        let obj = {
+            valueOf(){
+                return 1;
+            }
+        }
+        // obj == number(true)
+        // obj == 1
+        //obj primitive == 1
+        //1 == 1
+        console.log('Obj==true ', obj == true);
+
+        //undefined == false;
+        //undefined == false number
+        // undefined == 0
+        //Last rule
+        console.log('undefined == false ', undefined == false);
+        console.log('null == false ', null == false);
+
+        console.log('null != false ', null != false);
+
+        console.log('NaN == NaN ', NaN == NaN);
+        console.log('NaN != NaN ', NaN != NaN);
+        console.log('isNaN ', isNaN( NaN));
+    </script>    
+</html>

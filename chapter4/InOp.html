@@ -1,0 +1,29 @@
+<html>
+    <script>
+        //Object
+        let obj = {
+            name : "TK",
+            age : 40,
+        }
+        console.log('name in obj ', 'name' in obj);
+        console.log('age in obj ', 'age' in obj);
+
+        let keyName = 'something';
+        console.log('something in obj ', keyName in obj);
+        console.log('valueOf in obj ', 'valueOf' in obj);
+        console.log('toString in obj ', 'toString' in obj);
+
+        let data = [1,2,3];
+        console.log('0 in data ',0 in data);
+        console.log('3 in data ',3 in data);
+
+        //Date->Object
+        let date = new Date();
+        console.log('date instanceof Date ', date instanceof Date);
+        console.log('date instanceof Object ', date instanceof Object);
+        console.log('date instanceof Array ', date instanceof Array);
+
+        let arr = [];
+        console.log('arr instanceof Array ', arr instanceof Array);
+    </script>    
+</html>
