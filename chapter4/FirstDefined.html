@@ -1,0 +1,19 @@
+<html>
+    <script>
+        
+        
+
+       
+        function plugin(props)
+        {
+            let maxWidth = 100;
+            //props.max = (props.max !== null && props.max !== undefined ) ? props.max : maxWidth;
+            props.max = props.max?? maxWidth;
+
+            return props;
+        }
+        console.log('plugin ',plugin({}));
+        console.log('plugin ',plugin({max:5}));
+        console.log('plugin ',plugin({max:0}));
+    </script>    
+</html>

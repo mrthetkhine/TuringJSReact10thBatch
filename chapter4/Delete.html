@@ -1,0 +1,18 @@
+<html>
+    <script>
+        let obj = {
+            data : 10,
+            item : 20
+        };
+        delete obj.data;
+        console.log('Obj ',obj);
+        console.log('data in obj ', 'data' in obj);
+
+        let clone = {};
+        clone.item = obj.item;
+        console.log('Clone ',clone);
+
+        console.log('Delete readonly property ',delete window.top);
+        console.log('window.top ',window.top);
+    </script>    
+</html>
