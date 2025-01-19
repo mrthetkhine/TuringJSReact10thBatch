@@ -1,0 +1,24 @@
+<html>
+   
+    <script>
+        let obj ={
+            name : "TK",
+            age : 40,
+            city:"YGN"
+        };
+        console.log('Keys ',Object.keys(obj));
+        
+        for(const key of Object.keys(obj))
+        {
+            console.log('Key ',key, ' value ',obj[key]);
+        }
+        console.log('Values ',Object.values(obj));
+        console.log('Entries ',Object.entries(obj));
+
+        for(let [key,value] of Object.entries(obj))
+        {
+            console.log('Key ',key, ' value ',value);
+        }
+        
+    </script>    
+</html>

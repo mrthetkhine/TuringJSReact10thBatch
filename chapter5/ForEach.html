@@ -1,0 +1,34 @@
+<html>
+   
+    <script>
+        
+        let arr = [10,20,30,40,50];
+        
+        for(const i of arr)// let i = arr[index]
+        {
+            console.log('Arr ',i);
+            //i *= 2;
+        }
+       /*
+        for(let i=0;i < arr.length;i++)
+       {
+            arr[i] = arr[i] *2;
+       }*/
+       console.log(arr);
+
+       let matrix = [
+            [10,20,30,40,50],
+            [60,70,80,90,100],
+            [1,2,3,4,5]
+
+        ];
+        for(const outerElem of matrix)//outer loop
+        {
+            //console.log('Arr ',i , ' ',arr[i]);
+            for(const inner of outerElem)//inner loop
+            {
+                console.log('Inner ',inner);
+            }
+        }
+    </script>    
+</html>

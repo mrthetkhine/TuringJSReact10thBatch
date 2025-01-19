@@ -1,0 +1,53 @@
+<html>
+   
+    <script>
+        /*
+        row ->4, star =5
+        * * * * *
+        * * * * *
+        * * * * *
+        * * * * *
+        
+        */
+        for(let i=0;i < 4; i++)
+        {
+            let str= '';
+            for(let j=0;j<5;j++)
+            {
+                str+='*';
+            }
+            console.log(str);
+            console.log('');
+        }
+        /*
+        *
+        * *
+        * * *
+        * * * *
+        * * * * *
+       
+        i = 0; i < 5;
+        */
+        for(let i=0;i < 5; i++)
+        {
+            let str= '';
+            for(let j=0;j < i+1 ;j++)
+            {
+                str+='*';
+            }
+            console.log(str);
+            //console.log('');
+        }
+        console.log('---------');
+        for(let i=0;i < 5; i++)
+        {
+            let str= '';
+            for(let j=0;j < 5-i ;j++)
+            {
+                str+='*';
+            }
+            console.log(str);
+            //console.log('');
+        }
+    </script>    
+</html>
