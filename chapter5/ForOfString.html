@@ -1,0 +1,35 @@
+<html>
+   
+    <script>
+        let str = "Hello World";
+        for(const ch of str)
+        {
+            console.log('Ch ',ch);
+        }
+
+        let set = new Set([1,2,3,3,2,1]);
+        console.log('set ',set);
+        for(const item of set)
+        {
+            console.log('Item ',item);
+        }
+        let map = new Map([
+            [1,'One'],
+            [2,'Two']
+        ]);
+        for( const [key,value] of map)
+        {
+            console.log('Key ',key, ' value ',value);
+        }
+
+        let obj ={
+            name : "TK",
+            age : 40,
+            city:"YGN"
+        };
+        for(let prop in obj)
+        {
+            console.log('Prop ',prop,' value ',obj[prop]);
+        }
+    </script>    
+</html>

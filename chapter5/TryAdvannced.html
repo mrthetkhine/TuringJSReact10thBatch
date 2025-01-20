@@ -1,0 +1,42 @@
+<html>
+   
+    <script>
+        //debugger;
+        function div(a,b)//return,error
+        {
+            if( isNaN(a) || isNaN(b))
+            {
+                throw new Error('A or B is NaN');
+            }
+            else
+            {
+                return a / b;
+            }
+            
+        }
+        function process()
+        {
+            try
+            {
+                let result = div(10,NaN);
+                console.log('Result ',result);
+                return result;
+            }
+            catch(e)
+            {
+                console.log('Catch ',e);
+                //throw e;
+                return 100;
+            }
+            finally
+            {
+                console.log('Finally');
+                //return 200;
+                throw new Error('Error in finally');
+            }
+        }
+        let data = process();
+        console.log('Data ',data);
+        console.log('End ');
+    </script>    
+</html>
