@@ -1,0 +1,22 @@
+<html>
+   
+    <script>
+
+        let grandParent ={
+            y : 200
+        };
+        let parent = {
+            items: [100,200]
+        };
+        let obj = Object.create(parent);
+        obj.items.push(300);//read 
+
+        let obj2 = Object.create(parent);
+        obj2.items = [500,600];//write
+
+        console.log('Parent item ',parent.items);
+        console.log('Obj ',obj.items);
+        console.log('Obj2 ',obj2.items);
+
+    </script>    
+</html>

@@ -1,0 +1,27 @@
+<html>
+   
+    <script>
+
+
+        function plugin(params)
+        {
+            let setting = {
+                color: 'red',
+                width:100,
+            }
+            /*
+            for(let key in params)
+            {
+                setting[key] = params[key];
+            }*/ 
+           let data = Object.assign(setting,params );
+           console.log('setting ',setting);
+           console.log('Params ',params);
+            console.log('setting ',data);
+        }
+        console.log('Plugin ',plugin({
+            color:'Green',
+            //width:300,
+        }));
+    </script>    
+</html>

@@ -1,0 +1,27 @@
+<html>
+   
+    <script>
+
+        let obj = {
+            name : "TK",
+            age : 40,
+            address:{
+                city : "MDY"
+            },
+            state : "Something",
+            toString()
+            {
+                return "Hello"
+            }
+        }
+        console.log('name in obj ','name' in obj);
+        console.log('toString in obj ','toString' in obj);
+        console.log('Own property ',obj.hasOwnProperty('toString'));
+        console.log('Obj ',Object.hasOwnProperty('toString'));
+
+        for(let prop in obj)
+        {
+            console.log('Prop ',prop, ' value ',obj[prop]);
+        }
+    </script>    
+</html>

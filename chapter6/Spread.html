@@ -1,0 +1,21 @@
+<html>
+   
+    <script>
+        let car = {
+            model:"Yaris",
+            color:"Red",
+            year:2020
+        };
+        let position = {
+            lat : 30,
+            long : 20,
+            color:'Green',
+        }
+        let car2 = {
+            ... car ,
+            ... position,
+            extra:'Extra'
+        }
+        console.log('Car2 ',car2);
+    </script>    
+</html>

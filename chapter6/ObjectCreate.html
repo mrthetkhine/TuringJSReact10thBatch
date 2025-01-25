@@ -1,0 +1,22 @@
+<html>
+   
+    <script>
+
+        let grandParent ={
+            y : 200
+        };
+        let parent = Object.create(grandParent);
+        parent.x =100;
+        let obj= Object.create(parent);
+
+        //obj.y = 300;
+        console.log('Obj ',obj );
+        console.log('Obj.x ',obj.x );//parent.x
+        console.log('Obj.y ',obj.y );//grandParent.y
+        console.log('Obj.z ',obj.z);
+
+        obj.y = 300;//write
+        console.log('Graparent.y ',grandParent.y);
+        console.log('Obj ',obj);
+    </script>    
+</html>

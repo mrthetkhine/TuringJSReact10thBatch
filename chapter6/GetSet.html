@@ -1,0 +1,29 @@
+<html>
+   
+    <script>
+
+        let obj = {
+            name : "TK",
+            age : 40,
+            address:{
+                city : "MDY"
+            },
+            state : "Something"
+        }
+        delete obj.state;
+        console.log('Obj ',obj);
+        let isEven = 4%2==0 ? true : false;
+        console.log('Name ',obj.name);
+        console.log('Obj.addrees ',obj.address);
+        console.log('Obj.addrees.city ',obj?.address?.city);
+        console.log('Obj.state ',obj.state??'Default');
+        let data = {
+            city1:'Ygn',
+            city2:'MDY',
+        }
+        let cityId = 2;
+
+        let keyName = 'city'+cityId;
+        console.log('Dynamic ',data[keyName]);//MDY
+    </script>    
+</html>
