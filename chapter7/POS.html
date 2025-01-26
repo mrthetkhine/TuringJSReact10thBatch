@@ -1,0 +1,35 @@
+<html>
+   
+<script>
+    function createItem(name,price,qty)
+    {
+        return {
+            name,
+            price,
+            qty ,
+            get total()
+            {
+                return this.price * this.qty;
+                
+            }
+        }
+    }
+    let apple = createItem('Apple',5,4);
+    let orange = createItem('Orange',5,10);
+    let banna = createItem('Banana',20,15);
+    let items =[apple,orange,banna]; 
+    console.log('Items ',items)
+
+    function displayItems(items)
+    {
+        let total = 0;
+        for(let item of items)
+        {
+            console.log('Name ',item.name, ' Price ',item.price, ' Quantity ',item.qty, ' Total ',item.total);
+            total += item.total;
+        }
+        console.log('Total ',total);
+    }
+    displayItems(items);
+</script>    
+</html>

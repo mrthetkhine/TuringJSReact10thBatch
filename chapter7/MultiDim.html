@@ -1,0 +1,27 @@
+<html>
+   
+<script>
+    let arr = [
+        [1,2,3],
+        [4,5,6],
+        [7,8,9,10]
+    ]
+    console.log('Arr[0] ',arr[0]);
+    console.log('Arr[0][2] ',arr[0][2]);
+
+    for(const item of arr)
+    {
+        for(const ele of item)
+        {
+            console.log('Elemeent  ',ele);
+        }
+    }
+    for(let i=0;i < arr.length;i++)
+    {
+        for(let j=0; j < arr[i].length;j++)
+        {
+            console.log(`Arr[${i},${j} ] ${arr[i][j]}`);
+        }
+    }
+</script>     
+</html>

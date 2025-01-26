@@ -1,0 +1,29 @@
+<html>
+   
+<script>
+    let arr = [10,20,true,"Hello"];
+
+    console.log('Length ',arr.length);
+    arr.push(30);
+
+    console.log('Arr ',arr);
+    console.log('Length ',arr.length);
+
+    let arr2 = [ ... arr, 3,4,5];
+    console.log('Arr2 ',arr2);
+
+    let arr3 = new Array(5);// arr3 =[]
+    arr3.push(10);
+    arr3.push(20);
+    console.log('Arr3 ',arr3);
+
+    let arr4 = new Array(5,10);
+    console.log('Arr4 ',arr4);
+
+    let arr5 = Array.of(1,2,3);
+    console.log('Arr5 ',arr5);
+
+    let arr6 =Array.from(arr5);
+    console.log('Arr6 ',arr6);
+</script>    
+</html>

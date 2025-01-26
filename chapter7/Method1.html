@@ -1,0 +1,55 @@
+<html>
+   
+<script>
+    let arr = [1,2,3,4,5];
+    let items = ['apple','orange','banana'];
+        
+    /*
+    let items2 = [];
+    for(const item of items)
+    {
+        items2.push(item.toUpperCase());
+    }*/ 
+   let items2 = items.map(item=>item.toUpperCase());    
+    console.log('Items ',items2);
+
+    let objArr = [
+        {
+            name: "Aung Aung",
+            age : 40,
+            gender: "Male",
+        },
+        {
+            name: "Mya Maung",
+            age : 20,
+            gender:"Male",
+        },
+        {
+            name: "Hla Hla",
+            age : 20,
+            gender:"Female",
+        },
+    ];
+    /*
+    let names = [];
+    for(const obj of objArr)
+    {
+        names.push(obj.name);
+    }*/ 
+    function getName(obj)
+    {
+        return obj.name;
+    }
+    let names = objArr.map(getName);
+    console.log('Names ',names);
+    let males = [];
+    for(const obj of objArr)
+    {
+       if(obj.gender=="Male")
+       {
+        males.push(obj);
+       }
+    }
+    console.log('Males ',males);
+</script>     
+</html>
