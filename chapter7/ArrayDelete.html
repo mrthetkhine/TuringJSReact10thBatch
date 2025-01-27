@@ -1,0 +1,15 @@
+<html>
+   
+<script>
+    let arr = [1,10,2,3,14,15,6];
+    let indexToDelete = [4,5];//14,15
+
+    indexToDelete.sort( (a,b)=> b-a);
+    console.log('Indexto delete ',indexToDelete); 
+    for(const index of indexToDelete)
+    {
+        arr.splice(index,1);
+    }
+    console.log('Arr ',arr);
+</script>     
+</html>

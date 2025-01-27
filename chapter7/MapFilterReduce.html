@@ -1,0 +1,43 @@
+<html>
+   
+<script>
+    let objArr = [
+        {
+            name: "Aung Aung",
+            age : 40,
+            gender: "Male",
+            
+        },
+        {
+            name: "Mya Maung",
+            age : 20,
+            gender:"Male",
+        },
+        {
+            name: "Aung Win",
+            age : 75,
+            gender:"Male",
+        },
+        {
+            name: "Hla Hla",
+            age : 20,
+            gender:"Female",
+        },
+        {
+            name: "Hla Maung",
+            age : 75,
+            gender:"Male",
+        },
+    ];
+    function isMale(obj)
+    {
+        return obj.gender == "Male";
+    }
+    
+  
+    let oldestMale = objArr.filter(isMale)
+                      .reduce((objA,objB)=>objA.age > objB.age?objA: objB );
+                      
+    console.log('Males ',oldestMale.name);
+</script>     
+</html>

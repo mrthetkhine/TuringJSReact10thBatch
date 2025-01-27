@@ -1,0 +1,88 @@
+<html>
+   
+<script>
+    let items = [
+        {
+            item: 'Apple',
+            quantity : 10,
+        },
+        {
+            item:'Banana',
+            quantity : 15,
+        },
+        {
+            item:'Orange',
+            quantity : 35,
+        },
+        {
+            item: 'Orange',
+            quantity : 10,
+        },
+        {
+            item:'Banana',
+            quantity : 25,
+        },
+        {
+            item: 'Apple',
+            quantity : 30,
+        },
+    ];
+    
+    
+    function groupBy(arr,fieldName)
+    {
+        let group = {};
+        for(const obj of arr)
+        {
+            let fieldValue = obj[fieldName];
+            if ( !group[fieldValue])
+            {
+                group[fieldValue] =[obj]; 
+            }
+            else
+            {
+            
+                group[fieldValue].push(obj); 
+            }
+        }
+        return group;
+    }
+    let group = groupBy(items,'item');
+    console.log('itemgroup ',group);
+    let objArr = [
+        {
+            name: "Aung Aung",
+            age : 40,
+            gender: "Male",
+            
+        },
+        {
+            name: "Mya Maung",
+            age : 20,
+            gender:"Male",
+        },
+        {
+            name: "Mya Maung",
+            age : 20,
+            gender:"Another",
+        },
+        {
+            name: "Aung Win",
+            age : 75,
+            gender:"Male",
+        },
+        {
+            name: "Hla Hla",
+            age : 20,
+            gender:"Female",
+        },
+        {
+            name: "Hla Maung",
+            age : 75,
+            gender:"Male",
+        },
+    ];
+    let genderGroup = groupBy(objArr,'gender');
+    console.log('GenderGroup ',genderGroup);
+</script>     
+</html>

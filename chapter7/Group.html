@@ -1,0 +1,57 @@
+<html>
+   
+<script>
+    let objArr = [
+        {
+            name: "Aung Aung",
+            age : 40,
+            gender: "Male",
+            
+        },
+        {
+            name: "Mya Maung",
+            age : 20,
+            gender:"Male",
+        },
+        {
+            name: "Mya Maung",
+            age : 20,
+            gender:"Another",
+        },
+        {
+            name: "Aung Win",
+            age : 75,
+            gender:"Male",
+        },
+        {
+            name: "Hla Hla",
+            age : 20,
+            gender:"Female",
+        },
+        {
+            name: "Hla Maung",
+            age : 75,
+            gender:"Male",
+        },
+    ];
+    let group = {};
+    for(const obj of objArr)
+    {
+        
+        if ( !group[obj.gender])
+        {
+            group[obj.gender] =[obj]; 
+        }
+        else
+        {
+           
+            group[obj.gender].push(obj); 
+        }
+    }
+    console.log('Group ',group);
+    function groupBy(arr,fieldName)
+    {
+        
+    }
+</script>     
+</html>

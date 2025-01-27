@@ -1,0 +1,17 @@
+<html>
+   
+<script>
+    let arr = [1,2,3,-4,5];
+    function add(a,b)
+    {
+        console.log('A ',a, ' B ',b);
+        return a+b;
+    }
+    console.log('Arr ',arr);
+    let total = arr.reduce(add);
+    console.log('Total ',total);
+
+    let min = arr.reduce( (a,b)=>a< b? a:b);
+    console.log('Min ',min);
+</script>     
+</html>

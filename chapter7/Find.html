@@ -1,0 +1,18 @@
+<html>
+   
+<script>
+    let arr = [10,20,30,41];
+    let item =arr.find( ele=> ele > 10);
+    console.log('Item ',item);
+
+    let index = arr.findIndex(ele=> ele > 10);
+    console.log('Index ',index);
+
+    const isEven = (num) => num %2  == 0;
+    let allEven = arr.every(isEven);
+    console.log('All Even ',allEven);
+
+    let someEven = arr.some(isEven);
+    console.log('Some even ',someEven);
+</script>     
+</html>

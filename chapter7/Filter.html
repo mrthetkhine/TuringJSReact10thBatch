@@ -1,0 +1,38 @@
+<html>
+   
+<script>
+    let objArr = [
+        {
+            name: "Aung Aung",
+            age : 40,
+            gender: "Male",
+        },
+        {
+            name: "Mya Maung",
+            age : 20,
+            gender:"Male",
+        },
+        {
+            name: "Hla Hla",
+            age : 20,
+            gender:"Female",
+        },
+    ];
+    function isMale(obj)
+    {
+        return obj.gender == "Male";
+    }
+    /*
+    let males = [];
+    for(const obj of objArr)
+    {
+       if(isMale(obj))
+       {
+        males.push(obj);
+       }
+    }*/ 
+    let males = objArr.filter(isMale)
+                      .map(obj=>obj.name);
+    console.log('Males ',males);
+</script>     
+</html>
