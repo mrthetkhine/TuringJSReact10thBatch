@@ -1,0 +1,23 @@
+<html>
+   
+<script>
+    function outer()
+    {
+        console.log('Outer ');
+        function inner()
+        {
+            console.log('Inner');
+            function deepInner()
+            {
+            
+                console.log('Deep inner');
+            }
+            deepInner();
+        }
+        inner();
+        //deepInner();
+    }
+    //inner();
+    outer();
+</script>     
+</html>

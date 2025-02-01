@@ -1,0 +1,59 @@
+<html>
+   
+<script>
+    //1,100,12,20,31
+    let arr = [1,100,12,31,20];
+    console.log('Org ',arr);
+
+    arr.sort( (a,b)=> a- b);
+    console.log('Arr ',arr);
+
+    arr.sort( (a,b)=> b - a);
+    console.log('Arr ',arr);
+
+    let objArr = [
+        {
+            name: "Aung Aung",
+            age : 40,
+            gender: "Male",
+            
+        },
+        {
+            name: "Mya Maung",
+            age : 20,
+            gender:"Male",
+        },
+        {
+            name: "Aung Win",
+            age : 75,
+            gender:"Male",
+        },
+        {
+            name: "Aye Hla",
+            age : 20,
+            gender:"Female",
+        },
+        {
+            name: "Hla Maung",
+            age : 75,
+            gender:"Male",
+        },
+    ];
+    objArr.sort((objA,objB)=> objA.age - objB.age);
+    console.log('ObjArr ',objArr);
+
+    objArr.sort((objA,objB)=>{
+        let result = objA.age - objB.age;
+        if(result == 0)
+        {
+            result = objA.name.localeCompare(objB.name);
+        }
+        return result;
+    });
+    console.log('ObjArr ',objArr);
+    console.log('apple orange ','apple'.localeCompare('orange'));
+
+    objArr.reverse();
+    console.log('ObjArr ',objArr);
+</script>     
+</html>

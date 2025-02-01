@@ -1,6 +1,12 @@
 <html>
    
 <script>
+    //1,100,12,20,31
+    let arr = [1,100,12,31,20];
+    console.log('Org ',arr.join());
+
+    //Aung Aung;
+    //join(';')
     let objArr = [
         {
             name: "Aung Aung",
@@ -19,7 +25,7 @@
             gender:"Male",
         },
         {
-            name: "Hla Hla",
+            name: "Aye Hla",
             age : 20,
             gender:"Female",
         },
@@ -29,16 +35,23 @@
             gender:"Male",
         },
     ];
-
-    function isMale(obj)
-    {
-        return obj.gender == "Male";
-    }
     
-  
-    let oldestMale = objArr.filter(isMale)
-                      .reduce((objA,objB)=>objA.age > objB.age?objA: objB );
-                      
-    console.log('Males ',oldestMale.name);
+    objArr.sort( (objA,objB)=>{
+        if (objA.gender== objA.gender)
+        {
+            return 0;
+        }
+        else if(objA.gender == "Male")
+        {
+            return -1;
+        }
+        else
+        {
+            return 1;
+        }
+    })
+    console.log('ObjArr ',objArr);  
+    let names = objArr.map(obj=>obj.name).join(';');
+    console.log('Name ',names);
 </script>     
 </html>

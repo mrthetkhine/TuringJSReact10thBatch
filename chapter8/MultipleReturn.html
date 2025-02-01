@@ -1,0 +1,34 @@
+<html>
+   
+<script>
+    let arr = [10,20];
+    /*
+    let a = arr[0];
+    let b = arr[1];*/
+    let [a,b] = arr;
+
+    console.log('A ',a);
+    console.log('B ',b);
+
+    function div(a,b)
+    {
+        if(b==0)
+        {
+            return [undefined, new Error('Divisor is zero')]
+        }
+        else
+        {
+            return [a/b,undefined];
+        }
+    }
+    let [result,error] = div(10,0);
+    if(error)
+    {
+        console.log('Error ',error);
+    }
+    else
+    {
+        console.log('Result ',result);
+    }
+</script>     
+</html>

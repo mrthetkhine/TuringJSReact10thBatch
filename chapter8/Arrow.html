@@ -1,0 +1,28 @@
+<html>
+   
+<script>
+    function hello()//declaration
+    {
+        console.log('Hello World,Hi');
+        console.log('How are you ',this);
+    }
+    hello();
+   
+    function add(a,b)//parameter
+    {
+        return a + b;//return 
+    }
+    let result = add(10,2);
+    console.log('Result ',result);
+
+    let add2 = (a,b) => a+b;
+    result = add2(5,2);
+    console.log('Result ',result);
+
+    let another =(msg)=>{
+        console.log('Msg ',msg, ' this ',this);
+        return "Hello "+msg;
+    }
+    console.log('Another ',another('hi '));
+</script>     
+</html>

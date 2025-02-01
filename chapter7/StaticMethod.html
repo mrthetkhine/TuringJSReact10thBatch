@@ -1,0 +1,26 @@
+<html>
+   
+<script>
+    //1,100,12,20,31
+    let arr = Array.of(1,2,3);
+    console.log('Arr ',arr);
+
+    let arr2 = Array.from(arr);
+    console.log('arr2 ',arr2);
+
+    let obj = {};
+    console.log('is Array ',Array.isArray(obj));
+    console.log('is Array ',Array.isArray(arr));
+
+    let obj2 ={};
+    obj2[0] = 10;
+    obj2[1] = 20;
+    obj2.length = 2;
+
+    console.log('is Array ',Array.isArray(obj2)); 
+
+    let str = "Hello";
+    console.log('str[0] ',str[0]);
+    console.log('str.charAt ',str.charAt(0));
+</script>     
+</html>
