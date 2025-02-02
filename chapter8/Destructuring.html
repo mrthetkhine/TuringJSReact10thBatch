@@ -1,0 +1,24 @@
+<html>
+   
+<script>
+    /*
+    function print(arr)
+    {
+        let x = arr[0];
+        let y = arr[1];
+        console.log('X ',x, ' Y ',y);
+    }*/
+    function print([x,y])
+    {
+        console.log('X ',x, ' Y ',y);
+    }
+    print([10,2]);
+
+    let arr = [100,200,300];
+    let [a,b] = arr;
+    console.log('A ',a, ' B ',b);
+
+    let [c,...d] = arr;
+    console.log('C ',c, ' D ',d);
+</script>     
+</html>

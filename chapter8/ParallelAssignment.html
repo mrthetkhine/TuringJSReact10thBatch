@@ -1,0 +1,26 @@
+<html>
+   
+<script>
+    let a = 10;
+    let b = 20;
+
+    [a,b]  = [b,a];
+    console.log('A ',a);
+    console.log('B ',b);
+
+    let obj = {
+        name : "TK",
+        age : 40,
+    }
+    /*
+    let name = obj.name;
+    let age = obj.age;
+    */
+   let {
+        name:myName,
+        age
+    }=obj;
+   console.log('Name ',myName);
+   console.log('Age ',age);
+</script>     
+</html>

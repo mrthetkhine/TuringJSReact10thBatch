@@ -1,0 +1,20 @@
+<html>
+   <script src="./hello.js"></script>
+<script>
+   
+    //console.log('Hello ',hello);
+    //hello();
+    //console.log('Item ',items);
+
+    function hi()
+    {
+        console.log('Hi');
+    }
+    console.log(hi.toString());
+    console.log(window.setTimeout.toString());
+    console.log('typeof hi ',typeof hi);
+
+    const add = new Function("x", "y", "return x*y;");
+    console.log('Add ',add(10,2));
+</script>     
+</html>

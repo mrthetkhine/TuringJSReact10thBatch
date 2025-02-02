@@ -1,0 +1,30 @@
+<html>
+   
+<script>
+    let stack1 = {
+        items: [],
+        push(item)
+        {
+            this.items.push(item)
+        },
+        pop()
+        {
+            return this.items.pop();
+        }
+    }
+    let stack2 = {
+        items: [],
+        push(item)
+        {
+            this.items.push(item)
+        },
+        pop()
+        {
+            return this.items.pop();
+        }
+    }
+    stack1.push(10);
+    stack1.push(20);
+    console.log('Stack1 ',stack1.pop());
+</script>     
+</html>

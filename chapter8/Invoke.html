@@ -1,0 +1,39 @@
+<html>
+   
+<script>
+    function hello()
+    {
+        console.log('Hello');
+    }
+    hello();
+    window.hello();
+    window['hello']();
+
+    let obj = {
+        name : 'TK',
+        age : 40,
+        display(msg){
+            console.log(msg,' Name ',this.name, ' Age ',this.age);
+        }
+    }
+    obj.display('Hello');
+    let date = new Date();
+    console.log('Date ',date);
+
+    let obj2 ={
+        name: 'Another',
+        age : 30
+    }
+    let display = obj.display;
+    display.call(obj,'Hello');
+    display.call(obj2,'Hello');
+
+    display.apply(obj,['Hello']);
+    let another = obj.display.bind(obj2);
+    another('Hello');
+    
+    let arr = [10,20,40,-1]
+    console.log('Math.min  ',Math.min.apply(null,arr));
+    console.log('Math.min  ',Math.min(...arr));
+</script>     
+</html>

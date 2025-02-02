@@ -1,0 +1,27 @@
+<html>
+   
+<script>
+    //1
+    function hello()
+    {
+        console.log('Hello');
+    }
+    let fun = hello;//Rule 1
+    fun();
+  
+    function invoke(fun)
+    {
+        console.log('Invoke');
+        fun();
+    }
+    invoke(hello);//Rule 2
+
+    function getFun()
+    {
+        return function(){
+            console.log('New Function');
+        };
+    }
+    getFun()();
+</script>     
+</html>

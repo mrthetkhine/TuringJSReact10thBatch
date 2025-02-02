@@ -1,0 +1,39 @@
+<html>
+   
+<script>
+    function add(a,b)
+    {
+        return a+b;
+    }
+    console.log('Add ',add.name);
+    console.log('add.length ',add.length);
+
+    function unique()
+    {
+        return unique.counter++;
+    }
+    unique.counter =0;
+
+    console.log('Unique ',unique());
+    console.log('Unique ',unique());
+
+    factorial.cache= {};//key=n, value=result
+    function factorial(n)
+    {
+        if(factorial.cache[n])
+        {
+            return factorial.cache[n];
+        }
+        console.log('Compute factorial of ',n);
+        let result = 1;
+        for(let i=1;i<=n;i++)
+        {
+            result *= i;
+        }
+        factorial.cache [n] = result;
+        return result;
+    }
+    console.log('factorial ',factorial(4));
+    console.log('factorial ',factorial(4));
+</script>     
+</html>
