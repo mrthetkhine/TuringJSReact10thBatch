@@ -1,0 +1,17 @@
+<html>
+   
+<script>
+
+    const isEven = (n)=> n %2==0;
+
+    function not(fn)
+    {
+        return function(x)
+        {
+            return !fn(x);
+        }
+    }
+    const isOdd = not (isEven);
+    console.log('isOdd ',isOdd(3));
+</script>     
+</html>

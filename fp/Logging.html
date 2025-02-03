@@ -1,0 +1,46 @@
+<html>
+   
+<script>
+
+    let module = {
+        hello()
+        {
+            console.log('hello');
+        },
+        hi()
+        {
+            console.log('hi');
+        }
+    }
+    function greet(msg)
+    {
+        console.log('Hello ',msg);
+    }
+    function logger(fn)
+    {
+        return function(...args)
+        {
+            console.log('Fn started ',fn.name);
+            let result = fn(...args);
+            console.log('Fn end ',fn.name);
+            return result;
+        }
+    }
+    greet = logger(greet);
+    greet('hi');
+
+    function logWithModule(module)
+    {
+        for(let prop in module)
+        {
+            if( typeof module[prop] === 'function')
+            {
+                module[prop] = logger(module[prop]);
+            }
+        }
+    }
+    //logWithModule(module);
+    module.hello();
+    module.hi();
+</script>     
+</html>

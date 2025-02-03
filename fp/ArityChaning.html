@@ -1,0 +1,26 @@
+<html>
+   
+<script>
+
+    let items = ['1','2','3'];
+    let numbers = items.map(parseInt);
+    console.log('Numbers ',numbers);
+
+    items.map((value,index,arr)=>{
+        console.log('Value ',value, ' Index ',index, ' Arr ',arr);
+    })
+    //parseInt('1',0)
+    //parseint('2',1)
+    console.log('ParseInt ',parseInt('2',1));
+
+    function unary(fn)
+    {
+        return function(x)
+        {
+            return fn(x);
+        }
+    }
+    numbers = items.map(unary(parseInt));
+    console.log('Numbers ',numbers);
+</script>     
+</html>

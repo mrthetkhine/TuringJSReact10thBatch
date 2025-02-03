@@ -1,0 +1,36 @@
+<html>
+   
+<script>
+
+    function fact(n)
+    {
+        console.log('Compute ',n);
+        let result = 1;
+        for(let i=1;i<=n;i++)
+        {
+            result *= i;
+        }
+        return result;
+    }
+    //console.log('Fact ',fact(4));
+    function memonize(fn)
+    {
+        let cache = {};
+        return function(x)
+        {
+            if(cache[x])
+            {
+                return cache[x];
+            }
+            else
+            {
+                cache[x] = fn(x);
+                return cache[x];
+            }
+        }
+    }
+    fact =memonize(fact);
+    console.log(' fac 4 ',fact(4));
+    console.log(' fac 4 ',fact(4));
+</script>     
+</html>

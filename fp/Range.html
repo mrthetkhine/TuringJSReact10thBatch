@@ -1,0 +1,25 @@
+<html>
+   
+<script>
+
+    function range(start,end,fn)
+    {
+        for(let i=start;i<=end;i++)
+        {
+            fn(i);
+        }
+    }   
+    range(0,5,(i)=>console.log(i));
+
+    function range2(start,stop)
+    {
+        return new Array(stop - start).fill(0).map((v, i) => start + i);
+    }
+    let arr = range2(3,5);
+    console.log('Array ',arr);
+
+    //[1..n]
+    const fact = (n)=> range2(1,n+1).reduce((a,b)=>a*b,1);
+    console.log('fact (4) ',fact(4));
+</script>     
+</html>

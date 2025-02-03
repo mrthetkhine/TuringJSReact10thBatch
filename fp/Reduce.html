@@ -1,0 +1,29 @@
+<html>
+   
+<script>
+
+    function map(arr,fn)
+    {
+        return arr.map(fn)
+    }
+    console.log('Map ',map([1,2,3],(i)=>i*i));
+
+    function mapByReduce(arr,fn)
+    {
+        return  arr.reduce((a,b)=> [...a,fn(b)] ,[]);
+    }
+    //(a)=>[]
+    //([],1)=>[...[],1*1]
+    //([1],2)=>[ 1,2*2]
+    //([1,4],3)
+    console.log('Map ',mapByReduce([1,2,3],(i)=>i*i));
+
+    const isEven= (n) => n % 2 === 0;
+    function filter(arr,predFn)
+    {
+        return arr.reduce((a,b)=> predFn(b) ? [...a,b] : a ,[]);
+    }
+    let items = [1,2,3,4,5];
+    console.log('Filter even ',filter(items,isEven));
+</script>     
+</html>

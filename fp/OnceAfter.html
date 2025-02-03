@@ -1,0 +1,37 @@
+<html>
+   
+<script>
+
+    function payment(card)
+    {
+        console.log('Payment ',card);
+    }
+    function order()
+    {
+        console.log('Order');
+    }
+    function once(fn,after)
+    {
+        let done = false;
+        return function(...args)
+        {
+            if(!done)
+            {
+                fn(...args);
+                done = true;
+            }
+            else
+            {
+                after();
+            }
+        }
+    }
+    //paymet = once(payment('card'))
+    payment = once(payment,()=>console.log('Payment have been done'));
+    payment('card1');
+    payment();
+    order = once(order,()=>console.log('Order have been done'));
+    order();
+    order();    
+</script>     
+</html>
