@@ -1,0 +1,45 @@
+<html>
+   
+<script src="./fplib.js"></script>
+<script>
+   function add(x,y)
+   {
+       return x+y;
+   }
+   function curry(fn)
+   {
+        //console.log('Length ',fn.length);
+        return fn.length==0?fn:(x)=>fn.bind(null,x);
+        /*
+        if(fn.length==0)
+        {
+            return fn();
+        }
+        return function(x)
+        {
+            return fn.bind(null,x);
+        }*/
+   }
+
+   
+   
+   let curriedAdd = curry(add);
+   console.log('add(10) ',curriedAdd(10));
+   const add10 = curriedAdd(10);
+   const inc = (x)=> x+1;
+   const log = tap(console.log);
+   const newFun = pipe(inc,log,curriedAdd(10),log);
+   console.log('NewFun ',newFun(10));
+
+   function api(baseApi)
+   {
+       return function(url)
+       {
+            return(baseApi+'/'+url);
+       }
+   }
+   let api1 = api('https://www.google.com');
+   console.log('USe ',api1('url1'));
+   console.log('USe ',api1('url2'));
+</script>     
+</html>

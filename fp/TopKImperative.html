@@ -1,0 +1,51 @@
+<html>
+   
+<script src="./fplib.js"></script>
+<script>
+    let arr = [1,1,2,2,1,1,1,3,2,3,3,3] //1-5,3-4,2-2
+    let k = 2;//[1,3]
+    /*
+    frequency
+    sort desc
+    take top
+    */
+   let frequency = {};//key ->element, value -> frequency
+   /*
+    frequency ={
+    '1':5,
+    '2':2,
+    '3':4
+    }
+   */
+    for(const ele of arr)
+    {
+        //console.log('Frequency ele ',ele, ' frequency',frequency[ele]);
+        if(frequency[ele])
+        {
+            frequency[ele]++;
+        }
+        else
+        {
+            frequency[ele] = 1;
+        }
+    }
+    console.log('Frequency ',frequency);
+    let freqArr = Object.entries(frequency);
+    console.log('FreqArr ',freqArr);
+
+    freqArr.sort((a,b)=>{
+        return b[1] - a[1];
+    })
+    console.log('FreqArr ',freqArr);
+    freqArr.length = k;
+    console.log('FreqArr ',freqArr);
+
+    let topK = [];
+    for(let i=0;i< freqArr.length;i++)
+    {
+        topK.push(freqArr[i][0]);
+    }
+    console.log('TopK ',topK);
+  
+</script>     
+</html>

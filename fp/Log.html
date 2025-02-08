@@ -1,0 +1,50 @@
+<html>
+   
+<script>
+    function getField(obj,field)
+    {
+        return obj[field];
+    }
+    let obj = {
+        name : 'TK',
+        age: 40
+    }
+    function toUpper(str)
+    {
+        return str.toUpperCase();
+    }
+    function appendHi(str)
+    {
+        return str + ' hi';
+    }
+    function getStrLength(str)
+    {
+        return str.length;
+    }
+    function toUpperAndAppendHi(str)
+    {
+        return appendHi(toUpper(str));
+    }
+    function pipe(...fns)
+    {
+        return function(str)
+        {
+            return fns.reduce((input,fn)=> fn(input) ,str);
+        }
+    }
+    function tap(fun)
+    {
+        return function(str)
+        {
+            fun(str);
+            return str;
+        }
+    }
+    const log = tap(console.log);
+    console.log(log('Here is tap'));
+    let newFun = pipe(toUpper,log,appendHi,log);
+    console.log('newFun ',newFun('hello'));
+   
+
+</script>     
+</html>

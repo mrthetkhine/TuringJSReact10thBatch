@@ -1,0 +1,44 @@
+<html>
+   
+<script>
+    function getField(obj,field)
+    {
+        return obj[field];
+    }
+    let obj = {
+        name : 'TK',
+        age: 40
+    }
+    function toUpper(str)
+    {
+        return str.toUpperCase();
+    }
+    function appendHi(str)
+    {
+        return str + ' hi';
+    }
+    function getStrLength(str)
+    {
+        return str.length;
+    }
+    function toUpperAndAppendHi(str)
+    {
+        return appendHi(toUpper(str));
+    }
+    function compose(...fns)
+    {
+        return function(str)
+        {
+            return fns.reduceRight((input,fn)=> fn(input) ,str);
+        }
+    }
+    let newFun = compose(getStrLength,toUpper,appendHi);
+    console.log('toUpper ',newFun('hello'));
+    console.log('appendHi ',appendHi('hello'));
+
+    console.log('newFun ',newFun('hello'));
+    newFun  = compose(appendHi,toUpper);
+    console.log('NewFun ',newFun('hello'));
+
+</script>     
+</html>
