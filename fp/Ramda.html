@@ -16,5 +16,12 @@
     }
     let newFun = R.pipe(appendHi,toUpper);
     console.log('NewFun ',newFun('hello'));
+    let curriedAdd = R.add(10);
+    console.log('add(2) ',curriedAdd(2));
+
+    const add = (x,y)=> x+ y;
+    let add2 = R.curry(add);
+    console.log('Add2 ',add2(10,2));
+    console.log('Add2 ',add2(10)(2));
 </script>     
 </html>

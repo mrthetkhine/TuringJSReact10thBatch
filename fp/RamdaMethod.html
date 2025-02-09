@@ -1,0 +1,28 @@
+<html>
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.30.1/ramda.js"></script>
+<script>
+    let arr = [1,1,2,2,1,1,1,3,2,3,3,3] //1-5,3-4,2-2
+    let k = 2;//[1,3]
+    //frequency
+    //sort
+    //take top
+    console.log('Identity ', R.identity(10));
+
+    let group = R.countBy(R.identity)(arr);
+    console.log('Group ',group);
+
+    let arr2 = [1,2,3];
+    console.log('Head ',R.head(arr2));
+    console.log('Tail ',R.tail(arr2));
+
+    let obj = {
+        name : 'TK',
+        age : 40
+    }
+    console.log('Age ',R.prop('age')(obj));
+    let obj2 = R.assoc('age',50)(obj);
+    console.log('obj ',obj);
+    console.log('obj2 ',obj2);
+</script>     
+</html>

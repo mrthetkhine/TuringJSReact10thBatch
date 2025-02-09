@@ -1,0 +1,25 @@
+<html>
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.30.1/ramda.js"></script>
+<script>
+    let obj = {
+        name : 'TK',
+        age : 40
+    }
+    /*
+    function incAge(obj)
+    {
+        obj.age ++;
+    }*/
+   function incAge(obj)
+   {
+        return {
+            ...obj,
+            age : obj.age +1
+        }
+   };
+   let obj2 = incAge(obj);
+   console.log('Obj ',obj);
+   console.log('Obj2 ',obj2);   
+</script>     
+</html>

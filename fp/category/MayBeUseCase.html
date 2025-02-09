@@ -1,0 +1,57 @@
+<html>
+
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.30.1/ramda.js"></script>
+<script src="./fplib.js"></script>
+<script>
+    //console.log('MayBe ',MayBe);
+    let employess = {
+        1:{
+            name : 'Emp 1',
+            
+        },
+        2:{
+            name : 'Emp 2',
+            supervisor :1
+        },
+        3:{
+            name : 'Emp 3',
+            supervisor:1,
+        },
+        4:{
+            name : 'Emp 4',
+            supervisor:3,
+        }
+    }
+    /*
+    function getSupervisorName(empId)
+    {
+        let employe = employess[empId];
+        if(employe)
+        {
+            let supervisorId = employe.supervisor;
+            if(supervisorId)
+            {
+                let supervisor = employess[supervisorId];
+                if(supervisor)
+                {
+                    return supervisor.name;
+                }
+            }
+           
+        }
+    }*/
+    function getSupervisorName(empId)
+    {
+        return MayBe.of(empId)
+                    .map(id=>employess[id])
+                    .map(emp=>emp.supervisor)
+                    .map(supervisorId=>employess[supervisorId])
+                    .map(supervisor=>supervisor.name);
+    }
+    //console.log('supervisor ',getSupervisorName(4));
+    
+    getSupervisorName(14)
+        .map(name=>console.log('Name ',name));
+</script>     
+</html>

@@ -1,0 +1,22 @@
+<html>
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.30.1/ramda.js"></script>
+<script>
+    
+    let obj = {
+        name : 'TK',
+        age : 40,
+        /*
+        address: {
+            city : 'YGN'
+        }*/
+    }
+    //obj.address.city
+    //console.log('Obj.address.city ',obj?.address?.city);
+    console.log('Path  [address,city]', R.path(['address','city'])(obj));
+    //obj?.address?.city = "YGN";
+    let obj2 = R.assocPath(['address','city'],"YGN")(obj)
+    console.log('Obj ',obj);
+    console.log('Obj2 ',obj2);
+</script>     
+</html>

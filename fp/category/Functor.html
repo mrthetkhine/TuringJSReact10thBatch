@@ -1,0 +1,25 @@
+<html>
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.30.1/ramda.js"></script>
+<script>
+    
+    let arr = [1,2,3];
+    let arr2 = arr.map(x => x*2);
+    console.log('Arr2 ',arr2);
+
+    const Functor = (value)=>({
+        valueOf(){
+            return value;
+        },
+        map(fn){
+            return Functor(fn(value));
+        }
+    });
+    const counter= Functor(1);
+    const inc = (x)=>x+1;
+    const double = (x)=>x*2;
+    let counter2 =counter.map(inc)
+                         .map(double)
+    console.log('counter2 ',counter2.valueOf());  
+</script>     
+</html>
