@@ -1,0 +1,120 @@
+<html>
+
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.30.1/ramda.js"></script>
+<script src="./fplib.js"></script>
+<script>
+    let obj= {
+        name : 'TK',
+        age : 40,
+        email:'some@gmail.com'
+    }
+    function minLength(length)
+    {
+        return function(str)
+        {
+            return str.length>=length;
+        }
+    }
+    function maxLength(length)
+    {
+        return function(str)
+        {
+            return str.length <= length;
+        }
+    }
+    function minNum(num)
+    {
+        return function(value)
+        {
+            return value>=num;
+        }
+    }
+    function maxNum(num)
+    {
+        return function(value)
+        {
+            return value <= num;
+        }
+    }
+    function validEmail(email)
+    {
+        return email.includes('@');
+    }
+    /*
+    let minLengthOf3 = minLength(3);
+    console.log('MinLength 3 TK ',minLengthOf3('TK'));
+    console.log('MinLength 23 TK ',minLengthOf3('Thet'));
+
+    let maxLength5 = maxLength(5);
+    console.log('MaxLength 5 TK ',maxLength5('Thet'));
+    console.log('MaxLength 5 Hello ',maxLength5('Hello'));
+    console.log('MaxLength 5 Hello1 ',maxLength5('Hello1'));
+
+   
+    let minNum5 = minNum(5);
+    console.log('MinNum5 10 ',minNum5(10));
+    console.log('MinNum5 4 ',minNum5(4));
+
+    let maxNum10 = maxNum(10);
+    console.log('MaxNum10 12',maxNum10(12));
+    console.log('MaxNum10 5',maxNum10(5));
+
+    console.log('Valid Email some@gmail ',validEmail('some@gmail'));
+    console.log('Valid Email somegmail ',validEmail('somegmail'));
+    */
+   function and(...validators)//[minLength(3),maxLength(10)]
+   {
+    return function(input)
+    {
+        return validators.reduce((a,validatorFn)=> a && validatorFn(input), true);
+    } 
+   }
+   function or(...validators)//[minLength(3),maxLength(10)]
+   {
+    return function(input)
+    {
+        return validators.reduce((a,validatorFn)=> a || validatorFn(input), false);
+    } 
+   }
+   //and( validtor, or(r1,r2))
+   let min3AndMax5 = and(minLength(3),maxLength(5));
+   console.log('min3AndMax5 ATK ',min3AndMax5('ATK'));
+   console.log('min3AndMax5 TK ',min3AndMax5('TK'));
+
+   let min3OrMax5 = or(minLength(3),maxLength(5));
+   console.log('min3OrMax5 ATK ',min3OrMax5('ATK'));
+   console.log('min3OrMax5 TK ',min3OrMax5('TK'));
+
+   function validName(obj)
+   {
+        return and(minLength(3),maxLength(10))(obj.name); 
+   }
+   function validUserEmail(obj)
+   {
+        return validEmail(obj.email);
+   }
+   const validNameOrEmail = or(validName,validUserEmail);
+   console.log('validNameOrEmail ',validNameOrEmail({
+        name : 'MrTK',
+        email:'none'
+   }));
+   console.log('validNameOrEmail ',validNameOrEmail({
+        name : 'Mr',
+        email:'none'
+   }));
+   /*
+   console.log('validName TK ',validName({
+        name :"TK"
+   }));
+   console.log('validName MrTK ',validName({
+        name :"MrTK"
+   }));
+   console.log('Valid Useremail none ',validUserEmail({
+    email:"none"
+   }));
+   console.log('Valid Useremail none@gmail.com ',validUserEmail({
+    email:"none@gmail.com"
+   }));*/
+</script>     
+</html>

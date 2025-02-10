@@ -1,0 +1,158 @@
+<html>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.30.1/ramda.js"></script>
+<script src="./fplib.js"></script>
+<script>
+    const Left = (value) => ({
+        valueOf() {
+            return value;
+        },
+        isLeft()
+        {
+            return true;
+        },
+        map(fn) {
+            return Left.of(value);
+        },
+        matchWith(context)//{left,right}
+        {
+            //console.log('Left matchWith');
+            return context.left(value);
+        },
+        and(another)
+        {
+            return another.isLeft()?
+                        Left.of([...value,...another.valueOf()]): 
+                        Left.of([...value])
+        }
+    });
+    Left.of = Left;
+    const Right = (value) => ({
+        isLeft()
+        {
+            return false;
+        },
+        valueOf() {
+            return value;
+        },
+        map(fn) {
+            return Right.of(fn(value));
+        },
+        matchWith(context)//{left,right}
+        {
+            //console.log('Right matchWith');
+            return context.right(value);
+        },
+        and(another)
+        {
+            //console.log('Another value ',another.valueOf());
+            return another.isLeft()?
+                        Left.of([...another.valueOf()]): 
+                        Right.of(value)
+        }
+    });
+    Right.of = Right;
+    let obj = {
+        name: 'TK',
+        age: 40,
+        email: 'some@gmail.com'
+    }
+    function minLength(length) {
+        return function (str) {
+            return str.length >= length;
+        }
+    }
+    function maxLength(length) {
+        return function (str) {
+            return str.length <= length;
+        }
+    }
+    function minNum(num) {
+        return function (value) {
+            return value >= num;
+        }
+    }
+    function maxNum(num) {
+        return function (value) {
+            return value <= num;
+        }
+    }
+    function validEmail(email) {
+        return email.includes('@');
+    }
+    function and(...validators)//[minLength(3),maxLength(10)]
+    {
+        return function (input) {
+            return validators.reduce((a, validatorFn) => a && validatorFn(input), true);
+        }
+    }
+    function or(...validators)//[minLength(3),maxLength(10)]
+    {
+        return function (input) {
+            return validators.reduce((a, validatorFn) => a || validatorFn(input), false);
+        }
+    }
+    function validName(obj) {
+        return and(minLength(3), maxLength(10))(obj.name);
+    }
+    function validUserEmail(obj) {
+        return validEmail(obj.email);
+    }
+    const validNameOrEmail = or(validName, validUserEmail);
+    /*
+    console.log('validNameOrEmail ',validNameOrEmail({
+         name : 'MrTK',
+         email:'none'
+    }));
+    console.log('validNameOrEmail ',validNameOrEmail({
+         name : 'Mr',
+         email:'none'
+    }));
+    */
+    function enhanceWithError(validationFn, errorMessage) {
+        return function (obj) {
+            return validationFn(obj) ? Right.of(obj) : Left.of([errorMessage]);
+        }
+    }
+    const validNameV2 = enhanceWithError(validName, 'Invalid name');
+    const validUserEmailV2 = enhanceWithError(validUserEmail, 'Invalid Email');
+    /*
+     function validNameV2(obj)
+     {
+          return function(errorMessage)
+          {
+              return and(minLength(3),maxLength(10))(obj.name)?Right.of(obj): Left.of(errorMessage); 
+          }
+          
+     }*/
+    validNameV2({
+        name: "MrTK"
+    }).matchWith({
+        left: (err) => console.error(err),
+        right: (obj) => console.log('Valid obj ', obj)
+    })
+
+    validUserEmailV2({
+        email: 'none@gmail.com'
+    }).matchWith({
+        left: (err) => console.error(err),
+        right: (obj) => console.log('Valid obj ', obj)
+    })
+    function andV2(...validators)//validatior->Either
+    {
+        return function (input) {
+            return validators.reduce((a, validatorFn) => a.and( validatorFn(input)), Right.of(obj));
+        }
+    }
+    const validUserNameAndEmailV2 = andV2(validNameV2,validUserEmailV2);
+    validUserNameAndEmailV2({
+        name : "MRTK",
+        email: 'none@gmail.com'
+    }).matchWith({
+        left: (err) => console.error(err),
+        right: (obj) => console.log('Valid obj ', obj)
+    })
+</script>
+
+</html>

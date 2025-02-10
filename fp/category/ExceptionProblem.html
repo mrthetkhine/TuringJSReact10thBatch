@@ -1,0 +1,67 @@
+<html>
+
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.30.1/ramda.js"></script>
+<script src="./fplib.js"></script>
+<script>
+    const Left = (value)=>({
+        valueOf(){
+            return value;
+        },
+        map(fn){
+            return Left.of(value);
+        },
+        matchWith(context)//{left,right}
+        {
+            //console.log('Left matchWith');
+            return context.left(value);
+        }
+    });
+    Left.of = Left;
+    const Right = (value)=>({
+        valueOf(){
+            return value;
+        },
+        map(fn){
+            return Right.of(fn(value));
+        },
+        matchWith(context)//{left,right}
+        {
+            //console.log('Right matchWith');
+            return context.right(value);
+        }
+    });
+    Right.of = Right;
+
+    function div(a,b)
+    {
+        setTimeout(()=>{
+            if( isNaN(a) || isNaN(b))
+            {
+                //return Left.of('A or B is NaN');
+                throw new Error('A or B is NaN');
+            }
+            else
+            {
+                //return Right.of(a/b);
+                return a/b;
+            }
+        },1000);
+       
+    }
+    
+    try
+    {
+        let result = div(10,NaN)
+       
+        console.log('Result');
+    }
+    catch(e)
+    {
+        console.log('Error ',e);
+    }
+    console.log('Done'); 
+   
+       
+</script>     
+</html>
