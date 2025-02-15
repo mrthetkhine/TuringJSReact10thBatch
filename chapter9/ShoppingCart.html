@@ -1,0 +1,50 @@
+<html>
+<script>
+    class Item 
+    {
+        constructor(name,price,quantity) {
+            this.name = name;
+            this.price = price;
+            this.quantity = quantity;
+        }
+        get total()
+        {
+            return this.price* this.quantity;
+        }
+        toString()
+        {
+            return `${this.name.padEnd(20)} ${this.price.toString().padEnd(5)} ${this.quantity.toString().padEnd(5)} Total= ${(this.total).toString().padEnd(5)}`
+        }
+    }
+    class ShoppingCart
+    {
+        constructor() {
+            this.items = [];
+        }
+        add(item)
+        {
+            this.items.push(item);
+        }
+        print()
+        {
+            let str = '';
+            for(const item of this.items)
+            {
+                let itemStr = item+'\r\n';
+                str += itemStr;
+            }
+            console.log(str);
+        }
+    }
+    let sc = new ShoppingCart();
+    sc.add(new Item('Apple',10,2));
+    sc.add(new Item('Orange',3,5));
+    sc.print();
+
+
+    let item = new Item('item1',10,2);
+    console.log('item instanceof Item ',item instanceof Item);
+    console.log('item instanceof Object ',item instanceof Object);
+    console.log('item instanceof ShopingCart ',item instanceof ShoppingCart);
+</script>     
+</html>

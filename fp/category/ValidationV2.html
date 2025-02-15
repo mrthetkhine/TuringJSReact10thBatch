@@ -25,6 +25,12 @@
             return another.isLeft()?
                         Left.of([...value,...another.valueOf()]): 
                         Left.of([...value])
+        },
+        or(another)
+        {
+            return another.isLeft()?
+                        Left.of([...value,...another.valueOf()]): 
+                        Right.of(another.valueOf())
         }
     });
     Left.of = Left;
@@ -50,7 +56,14 @@
             return another.isLeft()?
                         Left.of([...another.valueOf()]): 
                         Right.of(value)
-        }
+        },
+        or(another)
+        {
+            //console.log('Another value ',another.valueOf());
+            return another.isLeft()?
+                        Right.of(this.valueOf()): 
+                        Right.of(value)
+        },
     });
     Right.of = Right;
     let obj = {
@@ -145,6 +158,12 @@
             return validators.reduce((a, validatorFn) => a.and( validatorFn(input)), Right.of(obj));
         }
     }
+    function orV2(...validators)//validatior->Either
+    {
+        return function (input) {
+            return validators.reduce((a, validatorFn) => a.or( validatorFn(input)), Left.of([]));
+        }
+    }
     const validUserNameAndEmailV2 = andV2(validNameV2,validUserEmailV2);
     validUserNameAndEmailV2({
         name : "MRTK",
@@ -152,6 +171,14 @@
     }).matchWith({
         left: (err) => console.error(err),
         right: (obj) => console.log('Valid obj ', obj)
+    })
+    const validUserNameOrEmailV2 = orV2(validNameV2,validUserEmailV2);
+    validUserNameOrEmailV2({
+        name : "TK",
+        email: 'nonegmail.com'
+    }).matchWith({
+        left: (err) => console.error(err),
+        right: (obj) => console.log('Or Valid obj ', obj)
     })
 </script>
 

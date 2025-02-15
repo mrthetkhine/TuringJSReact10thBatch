@@ -1,0 +1,52 @@
+<html>
+
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.30.1/ramda.js"></script>
+<script>
+    const MayBe = (value)=>({
+        getValue(){
+            return value;
+        },
+        isEmpty(value)
+        {
+            return value === undefined || value === null;
+        },
+        map(fn){
+            return this.isEmpty(value)? MayBe(value) : MayBe(fn(value));
+        }
+    });
+    MayBe.of = MayBe;
+
+    const Functor = (value)=>({
+        getValue(){
+            return value;
+        },
+        map(fn){
+            return Functor(fn(value));
+        },
+        flat(){
+            //console.log('Flat ',value);
+            return value;
+        },
+        flatMap(fn)
+        {
+            return fn(value);
+        }
+    });
+    Functor.of = Functor;
+
+    function transform(value)//MayBe
+    {
+        return MayBe.of(value);
+    }
+    const inc = (x)=>x+1;
+    let result = Functor.of(10)
+            //.map(transform);//Monadic function Functor(MayBe.of(10))
+                .flatMap(transform)
+    let result2 = result
+                        .map(inc);
+    console.log('Result ',result.getValue());
+    console.log('Result2 ',result2.getValue());
+
+</script>     
+</html>

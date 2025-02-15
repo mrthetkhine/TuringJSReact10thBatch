@@ -1,0 +1,31 @@
+<html>
+<script>
+    class MyClass
+    {
+        static count = 0;
+        #size = 10;
+        constructor()
+        {
+            //MyClass.count++;
+            this.id = MyClass.count++;
+        }
+        display()
+        {
+            console.log('Size ',this.#size);
+        }
+    }
+    MyClass.prototype.anotherMethod = function()
+    {
+        console.log('Another method ',this.id);
+    }
+    let obj1= new MyClass();
+    //obj1.#size =40;
+    let obj2 = new MyClass();
+    console.log('Count ', MyClass.count);
+    obj1.anotherMethod();
+    obj2.anotherMethod();
+
+    console.log('Obj ',obj1.id);
+    console.log('Obj2 ',obj2.id);
+</script>     
+</html>

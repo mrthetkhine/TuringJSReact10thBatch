@@ -1,0 +1,34 @@
+<html>
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.30.1/ramda.js"></script>
+<script>
+    
+    let arr = [1,2,3];
+    let arr2 = arr.map(x => x*2);
+    console.log('Arr2 ',arr2);
+
+    const ApplicativeFunctor = (value)=>({
+        valueOf(){
+            return value;
+        },
+        map(fn){
+            return ApplicativeFunctor(fn(value));
+        },
+        //Current-> Ap(fn), another(Ap(value))
+        ap(another){
+            return ApplicativeFunctor.of(value(another.valueOf()));
+        }
+    });
+    ApplicativeFunctor.of = ApplicativeFunctor;
+    function add(x,y)
+    {
+        return x+y;
+    }
+    add = R.curry(add);
+    const three = ApplicativeFunctor(3);
+    const counter= ApplicativeFunctor(1);
+    let counter2 =counter.map(add);//add(1)=> curreidAdd(1)=>ApplicationFunctor( curriedAdd(1))
+    let counter3 = counter2.ap(three); // Ap(4)
+    console.log('counter2 ',counter3.valueOf());  
+</script>     
+</html>

@@ -1,0 +1,54 @@
+<html>
+<script>
+    class Human{//Parent/Super
+        constructor(name,age){
+            this.name = name;
+            this.age = age;
+            console.log('Human constructor');
+        }
+        display(){
+            console.log('Name ',this.name, ' Age ',this.age)
+        }
+        eat(){
+            console.log(this.name, 'is eating');
+        }
+        work()
+        {
+            console.log(this.name, 'is working');
+        }
+    }
+    class Teacher extends Human{//Child/subsclass
+        constructor(name,age,subject){
+            super(name,age);
+            console.log('Teacher constuctor');
+            this.subject = subject;
+        }
+        work(){
+            console.log(this.name, 'is teaching',this.subject);
+        }
+    }
+    class Doctor extends Human{
+        constructor(name,age,speciality){
+            super(name,age);
+            this.speciality = speciality;
+        }
+        work(){
+            console.log(this.name, 'is treating',this.speciality);
+        }
+        display()
+        {
+            super.display();
+            console.log('Dr ',this.name , ' Speciality ',this.speciality);
+        }
+    }
+    let t1 = new Teacher('Win Aung',20,'Math');
+    t1.display();
+    t1.eat();
+    t1.work();
+
+    let d1 = new Doctor('Win Aung',20,'Dentist');
+    d1.display();
+    d1.eat();
+    d1.work();
+</script>     
+</html>

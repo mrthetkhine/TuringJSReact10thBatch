@@ -1,0 +1,55 @@
+<html>
+<script>
+    let obj = {
+        name: "TK",
+        age : 40,
+        display()
+        {
+            console.log('Name ',this.name, ' Age ',this.age)
+        },
+        eat()
+        {
+            console.log(this.name, 'is eating');
+        }
+
+    };
+    obj.display();
+    obj.eat();
+
+    let obj2 = {
+        name: "Aung Aung",
+        age : 34,
+        display()
+        {
+            console.log('Name ',this.name, ' Age ',this.age)
+        },
+        eat()
+        {
+            console.log(this.name, 'is eating');
+        }
+
+    };
+    obj2.display();
+    obj2.eat();
+
+    function Human(name,age)
+    {
+        return {
+            name,
+            age,
+            display()
+            {
+                console.log('Name ',this.name, ' Age ',this.age)
+            },
+            eat()
+            {
+                console.log(this.name, 'is eating');
+            }
+        }
+    }
+    let obj3 = Human('Win Aung',20);
+    let obj4 = Human('Wing Naing',35);
+    obj3.display();
+    obj4.display();
+</script>     
+</html>
