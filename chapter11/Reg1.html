@@ -1,0 +1,36 @@
+<html>
+   
+<script>
+    let str = "123";
+    function validateDigitStr(str)
+    {
+        //digit
+        for(let i=0;i<str.length;i++)
+        {
+            if( !(str[i]>='0' && str[i]<='9'))
+            {
+                return false;
+            }
+
+        }
+        return true;
+    }
+    console.log('validateDigitStr ',validateDigitStr(str));
+    console.log('validateDigitStr ',validateDigitStr('123H'));
+
+    let pattern = /^[0-9]+$/;
+    console.log('pattern test 123H',pattern.test('123H'));
+    console.log('pattern test 122',pattern.test('112'));
+
+    pattern = /^Java/;
+    console.log(`pattern ${pattern}.test Java`,pattern.test('Java'));
+    console.log(`pattern ${pattern}.test JavaScript`,pattern.test('JavaScript'));
+    console.log(`pattern ${pattern}.test TypeScript`,pattern.test('TypeScript'));
+
+    pattern = /Script$/;
+    console.log(`pattern ${pattern}.test Java`,pattern.test('Java'));
+    console.log(`pattern ${pattern}.test JavaScript`,pattern.test('JavaScript'));
+    console.log(`pattern ${pattern}.test TypeScript`,pattern.test('TypeScript'));
+</script>
+
+</html>

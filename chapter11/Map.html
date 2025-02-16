@@ -1,0 +1,35 @@
+<html>
+
+<script>
+    let map = new Map([
+        [1,"One"],
+        [2,"Two"]
+    ]);
+    console.log('Map ',map);
+    console.log('Size ',map.size);
+
+    map.set(3,'THree');
+    map.set(1,'Change');
+    map.set("1","Another");
+    console.log('Map ',map);
+    console.log('Size ',map.size);
+
+    console.log('has 1 ',map.has(1));
+    console.log('get 1 ',map.get(1));
+
+    map.delete(1);
+    console.log('Map ',map);
+
+    //map.clear();
+    console.log('Map ',map);
+
+    for(const [key,value] of map)
+    {
+        console.log('Key ',key,' Value ',value);
+    }
+    console.log('Keys ',map.keys());
+    console.log('Values ',map.values());
+    console.log('Entries ',map.entries());
+</script>
+
+</html>

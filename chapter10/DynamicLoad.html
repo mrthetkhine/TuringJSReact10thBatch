@@ -1,0 +1,26 @@
+<html>
+<body>
+    <button type="button" id="loadScript">
+        Load
+    </button>
+</body>
+<script>
+    function loadLib(src)
+    {
+        let ele = document.createElement('script');
+        ele.src = src;
+        document.head.appendChild(ele);
+
+        ele.onload = () => {
+            api();
+        }
+    }
+    document.getElementById('loadScript')
+            .addEventListener('click',()=>{
+                console.log('Button click');
+                loadLib('api.js');
+                
+            });
+</script>
+
+</html>

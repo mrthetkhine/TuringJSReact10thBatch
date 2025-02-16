@@ -1,0 +1,30 @@
+<html>
+
+<script>
+    let set = new Set([1,2,3,1,1,2,'1']);
+    
+    console.log(set);
+    console.log('size ',set.size);
+
+    set.add(4);
+    set.add(3);
+    console.log(set);
+    console.log('size ',set.size);
+
+    set.delete(3);
+    console.log('set ',set);
+    console.log('has 2 ',set.has(2));
+    //set.clear();
+   
+    console.log('set ',set);
+    for(const item of set)
+    {
+        console.log('Item ',item);
+    }
+    let arr = [...set];
+    console.log(arr);
+
+    set.forEach(item=>console.log('Item for each ',item))
+</script>
+
+</html>

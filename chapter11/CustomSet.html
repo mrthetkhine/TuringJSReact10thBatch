@@ -1,0 +1,38 @@
+<html>
+
+<script>
+    class MySet
+    {
+        constructor(items) {
+            this.set= {}
+            for(const item of items)
+            {
+                this.set[item] = true;
+            }
+        }
+        toString()
+        {
+            return `{${Object.keys(this.set).join(',')}}`;
+        }
+        add(item)
+        {
+            this.set[item] = true;
+        }
+        delete(item)
+        {
+            delete this.set[item];
+        }
+    }
+    let set = new MySet([1,2,3,1,1,2]);
+    console.log('set ',set+'');
+    set.add(4);
+    console.log('set ',set+'');
+
+    set.add(2);
+    console.log('set ',set+'');
+    
+    set.delete(1);
+    console.log('set ',set+'');
+</script>
+
+</html>

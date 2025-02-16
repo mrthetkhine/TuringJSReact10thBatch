@@ -1,0 +1,21 @@
+<html>
+
+    <button type="button" id="btnAllocate">Allocate</button>
+    <button type="button" id="btnDeAllocate">DeAllocate</button>
+<script>
+    
+    let arr1,arr2;
+    let btnAllocate = document.getElementById('btnAllocate');
+    let map = new WeakMap(); 
+
+    document.getElementById('btnDeAllocate').addEventListener('click',()=>{
+        arr1 =null;
+    });
+    btnAllocate.addEventListener('click',()=>{
+        arr1 = new Array(100_000_0);//1million
+        //arr2 = arr1;
+        map.put(arr1,"Entry");
+    });
+</script>
+
+</html>
