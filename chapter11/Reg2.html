@@ -1,0 +1,43 @@
+<html>
+   
+<script>
+    
+    let pattern = /^[0-9]+.+$/;
+    console.log('pattern test 123H',pattern.test('123H'));
+    console.log('pattern test 122',pattern.test('112'));
+
+    pattern = /^a*b*$/;
+    console.log('pattern test aaab',pattern.test('aaaab'));
+    console.log('pattern test b',pattern.test('b'));
+    console.log('pattern test bc',pattern.test('bc'));
+
+    pattern = /^[0-9]+$/;
+    console.log(`pattern ${pattern} aaab`,pattern.test('aaaab'));
+    console.log(`pattern ${pattern} 1`,pattern.test('1'));
+    console.log(`pattern ${pattern} 122`,pattern.test('112'));
+
+    pattern = /[0-9]+/;
+    console.log(`pattern ${pattern} aa123`,pattern.test('aa123'));
+
+    pattern = /^a?b?$/;
+    console.log(`pattern ${pattern} ab`,pattern.test('ab'));
+    console.log(`pattern ${pattern} b`,pattern.test('b'));
+    console.log(`pattern ${pattern} aab`,pattern.test('aab'));
+
+    pattern = /^(ab)+$/;
+    console.log(`pattern ${pattern} abababab`,pattern.test('abababab'));
+    console.log(`pattern ${pattern} abab`,pattern.test('abab'));
+    console.log(`pattern ${pattern} aab`,pattern.test('aab'));
+
+    pattern = /^([a-z]|[A-Z])+$/;
+    console.log(`pattern ${pattern} leR`,pattern.test('leR'));
+    console.log(`pattern ${pattern} la`,pattern.test('la'));
+    console.log(`pattern ${pattern} la123`,pattern.test('la123'));
+
+    pattern = /^[0-9]{6}$/;
+    console.log(`pattern ${pattern} 123456`,pattern.test('123456'));
+    console.log(`pattern ${pattern} 1234`,pattern.test('1234'));
+    console.log(`pattern ${pattern} la123`,pattern.test('la123'));
+</script>
+
+</html>

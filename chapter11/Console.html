@@ -1,0 +1,42 @@
+<html>
+   
+    <script>
+        console.log('This is log');
+        console.info('Info ');
+        console.error('Error happend');
+        console.warn('Wraning');
+
+        let num = 5;
+        console.assert(num>=10,'Number is less than 10');
+
+        let arr = [
+            {
+                name :"Apple",
+                qty :10
+            },
+            {
+                name :"Banana",
+                qty :10
+            },
+        ];
+        console.table(arr);
+        console.time('timer1');    
+        function hello()
+        {
+            console.trace('Hello');
+            console.count('Hello');
+        }
+        hello();
+        hello();
+
+        console.group('level1');
+        console.group('level2');
+        console.log('level2 message');
+        console.groupEnd();
+        console.log('level 1 message');
+        console.groupEnd();
+
+        console.timeLog('timer1',"Time end");   
+        console.timeEnd('timer1');
+    </script>    
+</html>

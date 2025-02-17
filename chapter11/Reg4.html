@@ -1,0 +1,32 @@
+<html>
+   
+<script>
+    
+    let pattern;
+
+    pattern = /^\s+$/;
+    console.log(`pattern ${pattern}    `,pattern.test('  '));
+    console.log(`pattern ${pattern} 122`,pattern.test('122'));
+   
+    pattern = /^\S+$/;
+    console.log(`pattern ${pattern}    `,pattern.test('  '));
+    console.log(`pattern ${pattern} 122`,pattern.test('122'));
+
+    pattern = /^\d{6,8}$/;
+    console.log(`pattern ${pattern} 123456`,pattern.test('123456'));
+    console.log(`pattern ${pattern} 12345`,pattern.test('12345'));
+
+    pattern = /^\D{6,8}$/;
+    console.log(`pattern ${pattern} abcdefgh`,pattern.test('abcdefgh'));
+    console.log(`pattern ${pattern} 12345`,pattern.test('12345'));
+
+    console.log(`"JavaScript".search(/script/ui) `, 'JavaScript'.search(/script/ui) );
+    
+    let str = 'javascript programming language';
+    str = str.replace(/javascript/gi, "JavaScript");
+    console.log('str ',str);
+
+    console.log('match',"7 plus 8 equals 15".match(/\d+/g));
+</script>
+
+</html>

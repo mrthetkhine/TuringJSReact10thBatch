@@ -1,0 +1,38 @@
+<html>
+   
+    <script>
+        let obj ={
+            name: "tk",
+            age : 40,
+            address: {
+                city : "YGN",
+                street : "Somewhere"
+            },
+            items:['Apple','Oragne','Banana'],
+            display()
+            {
+                console.log('Name ',this.name, ' Age ',this.age);
+            },
+            toJSON()
+            {
+                console.log('toJSON called');
+                return {
+                    username:this.name,
+                    age: this.age,
+                }
+            }
+
+        }
+        let str = JSON.stringify(obj);
+        console.log('Str ',str);
+
+        let obj2 = JSON.parse(str,function(key,value){
+            if(typeof value === 'string')
+            {
+                return value.toUpperCase();
+            }
+            return value;
+        });
+        console.log('Obj2 ',obj2);
+    </script>
+</html>

@@ -1,0 +1,37 @@
+<html>
+   
+<script>
+    
+    let pattern;
+
+    pattern = /^[0-9]{6}$/;
+    console.log(`pattern ${pattern} 123456`,pattern.test('123456'));
+    console.log(`pattern ${pattern} 1234`,pattern.test('1234'));
+    console.log(`pattern ${pattern} la123`,pattern.test('la123'));
+
+    pattern = /^[0-9]{6,}$/;
+    console.log(`pattern ${pattern} 123456`,pattern.test('123456'));
+    console.log(`pattern ${pattern} 12345678`,pattern.test('12345678'));
+    console.log(`pattern ${pattern} la123`,pattern.test('la123'));
+
+    pattern = /^[0-9]{3,6}$/;
+    console.log(`pattern ${pattern} 123`,pattern.test('123'));
+    console.log(`pattern ${pattern} 123456`,pattern.test('123456'));
+    console.log(`pattern ${pattern} 12`,pattern.test('12'));
+    console.log(`pattern ${pattern} 1234567`,pattern.test('1234567'));
+
+    pattern = /^[^0-9]+$/;
+    console.log(`pattern ${pattern} 123`,pattern.test('123'));
+    console.log(`pattern ${pattern} abc`,pattern.test('abc'));
+
+    pattern = /^\w+$/;
+    console.log(`pattern ${pattern} 123`,pattern.test('123'));
+    console.log(`pattern ${pattern} abc`,pattern.test('abc'));
+
+    pattern = /^\W+$/;
+    console.log(`pattern ${pattern} 123`,pattern.test('123'));
+    console.log(`pattern ${pattern} abc`,pattern.test('abc'));
+    console.log(`pattern ${pattern} $#`,pattern.test('$#'));
+</script>
+
+</html>

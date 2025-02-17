@@ -1,0 +1,24 @@
+<html>
+   
+<script>
+    
+    let url = /(\w+):\/\/([\w.]+)\/(\S*)/;
+    let text = "Visit my blog at http://www.example.com/~david"; 
+    let match = text.match(url);
+    let fullurl, protocol, host, path;
+    if (match !== null) {
+        fullurl = match[0]; // fullurl == "http://www.example.com/~david"
+        protocol = match[1]; // protocol == "http"
+        host = match[2]; // host == "www.example.com" path = match[3]; // path == "~david"
+    }
+    console.log('Match ',match);
+    console.log('full url ',fullurl);
+    console.log('protocol ',protocol);
+    console.log('host ',host);
+
+    let str = 'apple;orange;banana;';
+    let items = str.split(';');
+    console.log('Items ',items);
+</script>
+
+</html>
