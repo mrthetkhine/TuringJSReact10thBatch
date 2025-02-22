@@ -1,0 +1,36 @@
+<html>
+    
+<script>    
+    function range(end)
+    {
+        let counter = 0;
+        return{
+            [Symbol.iterator]()
+            {
+                return {
+                    next()
+                    {
+                        let value =  counter>end-1?undefined:counter ++;
+                        return {
+                            value : value,
+                            done : value == undefined? true :false,  
+                        } 
+                    }
+                }
+            }
+        };
+    }
+    
+    for(const item of range(5))
+    {
+        console.log('Item ',item);
+    }
+   /*
+   let iterator = range(2)[Symbol.iterator]();
+    console.log('Iterator ',iterator.next());
+    console.log('Iterator ',iterator.next());
+    console.log('Iterator ',iterator.next());
+    */
+</script>
+
+</html>

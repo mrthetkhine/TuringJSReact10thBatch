@@ -1,0 +1,24 @@
+<html>
+    <button id="btnDo">Do</button>
+<script>    
+    document.getElementById('btnDo').addEventListener('click',()=>{
+        console.log('CLick');
+    });
+    function delay(ms)
+    {
+        let date = Date.now();
+        while(Date.now() - date < ms)
+        {
+            //console.log('Waiting');
+        }
+    }
+    console.log('start');
+    setTimeout(function(){
+        console.log('World');
+    },0);
+    delay(2000);
+    
+    console.log('Hello');
+</script>
+
+</html>

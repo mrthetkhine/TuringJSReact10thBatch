@@ -1,0 +1,17 @@
+<html>
+    
+<script>    
+    function* smallNumber()
+    {
+        let x1 = yield 1;
+        console.log('X1',x1);
+
+        let x2 = yield 2;
+        console.log('X2 ',x2);
+    }
+    let g = smallNumber();
+    console.log('NExt ',g.next());
+    console.log('NExt ',g.next('two'));
+</script>
+
+</html>

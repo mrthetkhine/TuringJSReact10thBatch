@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <div id="current"></div>
+        <button type="button" id="stopInterval">
+            Stop 
+        </button>    
+    </body>
+<script>
+    let timer = setInterval(function(){
+        document.getElementById('current').innerHTML = new Date();
+    },1000);
+
+    document.getElementById('stopInterval').addEventListener('click',()=>{
+        clearInterval(timer);
+    });
+    setTimeout(function(){
+        console.log('Fire settimeout');
+    },1000);
+</script>
+
+</html>

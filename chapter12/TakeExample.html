@@ -1,0 +1,32 @@
+<html>
+    
+<script>    
+    function* toInfinity(start)
+    {
+        while(true)
+        {
+            yield start++;
+        }
+    }
+    function* take(iterator,count)
+    {
+        for(let i=0;i<count;i++)
+        {
+            yield iterator.next();
+        }
+    }
+    let  iterator = toInfinity(4)[Symbol.iterator]();
+    console.log('Iterator ',iterator);
+    for(const item of take(iterator,5))
+    {
+        console.log('Item ',item);
+    }
+   /*
+   let iterator = range(2)[Symbol.iterator]();
+    console.log('Iterator ',iterator.next());
+    console.log('Iterator ',iterator.next());
+    console.log('Iterator ',iterator.next());
+    */
+</script>
+
+</html>
