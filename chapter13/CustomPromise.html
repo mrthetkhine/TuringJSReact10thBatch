@@ -1,0 +1,42 @@
+<html>
+    <script>
+        
+        class CustomPromise
+        {
+            handlers =[];//success,error
+            constructor(executor)//executor(resolve,reject)
+            {
+                
+                setTimeout(()=>{
+                    executor((x)=>{
+                        console.log('Resolve fired ',x);
+                        let input = x;
+                        for(let i=0;i < this.handlers.length;i++)
+                        {
+                            input = this.handlers[i].successHandler(input);
+                        }
+                    },(err)=>{
+                        console.log('Reject fired ',x);
+                    });
+                    console.log('Executor ',executor);
+                    console.log('Handlers ',this.handlers);
+                },0);
+               
+            }
+            then(successHandler,errorHandler)
+            {
+                this.handlers.push({
+                    successHandler,
+                    errorHandler,
+                })
+                return this;
+            }
+        }
+        let promise =new CustomPromise((resolve,reject)=>{
+            resolve(100);
+        })
+        .then(x=>x+1)
+        .then(x=> x+ 50)
+        .then(x=>console.log("x is ",x));
+    </script>    
+</html>

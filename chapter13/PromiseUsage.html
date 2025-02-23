@@ -1,0 +1,17 @@
+<html>
+    <script>
+        function callback(result)
+        {
+            console.log('Result from div ',result);
+        }
+        function delayDiv(a,b,cb)
+        {
+            setTimeout(() => {
+                console.log('Compute div result ',a/b);
+                cb(a/b);
+            },3000);
+        }
+        console.log('started delayed div');
+        delayDiv(10,2,callback);
+    </script>    
+</html>

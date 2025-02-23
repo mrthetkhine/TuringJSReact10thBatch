@@ -1,0 +1,23 @@
+<html>
+    <button type="button" id="btnProcess">Process</button>
+    <script>
+        console.log('todo called');
+        let todosUrl  = "https://jsonplaceholder.typicode.com1/todos/1";
+        fetch(todosUrl)
+            .then(response=>response.json(),(err)=>console.log('Error ',err))
+            .then(json=>console.log('Todos ',json))
+
+        let movieUrl = "https://imdb.iamidiotareyoutoo.com/search?q=matrix";
+
+        console.log('movie called');
+        fetch(movieUrl)
+            .then(response=>response.json())
+            .then(json=>console.log('Movies ',json));
+        
+        document.getElementById('btnProcess')
+                .addEventListener('click',()=>{
+                    console.log('clicked');
+                });
+        
+    </script>    
+</html>

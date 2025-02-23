@@ -1,0 +1,51 @@
+<html>
+    <button type="button" id="btnProcess">Process</button>
+    <script>
+        /*
+        Promise.resolve(100)//Success, Reject(error);
+            .then(data=>console.log('Sucess ',data),err=>console.log('Error ',err))
+        
+        Promise.reject(new Error('Somehting went wrong'))//Success, Reject(error);
+            .then(data=>console.log('Sucess ',data),err=>console.log('Error ',err))
+        */
+       /*
+        Promise.reject(100)
+              .then(x=>x*2,err=>err+1)
+              .then(x=>console.log('X ',x))
+              .catch(e=>console.log('Error ',e));
+        */
+        /*
+        Promise.reject(100)
+              .then(x=>x*2,err=>new Error(err+1))
+              .then(x=>console.log('X ',x))
+              .catch(e=>console.log('Error ',e));
+            */ 
+           /*
+        Promise.resolve(20)
+               .then(x=>{
+                   console.log('Step 1 left  ',x);
+                   throw new Error(x+1);
+               }, err=>{
+                    console.log('Setp 1 right ',err);
+                    return 1;
+               })// reject(21)
+               .then(x=>{
+                    console.log('Step 2 left  ',x);
+                    return x+50;
+               }, err=>{
+                    console.log('Setp 2 right ',err);
+                    throw new Error(err+1);
+               })
+               .then(x=>console.log('X ',x))               
+               .catch(e=>console.log('Error ',e));
+        */
+        Promise.resolve(20)
+               .then(x=> {
+                 //throw new Error(x+1)
+                 return Promise.reject(x+1);
+               }, err=>1)// reject(21)
+               .then(x=>x+50, err=>err+1)
+               .then(x=>console.log('X ',x))               
+               .catch(e=>console.log('Error ',e));
+    </script>    
+</html>

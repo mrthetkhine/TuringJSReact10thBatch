@@ -1,0 +1,41 @@
+<html>
+    <script>
+        
+        /*
+        function fetchUrl(url)
+        {
+            let request = new XMLHttpRequest();
+            request.open('GET',url);
+            request.send();
+            request.onload = function()
+            {
+                console.log(request.response);
+            }
+            request.onerror = function(e)
+            {
+                console.log('On error ',e);
+            }
+        }*/
+        function fetchUrl(url)
+        {
+            return new Promise((resolve,reject)=>{
+                let request = new XMLHttpRequest();
+                request.open('GET',url);
+                request.send();
+                request.onload = function()
+                {
+                    //console.log(request.response);
+                    resolve(JSON.parse(request.response));
+                }
+                request.onerror = function(e)
+                {
+                    console.log('On error ',e);
+                    reject(e);
+                }
+            });
+        }
+        let todosUrl  = "https://jsonplaceholder.typicode.com/todos/1";
+        fetchUrl(todosUrl)
+            .then(json=>console.log('JSON ',json));
+    </script>    
+</html>
