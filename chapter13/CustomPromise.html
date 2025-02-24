@@ -5,23 +5,46 @@
         {
             handlers =[];//success,error
             constructor(executor)//executor(resolve,reject)
-            {
-                
+            {        
                 setTimeout(()=>{
                     executor((x)=>{
-                        console.log('Resolve fired ',x);
-                        let input = x;
-                        for(let i=0;i < this.handlers.length;i++)
+                        //console.log('Resolve fired ',x);
+                        this.handleAll(true,x);
+                        
+                    },(err)=>{
+                        console.log('Reject fired ',err);
+                        this.handleAll(false,err);
+                    });
+                    //console.log('Executor ',executor);
+                    //console.log('Handlers ',this.handlers);
+                },0);
+               
+            }
+            handleAll(previousStepSuccess,input)
+            {
+                    
+                for(let i=0;i < this.handlers.length;i++)
+                {
+                    try
+                    {
+                        if(previousStepSuccess)
                         {
                             input = this.handlers[i].successHandler(input);
                         }
-                    },(err)=>{
-                        console.log('Reject fired ',x);
-                    });
-                    console.log('Executor ',executor);
-                    console.log('Handlers ',this.handlers);
-                },0);
-               
+                        else
+                        {
+                            input = this.handlers[i].errorHandler(input);
+                        }
+                        previousStepSuccess = true;
+                    }
+                    catch(e)
+                    {
+                        input = e;
+                        previousStepSuccess = false;
+                    }
+                    
+                    
+                }
             }
             then(successHandler,errorHandler)
             {
@@ -32,11 +55,50 @@
                 return this;
             }
         }
+        /*
         let promise =new CustomPromise((resolve,reject)=>{
             resolve(100);
         })
-        .then(x=>x+1)
-        .then(x=> x+ 50)
+        .then(x=>{
+            throw new Error(10);
+        })
+        .then(x=> x+ 50,err=>{
+            console.log('Error ',err);
+            return 100;
+        })
         .then(x=>console.log("x is ",x));
+        */ 
+        let promise =new CustomPromise((resolve,reject)=>{
+            reject(100);
+        })
+        .then(x=>{
+            throw new Error(10);
+        },err=>{
+            console.log('Error ',err);
+            return 200;
+        })
+        .then(x=>console.log('X is ',x))
+
+        function fetchUrl(url)
+        {
+            return new CustomPromise((resolve,reject)=>{
+                let request = new XMLHttpRequest();
+                request.open('GET',url);
+                request.send();
+                request.onload = function()
+                {
+                    //console.log(request.response);
+                    resolve(JSON.parse(request.response));
+                }
+                request.onerror = function(e)
+                {
+                    console.log('On error ',e);
+                    reject(e);
+                }
+            });
+        }
+        let todosUrl  = "https://jsonplaceholder.typicode.com/todos/1";
+        fetchUrl(todosUrl)
+            .then(json=>console.log('JSON ',json));
     </script>    
 </html>

@@ -1,0 +1,37 @@
+<html>
+    
+    <script>
+        const promise1 = new Promise((resolve, reject) => {
+            setTimeout(resolve, 500, "one");
+        });
+
+        const promise2 = new Promise((resolve, reject) => {
+            setTimeout(resolve, 100, "two");
+        });
+
+        Promise.race([promise1, promise2]).then((value) => {
+            console.log(value);
+            // Both resolve, but promise2 is faster
+        });
+        function getData()
+        {
+            return 100;
+        }
+        Promise.try(getData)
+                .then(x=>console.log('X ',x));
+
+        class NotPromise {
+            constructor(executor) {
+            // The "resolve" and "reject" functions behave nothing like the native
+            // promise's, but Promise.withResolvers() just returns them, as is.
+                executor(
+                    (value) => console.log("Resolved", value),
+                    (reason) => console.log("Rejected", reason),
+                );
+            }
+        }
+
+const { promise, resolve, reject } = Promise.withResolvers.call(NotPromise);
+resolve("hello");        
+    </script>    
+</html>

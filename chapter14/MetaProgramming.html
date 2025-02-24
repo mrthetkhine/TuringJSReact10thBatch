@@ -1,0 +1,39 @@
+<html>
+    
+    <script>
+        
+        let obj = {
+            name: "",
+            age : 40,
+            address:"Somewhere",
+            
+        }
+        let another ={
+            city:"",
+            message:"",
+        }
+        function checkNotEmpty(obj)
+        {
+            /*
+            if(obj.name == "")
+            {
+                console.warn('Name is empty')
+            }
+            if(obj.address =="")
+            {
+                console.warn('Address is empty')
+            }*/
+           for(let prop in obj)
+           {
+            if(typeof obj[prop]=== 'string')
+            {
+                if( obj[prop] === '')
+                {
+                    console.warn(prop,' is empty')
+                }
+            }
+           }
+        }
+        checkNotEmpty(obj);
+    </script>    
+</html>

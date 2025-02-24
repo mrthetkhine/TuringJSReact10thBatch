@@ -1,0 +1,48 @@
+<html>
+    
+    <script>
+        /*
+        Promise.resolve(20)
+               .then(x=>Promise.resolve(200))//Promise(Promise(200))
+               .then(x=>x+1)
+               .then(x=>console.log("X is ",x))
+        */
+       /*
+       let data = [];
+       fetch('https://jsonplaceholder.typicode.com/todos/1')
+        .then(resp=>resp.json())
+        .then(json1=>(console.log('JSON1 ',json1),data.push(json1),json1))
+        .then(json1=>fetch('https://jsonplaceholder.typicode.com/todos/2'))
+        .then(resp2=>resp2.json())
+        .then(json2=>(console.log('JSON 2',json2),data.push(json2),data))
+        .then(data=>console.log('Data ',data))
+        */ 
+        /*
+        fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(resp=>resp.json())
+            .then(json=>{
+                fetch('https://jsonplaceholder.typicode.com/todos/2')
+                    .then(resp2=>resp2.json())
+                    .then(json2=>console.log('JSON1 ',json, " json2 ",json2))
+            })
+        */
+       let urls =['https://jsonplaceholder.typicode.com/todos/1',
+                  'https://jsonplaceholder.typicode.com1/todos/2'];
+       let promises = urls.map(url=>fetch(url)
+                                    .then(resp=>resp.json()));
+                        
+       /*
+       Promise.all(promises)
+              .then(data=>console.log('Data ',data));
+        */     
+        Promise.allSettled(promises)
+              .then(data=>console.log('Data ',data)); 
+        const promise1 = Promise.reject(0);
+        const promise2 = new Promise((resolve) => setTimeout(resolve, 100, "quick"));
+        const promise3 = new Promise((resolve) => setTimeout(resolve, 500, "slow"));
+
+        const promises2 = [promise1, promise2, promise3];
+
+        Promise.any(promises2).then((value) => console.log(value));
+    </script>    
+</html>

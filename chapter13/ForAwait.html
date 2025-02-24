@@ -1,0 +1,20 @@
+<html>
+    
+    <script>
+        
+        async function getData(urls)
+        {
+           let promises = urls.map(url=>fetch(url)
+                                        .then(resp=>resp.json()))
+           for await(const json of promises)
+           {
+                //let json= await p;
+                console.log('json ',json);
+           } 
+            
+        }
+        let urls = ['https://jsonplaceholder.typicode.com/todos/1',
+        'https://jsonplaceholder.typicode.com/todos/2'];
+        getData(urls);
+    </script>    
+</html>

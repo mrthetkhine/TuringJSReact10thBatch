@@ -1,0 +1,24 @@
+<html>
+    
+    <script>
+        
+        async function getData(x)
+        {
+            return x*2;
+        }
+        //let data = await getData();
+        getData(20)
+            .then(x=>console.log('X is ',x))
+
+        function getPromise()
+        {
+            return Promise.resolve(200);
+        }
+        async function waitPromise()
+        {
+            let result = await getPromise();
+            console.log('Result ',result);
+        } 
+        waitPromise();   
+    </script>    
+</html>

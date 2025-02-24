@@ -1,0 +1,25 @@
+<html>
+    
+    <script>
+        
+        let obj = {
+            name: "",
+            age : 40,
+            address:"Somewhere",
+            
+        }
+        console.log('PropDescriptor ',Object.getOwnPropertyDescriptor(obj,'name'));
+        console.log('PropDescriptor ',Object.getOwnPropertyDescriptors(obj));
+
+        Object.defineProperty(obj,"city",{
+            value:"YGN",
+            configurable:false,
+            writable:false,
+        });
+        console.log('Obj ',obj);
+        obj.city = "MDY";
+        delete obj.city;
+
+        console.log('Obj ',obj);
+    </script>    
+</html>

@@ -1,0 +1,25 @@
+<html>
+    
+    <script>
+        
+        async function getData(url)
+        {
+            console.log('getData started');
+            try
+            {
+                let res = await fetch(url);// fetch.then(res=>)
+                console.log('fetch resolved');
+                let json = await res.json();
+                console.log('JSON ',json);
+            }
+            catch(e)
+            {
+                console.log('Error ',e);
+            }
+            console.log('Done');
+            
+        }
+        let url = 'https://jsonplaceholder.typicode.com1/todos/1';
+        getData(url);
+    </script>    
+</html>
