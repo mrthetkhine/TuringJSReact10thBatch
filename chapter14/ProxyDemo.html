@@ -1,0 +1,37 @@
+<html>
+      
+    <script>
+        //document.getElementById('name').innerText = "Hello";
+        
+        let module ={
+            method1()
+            {
+                console.log('Method 1');
+            },
+            method2()
+            {
+                console.log('Method 2');
+            }
+        }
+        let logHandler ={
+            get(target, prop, receiver) {
+                //console.log('Getter ',target, ' Prop ',prop, ' Receiver ',receiver);
+                if(typeof target[prop] === 'function')
+                {
+                    console.log('Method ',prop, ' called')
+                    let ret= target[prop];
+                    return ret;
+                }
+                else
+                {
+                    return target[prop];
+                }
+                
+            },
+        }
+        let proxy = new Proxy(module,logHandler);
+
+        proxy.method1();
+        proxy.method2();
+    </script>    
+</html>

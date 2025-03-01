@@ -1,0 +1,35 @@
+<html>
+    <body>
+     <button type="button" id="btnLoad">Load</button>
+    </body>  
+    <script>
+        let data = 10;
+    </script>
+    <script >
+        console.log('Data ',data);
+        function load(url)
+        {
+            return new Promise((resolve,reject)=>{
+                let script = document.createElement('script');
+                script.src = url;
+                document.body.appendChild(script);
+                script.onload =function()
+                {
+                    resolve();
+                }
+                script.onerror = function()
+                {
+                    reject();
+                }
+            })
+            
+        }
+      document.getElementById('btnLoad')
+              .addEventListener('click', () => {
+                  console.log('btnload click');
+                  load('./api.js')
+                    .then(()=>api());
+              })  
+    </script>   
+    
+</html>

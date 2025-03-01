@@ -1,0 +1,62 @@
+<html>
+      
+    <script>
+        let obj ={
+            name:"SOmeone",
+            age : 30,
+            display()
+            {
+                console.log('Display ',this.name);
+            }
+        }
+        let another = {
+            name: "Another",
+            age :40,
+        }
+        Reflect.apply(obj.display,another,[]);
+        class Human
+        {
+            constructor(name,age)
+            {
+                this.name = name;
+                this.age = age;
+                console.log('Human');
+            }
+        }
+        let conFn = Human;
+        let obj2 = Reflect.construct(Human,["SOmeone",30]);
+        console.log('Obj ',obj2);
+        console.log('new human ',new conFn('TK',40));
+
+        let obj3 ={};
+        /*
+        Object.defineProperty(obj2,'name',{
+            value:"TK",
+            enumerable:true,
+            writable:false,
+            configurable:true,
+            get (){ 
+                return "Hello";
+            },
+            set(newValue){
+                this.value = newValue;
+            }
+        });*/
+        Object.defineProperty(obj3,'name',{
+        
+            enumerable:true,
+            configurable:true,
+            get (){ 
+                return "Hello";
+            },
+            set(newValue){
+                this.value = newValue;
+            }
+        });
+        obj3.name = "Something";
+        console.log('Ob3 ',obj3);
+
+        console.log('Object.ownProperty ',Object.getOwnPropertyDescriptor(another,'name'));
+        //console.log('Reflect.ownProperty ',Reflect.getOwnPropertyDescriptor(122,'name'));
+    </script>    
+</html>

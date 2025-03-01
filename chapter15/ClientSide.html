@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <h3 id="clock"></h1>
+    </body>  
+    <script>
+        console.log('Script 1');
+
+        const clock = document.getElementById('clock');
+        console.log('Clock ',clock);
+       
+        setInterval(() => { 
+            clock.innerText = new Date().toLocaleTimeString();
+        }, 1000);
+    </script>   
+    
+</html>

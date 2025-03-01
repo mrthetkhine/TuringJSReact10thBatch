@@ -1,0 +1,36 @@
+<html>
+      
+    <script>
+        //document.getElementById('name').innerText = "Hello";
+        
+        let model = {
+            name:"SOmeone",
+            age : 30
+        }
+        Object.seal(model);
+        console.log('isSealed ',Object.isSealed(model));
+        model.address = "Something";
+
+        console.log('Model ',model);
+        model.age = 50;
+        console.log('Model ',model);
+
+        Object.freeze(model);
+        console.log('isFrozen ',Object.isFrozen(model));
+        model.age = 30;
+        console.log('Model ',model);
+
+        let parent = {
+            x :100
+        };
+        let obj = Object.create(parent);
+        console.log('Obj.x ',obj.x);
+        console.log('Object getPrototypeOf ',Object.getPrototypeOf(obj));
+
+        let another = {
+            x : 200
+        }
+        Object.setPrototypeOf(obj,another);
+        console.log('Obj.x ',obj.x);
+    </script>    
+</html>

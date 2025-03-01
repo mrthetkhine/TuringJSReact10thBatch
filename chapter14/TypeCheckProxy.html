@@ -1,0 +1,31 @@
+<html>
+      
+    <script>
+        //document.getElementById('name').innerText = "Hello";
+        
+        let obj = {
+            name: "TK",
+            age : 40,
+        }
+        let typeCheckHandler ={
+            set(target, prop, value) {
+                if(typeof target[prop] !== typeof value)
+                {
+                    console.warn('Prop ',prop,'have type ',typeof target[prop], 'but found value ',value,' with ',typeof value)
+                }
+                else
+                {
+                    target[prop] = value;
+                }
+                
+            },
+        }
+        let proxy = new Proxy(obj,typeCheckHandler);
+
+       proxy.name = 300;
+       proxy.name = "Hello";
+       proxy.age = "Something";
+       proxy.age = 30;
+       console.log('Obj ',obj);
+    </script>    
+</html>

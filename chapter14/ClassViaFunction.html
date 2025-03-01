@@ -1,0 +1,44 @@
+<html>
+      
+    <script>
+        function Human(name, age) {
+            this.name = name;
+            this.age = age;
+
+            this.display = function()
+            {
+                console.log('Name ',this.name, ' Age ',this.age);
+            }
+        }
+        let obj = new Human('TK',49);
+        obj.display();
+
+        let obj2 ={};
+        /*
+        Object.defineProperty(obj2,'name',{
+            value:"TK",
+            enumerable:true,
+            writable:false,
+            configurable:true,
+            get (){ 
+                return "Hello";
+            },
+            set(newValue){
+                this.value = newValue;
+            }
+        });*/
+        Object.defineProperty(obj2,'name',{
+        
+            enumerable:true,
+            configurable:true,
+            get (){ 
+                return "Hello";
+            },
+            set(newValue){
+                this.value = newValue;
+            }
+        });
+        obj2.name = "Something";
+        console.log('Obj2 ',obj2);
+    </script>    
+</html>
