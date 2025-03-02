@@ -1,0 +1,60 @@
+<html>
+    <head>
+       <style>
+        #parent
+        {
+            background-color: gray;
+            width: 200px;
+            height: 200px;
+
+        }
+        #child
+        {
+            background-color: red;
+        }
+        </style>
+    </head>
+    <body>
+      <div id="parent">
+        Parent
+        <div id="child">
+            Child
+        </div>
+      </div>
+    </body>  
+  
+    <script>
+       document.addEventListener('click',(event) => {
+            console.log('Document click ',event);
+       },{
+        capture:true,
+        once:true,
+       });
+        document.getElementById('parent')
+                .addEventListener('click',(event) => {
+                    console.log('Parent click ',event);
+                },{
+        capture:true
+       });
+        document.getElementById('parent')
+                .addEventListener('click',(event) => {
+                    console.log('Parent click 2',event);
+                },{
+        capture:true
+       });         
+        document.getElementById('child')
+                .addEventListener('click',(event) => {
+                    console.log('Child click ',event);
+                },{
+        capture:true
+       });
+        document.getElementById('child')
+                .addEventListener('click',(event) => {
+                    console.log('Child click 2 ',event);
+                },{
+        capture:true
+       });        
+    </script>
+ 
+    
+</html>

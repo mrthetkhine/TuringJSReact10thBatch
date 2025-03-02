@@ -1,0 +1,27 @@
+<html>
+    <body>
+      <button type="button" id="btnStart">Start</button>
+      <button type="button" id="btnRemove">Remove</button>
+    </body>  
+  
+    <script>
+        document.getElementById('btnStart')
+                .addEventListener('click',()=>{
+                    console.log('start ');
+                    setTimeout(()=>{
+                        console.log('Done');
+                        document.dispatchEvent(new CustomEvent('task_done',{
+                            data :100
+                        }));
+                    },3000);
+                });
+        document.addEventListener('task_done', (event) => {
+            console.log('Task Done ',event);
+        })  
+        document.addEventListener('task_done', (event) => {
+            console.log('Task Done 2 ',event);
+        })        
+    </script>
+ 
+    
+</html>

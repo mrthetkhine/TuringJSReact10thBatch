@@ -1,0 +1,42 @@
+<html>
+    <head>
+       <style>
+        #parent
+        {
+            background-color: gray;
+            width: 200px;
+            height: 200px;
+
+        }
+        #child
+        {
+            background-color: red;
+        }
+        </style>
+    </head>
+    <body>
+      <div id="parent">
+        Parent
+        <div id="child">
+            Child
+        </div>
+      </div>
+      <a href="http://www.google.com" id="lnkGoogle">Google</a>
+    </body>  
+  
+    <script>
+        document.getElementById('lnkGoogle')
+              .addEventListener('click', (event) => {
+                  alert('Google Clicked');
+                  event.preventDefault();
+              },{
+                //passive:true
+              })     
+        document.addEventListener('contextmenu', (event) => {
+           console.log('Right click'); 
+           event.preventDefault();
+        });
+    </script>
+ 
+    
+</html>

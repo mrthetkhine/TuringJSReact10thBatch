@@ -1,0 +1,20 @@
+<html>
+    <body>
+       
+    </body>  
+    <script src="./lib1.js" defer></script>
+    <script src="./lib2.js" async></script>
+    <script>
+        window.onerror = function(err)
+        {
+            console.log('Err ',err);
+        }
+        console.log('Script 1');
+        null.toString();
+        addEventListener("DOMContentLoaded", (event) => {
+            console.log('DOM loaded');
+        });
+        
+    </script>   
+    
+</html>

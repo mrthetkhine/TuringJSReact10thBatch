@@ -1,0 +1,39 @@
+<html>
+    <body>
+      <button type="button" onclick="alert('Button Clicked');">Click</button>
+      <button type="button" id="btnRemove">Remove</button>
+    </body>  
+  
+    <script>
+        let handler1 = (event) => {
+            console.log('Doc click Listener 1',event);
+        };
+        document.addEventListener('click',handler1 );
+        document.getElementById('btnRemove')
+                .addEventListener('click', () => {
+                    document.removeEventListener('click',handler1);
+                })
+        window.onload= function()
+        {
+            console.log('Onload');
+        }
+        document.onclick = function(event)
+        {
+            console.log('Document Click ',event);
+        }
+        
+       
+        document.onclick = function(event)
+        {
+            console.log('Document Click 2',event);
+        }
+        document.addEventListener('click', (event) => {
+            console.log('Doc click Listener 2',event);
+        });
+        document.addEventListener('click', (event) => {
+            console.log('Doc click Listener 3',event);
+        });
+    </script>
+ 
+    
+</html>

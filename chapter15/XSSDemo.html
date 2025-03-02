@@ -1,0 +1,14 @@
+<html>
+    <body>
+       <h1>Hello</h1>
+    </body>  
+  
+    <script>
+        let name = new URL(document.URL).searchParams.get("name"); 
+        console.log('Name ',name);
+        document.querySelector('h1').innerHTML = "Hello " + name; 
+        console.log('\u0068\u0065\u006C\u006C\u006F');
+    </script>
+ 
+    
+</html>
