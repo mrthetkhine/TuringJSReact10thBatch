@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <style>
+            div p {
+                color: red;
+            }
+            div > p {
+                color: green;
+            }
+            body >h1:first-child{
+                color: blue;
+            } 
+            tbody>tr:nth-child(even){
+                background: lightblue;
+            }
+            table + div {
+                color: green;
+            }
+            h2 ~ p {
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            First
+        </h1>
+        <h2>
+            Second
+        </h2>
+        <p>
+            P after h2
+        </p>
+        <p> Normal P</p>
+      <div id="container">
+        Hello
+      </div>
+     
+    <div>
+        <form>
+            <p>
+                P inside div
+            </p>
+        </form>
+       
+        <p>Direct child p of div </p>
+    </div>
+
+     
+     <p> Normal P </p>
+     <table>
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+        </thead>
+        <toby>
+            <tr>
+                <td>1</td>
+                <td>One</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Two</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Three</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Four</td>
+            </tr>
+        </toby>
+     </table>
+     <div>
+        Div beside table
+     </div>
+     <div>
+        Div Another
+     </div>
+    </body>  
+  
+    <script>
+              
+    </script>
+ 
+    
+</html>

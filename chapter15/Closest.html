@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <template id="tableRow">
+            <tr>
+              <td class="">No</td>
+              <td>Dummy</td>
+            </tr>
+          </template>
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>Name</th>
+            </thead>
+            <tbody id="tableBody">
+                <tr>
+                    <td>1</td>
+                    <td>One</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Two</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Three</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Four</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>  
+  
+    <script>
+        const template = document.querySelector("#tableRow");
+        
+        for( let i=0;i <10_000 ;i++)
+        {
+            const clone = template.content.cloneNode(true);
+            let td = clone.querySelectorAll("tr>td");
+            td[0].textContent = i;
+            td[1].textContent = "Stuff";
+            document.getElementById('tableBody').appendChild(clone);
+        }
+        /*
+        document.getElementById('tableBody')
+                .addEventListener('click', (event) => {
+                    console.log('table body click');
+                    let row = event.target.closest("tr");
+                    console.log('Row ',row);
+                });
+        */
+       
+       let allTr = document.querySelectorAll('tr')
+       for(let i=0;i< allTr.length;i++)
+       {
+            allTr[i].addEventListener('click', (event) => {
+                    console.log('table  click ',event.target);
+                });
+       }
+              
+    </script>
+ 
+    
+</html>

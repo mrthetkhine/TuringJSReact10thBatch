@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <h1>First heading</h1>
+        <h1 id="second" >Second heading</h1>
+        <form>
+            <input type="text" name="color"/>
+        </form>
+        <div id="container">
+            Div container
+            <span>one</span>
+            <span>two</span>
+            <span>three</span>
+        </div>
+        <div>
+            Another
+        </div>
+    </body>  
+  
+    <script>
+        console.log('document.forms ',document.forms);
+        console.log('Images ',document.images);
+        let secondNode = document.getElementById('second');
+        console.log('second parent ',secondNode.parentElement);
+
+        let container = document.getElementById('container');
+        console.log('Childern ',container.children);
+        console.log('firstelemet ',container.firstElementChild  );
+        console.log('lastElement ',container.lastElementChild);
+
+        console.log('container nextElementSibling ',container.nextElementSibling);
+        console.log('container previousElementSibling ',container.previousElementSibling);
+    </script>
+ 
+    
+</html>

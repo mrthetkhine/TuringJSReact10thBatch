@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <h1>First heading</h1>
+        <h1 id="second" >Second heading</h1>
+        <form>
+            <input type="text" name="color"/>
+        </form>
+        <div class="container">
+            Div container
+        </div>
+    </body>  
+  
+    <script>
+          let heading = document.querySelector('#second');    
+          console.log('Heading ',heading);
+
+          let container = document.querySelector('.container');
+          console.log('Container ',container);
+
+          let allHeading = document.querySelectorAll('h1');
+          console.log('All Heading ',allHeading);
+
+          let byName = document.getElementsByName("color");
+          console.log('ByName ',byName);
+
+          let allH1 = document.getElementsByTagName("h1");
+          console.log('All H1 ',allH1);
+
+          console.log('ClassName ',document.getElementsByClassName('container'));
+    </script>
+ 
+    
+</html>

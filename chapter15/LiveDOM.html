@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <h1>First heading</h1>
+        <h1 id="second" >Second heading</h1>
+        <form>
+            <input type="text" name="color"/>
+        </form>
+        <div class="container">
+            Div container
+        </div>
+        <button type="button" id="btnAdd">Add</button>
+    </body>  
+  
+    <script>
+        document.getElementById('btnAdd')
+                .addEventListener('click', () => {
+                    /*
+                    let h1 = document.createElement('h1');
+                    h1.innerText = 'New Heading';
+                    document.body.appendChild(h1);
+                    */
+                   for( let i=0 , len = document.getElementsByTagName('h1').length;i <len ;i++)
+                   {
+                        let h1 = document.createElement('h1');
+                        h1.innerText = 'New Heading';
+                        document.body.appendChild(h1);
+                        console.log('Append');
+                   }
+                })
+    </script>
+ 
+    
+</html>

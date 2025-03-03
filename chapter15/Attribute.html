@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <style>
+            .container
+            {
+                background-color: blue;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            Container
+        </div>
+        <h2 id="title" data-section-number="16.1">Attributes</h2>
+        <button type="button" id="btnAddImage">Add</button>
+        <button type="button" id="btnToogle">Toggle</button>
+    </body>  
+  
+    <script>
+        console.log('section number ', document.querySelector("#title").dataset.sectionNumber);
+        document.getElementById('btnAddImage')
+                .addEventListener('click', () => {
+                    let img = document.createElement('img');
+                    img.src = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png';
+                    document.body.appendChild(img);
+                });
+        let container = document.getElementById('container');
+
+        let classExist = false;
+        document.getElementById('btnToogle')
+                .addEventListener('click',()=>{
+                
+                    if(!classExist)
+                    {
+                        container.classList.add('container');
+                        
+                    }
+                    else
+                    {
+                        container.classList.remove('container');
+                    }
+                    classExist = !classExist;
+                    console.log('Container ',container.classList);
+                });        
+    </script>
+ 
+    
+</html>

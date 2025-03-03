@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <style>
+            .container
+            {
+                background-color: blue;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            Container
+        </div>
+        <h2 id="title" data-section-number="16.1">Attributes</h2>
+        <button type="button" id="btnUpdate">Update</button>
+        <button type="button" id="btnAdd">Add</button>
+        <button type="button" id="btnRemove">Remove</button>
+    </body>  
+  
+    <script>
+       
+        let container = document.getElementById('container');
+        document.getElementById('btnUpdate')
+                .addEventListener('click', () => {
+                    console.log('Update');
+                    //container.innerHTML = "<h1>Change</h1>";
+                    //container.innerText = "<h1>Change</h1>";
+
+                    //container.outerHTML = "<h1>Change</h1>";
+                    //container.outerText = "<h1>Change</h1>";
+                    container.textContent = "<h1>Change</h1>";
+                    container.style.color = 'green';
+                    container.style.backgroundColor   = 'lightgray';
+                });
+       
+        document.getElementById('btnAdd') 
+                .addEventListener('click',()=>{
+                    let div = document.createElement('div');
+                    div.textContent="Hello";
+
+                    //container.appendChild(div);
+                    //container.append(div);
+                    //container.prepend(div);
+                    //container.after(div);
+                    container.before(div);
+                    console.log('add');
+                
+                });
+        document.getElementById('btnRemove')
+                .addEventListener('click',()=>{
+                    container.remove();
+                });      
+    </script>
+ 
+    
+</html>
