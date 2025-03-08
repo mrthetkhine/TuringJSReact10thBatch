@@ -1,0 +1,42 @@
+<html>
+    <head>
+      
+         <style>
+           #container
+             {
+                 background-color: gray;
+                 width: 200px;
+                 height: 1200px;
+             }
+         </style>  
+        
+    </head>
+    <body>
+        <button type="button" id="btnGo">Go</button>
+        <button type="button" id="btnEnd">Go to end</button>
+        <div id="container">
+            Container
+        </div>
+        <div id="container2">
+            Container 2
+        </div>
+        <div id="end">End is here</a>
+    </body>  
+  
+    <script>
+        document.getElementById('btnGo')
+                .addEventListener('click',()=>{
+                    window.location='https://www.google.com';
+                }); 
+        document.getElementById('btnEnd')
+                .addEventListener('click',()=>{
+                    console.log('hash ',document.location.hash);
+                    window.location='#end';
+                }); 
+        addEventListener('hashchange',(event)=>{
+            console.log('hashchange ',event);
+        });
+    </script>
+ 
+    
+</html>

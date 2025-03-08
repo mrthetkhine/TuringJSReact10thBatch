@@ -1,0 +1,16 @@
+<html>
+   
+    <body>
+        <button type="button" id="btnChange">Change</button>
+    </body>  
+  
+    <script>
+        document.getElementById('btnChange')
+                .addEventListener('click', () => {
+                    console.log('Communite to another tab');
+                    window.localStorage.logout = "Change";
+                });
+    </script>
+ 
+    
+</html>

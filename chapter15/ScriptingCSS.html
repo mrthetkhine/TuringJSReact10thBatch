@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <link id="theme" rel="stylesheet" href="theme-1.css"/>
+           
+        
+    </head>
+    <body>
+        <div id="container">
+            Container
+        </div>
+        <h1> This is h1</h1>
+        <button type="button" id="btnUpdate">Update</button>
+        <button type="button" id="btnChange">Change</button>
+        <button type="button" id="btnRemove">Remove</button>
+    </body>  
+  
+    <script>
+       
+        let container = document.getElementById('container');
+        document.getElementById('btnUpdate')
+                .addEventListener('click', () => {
+                    console.log('Update');
+             
+                    //container.style.color = 'green';
+                    //container.style.backgroundColor   = 'lightgray';
+                    console.log('Computed style ',window.getComputedStyle(container))        
+                    let cssText = `color:green;background-color:lightgray`;
+                    container.style.cssText = cssText;
+                    console.log('Computed style ',window.getComputedStyle(container))        
+                });
+       document.getElementById('btnChange')
+                .addEventListener('click', () => {
+                    console.log('Change');
+                    document.getElementById('theme').setAttribute('href','theme-2.css');
+                });
+        console.log('bounding client rect ',container.getBoundingClientRect());
+        document.addEventListener('click',(event)=>{
+            console.log('DOM under pointer ',document.elementFromPoint(event.clientX,event.clientY));
+        });
+    </script>
+ 
+    
+</html>

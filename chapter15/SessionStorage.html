@@ -1,0 +1,21 @@
+<html>
+   
+    <body>
+        
+    </body>  
+  
+    <script>
+        let name = window.sessionStorage.username;
+        if(!name)
+        {
+            name = prompt('What is your name?');
+            window.sessionStorage.username = name;
+        }
+        else
+        {
+            console.log('Name is ',name)
+        }
+    </script>
+ 
+    
+</html>

@@ -1,0 +1,61 @@
+<html>
+    <head>
+      
+         <style>
+             #container
+             {
+                 background-color: gray;
+                 width: 200px;
+                 height: 1200px;
+             }
+             #container2
+             {
+              
+                 width: 200px;
+                 height: 1200px;
+             }
+         </style>  
+        
+    </head>
+    <body>
+        <button type="button" id="btnEnd">Go to end</button>
+        <div id="container">
+            Container
+        </div>
+        <div id="container2">
+            Container 2
+        </div>
+        <a href="#end">End is here</a>
+        <h1> This is End</h1>
+        
+       
+    </body>  
+  
+    <script>
+       document.getElementById('btnEnd')
+                .addEventListener('click', () => {  
+                    let documentHeight = document.documentElement.offsetHeight; 
+                    let viewportHeight = window.innerHeight;
+                    window.scrollTo({
+                        left: 0,
+                        top: documentHeight - viewportHeight,
+                        behavior: "smooth"
+                    });
+                    // And scroll so the last "page" shows in the viewport
+                    /*
+                    let y = 0;
+                    let endY = documentHeight - viewportHeight;
+                    let timer = setInterval(() => {
+                        y += 10;
+                        window.scrollTo(0,y);
+                        if(y >= endY)
+                        {
+                            clearInterval(timer);
+                        }
+                    },5);*/
+                });
+        
+    </script>
+ 
+    
+</html>
