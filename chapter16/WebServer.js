@@ -9,8 +9,17 @@ console.log("Listening on port", port);
 
 server.on('request', (req, res) => {
     let endpoint = url.parse(req.url).pathname;
+    console.log('Req ',req);
     console.log('Client connected to server endpoint ',endpoint);
     
     res.writeHead(200);
+    /*
+    let headers = req.rawHeaders;
+    for(let i = 0; i < headers.length; i += 2) {
+        res.write(`${headers[i]}:
+        ${headers[i+1]}\r\n`);
+    }
+    */
+
     res.end('<h1>Hello World</h1>');
 })
