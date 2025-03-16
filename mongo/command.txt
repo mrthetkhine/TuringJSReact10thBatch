@@ -1,0 +1,182 @@
+mongosh
+
+show databases;
+
+cls;
+
+show collections;
+
+//create db
+use react_10batch_test;
+
+//todos collections;
+db.todos.insertOne({
+    title:"Task 1",
+    completed:false,
+})
+
+db.todos.insertOne({
+    title:"Task 2",
+    completed:false,
+    description:"Another",
+})
+
+db.todos.insertMany([{
+    title:"Task 3",
+    completed:false,
+   
+},
+{
+    title:"Task 4",
+    completed:false,
+   
+}
+])
+
+db.movies.insertOne({
+    title:"Titanic",
+    year:200,
+    actors:[
+        {
+            name: "Leonardo Decaprio",
+            gender:"Male",
+
+        },
+        {
+            name: "Kate Winslect",
+            gender:"Female",
+        }
+    ]
+})
+
+db.inventory.insertMany( [
+   { item: "journal", qty: 25, size: { h: 14, w: 21, uom: "cm" }, status: "A" },
+   { item: "notebook", qty: 50, size: { h: 8.5, w: 11, uom: "in" }, status: "A" },
+   { item: "paper", qty: 100, size: { h: 8.5, w: 11, uom: "in" }, status: "D" },
+   { item: "planner", qty: 75, size: { h: 22.85, w: 30, uom: "cm" }, status: "D" },
+   { item: "postcard", qty: 45, size: { h: 10, w: 15.25, uom: "cm" }, status: "A" }
+]);
+
+// where qty =25
+db.inventory.find({
+    qty:25
+})
+
+db.inventory.find({
+    status:"A"
+})
+
+db.inventory.find( { "size.uom": "in" } )
+
+db.inventory.find( { "size.h": { $lt: 15 } } )
+
+//AND 
+db.inventory.find( { 
+    "size.h": { $lt: 15 },
+    "status":"A" 
+} )
+
+db.inventory.find( { size: { h: 14, w: 21, uom: "cm" } } )
+
+
+
+
+//OR
+db.inventory.find({$or:[
+  {
+    qty: { $gte:50}
+  },
+  {
+  
+  item:"journal"
+  }
+]})
+
+
+// status ="A" AND (qty>=50 OR item='journal')
+db.inventory.find({
+    "status":"A",
+    $or:[
+        {
+            qty: { $gte:50}
+        },
+        {
+        
+        item:"journal"
+        }
+    ]
+})
+
+//not 
+//item!= 'journal'
+db.inventory.find({
+  item:{
+    $not:/journal/
+  }
+});
+
+//not
+db.inventory.find({
+  item:{
+    $ne:'journal'
+  }
+});
+
+//status ='A' OR status='D'
+db.inventory.find( { status: { $in: [ "A", "D" ] } } )
+
+db.inventory.insertMany([
+   { item: "journal", qty: 25, tags: ["blank", "red"], dim_cm: [ 14, 21 ] },
+   { item: "notebook", qty: 50, tags: ["red", "blank"], dim_cm: [ 14, 21 ] },
+   { item: "paper", qty: 100, tags: ["red", "blank", "plain"], dim_cm: [ 14, 21 ] },
+   { item: "planner", qty: 75, tags: ["blank", "red"], dim_cm: [ 22.85, 30 ] },
+   { item: "postcard", qty: 45, tags: ["blue"], dim_cm: [ 10, 15.25 ] }
+]);
+
+//exact match 
+db.inventory.find( { tags: ["red", "blank"] } )
+
+//all 
+db.inventory.find( { tags: { $all: ["red", "blank"] } } )
+
+//not exact cross element 
+db.inventory.find( { dim_cm: { $gt: 15, $lt: 20 } } )
+
+//element that is gt 22 and lt 30
+db.inventory.find( { dim_cm: { $elemMatch: { $gt: 22, $lt: 30 } } } )
+
+//exact match 
+db.inventory.find( { "instock": { warehouse: "A", qty: 5 } } )
+
+//notworking 
+db.inventory.find( { size: {  w: 21,h: 14, uom: "cm" } } )
+
+
+//working 
+db.inventory.find( { 
+    "size.w": 21,
+    "size.h": 14, 
+    "size.uom": "cm"}   
+)
+//Project
+db.inventory.find({},{status:1});
+
+db.inventory.find({},{status:0});
+
+//update 
+db.inventory.find(
+  {_id:ObjectId('67d6a9628f55d205ff5c7a46')}
+)
+db.inventory.updateOne(
+  {_id:ObjectId('67d6a9628f55d205ff5c7a46')},
+  [
+     { $set: { qty: 50, comments: [ "One", "Two" ] } },
+     { $unset:["size"]}
+  ])
+db.inventory.updateMany(
+   { "qty": { $lt: 50 } },
+   {
+     $set: { "size.uom": "in", status: "P" },
+     $currentDate: { lastModified: true }
+   }
+)
