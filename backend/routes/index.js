@@ -63,6 +63,7 @@ router.get('/hello',function (req,res,next){
 router.get('/ab?cd', (req, res) => {
   res.send('ab?cd')
 })
+/*
 router.get('/api/:id',function (req,res,next){
   console.log('Params ',req.params);
   res.json({
@@ -78,4 +79,6 @@ router.post('/api',function(req,res) {
     "completed": false
   })
 });
+*/
+
 module.exports = router;

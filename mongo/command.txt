@@ -180,3 +180,8 @@ db.inventory.updateMany(
      $currentDate: { lastModified: true }
    }
 )
+db.inventory.find(
+  {_id:ObjectId('67d6a9628f55d205ff5c7a46')}
+)
+
+db.inventory.deleteOne({_id:ObjectId('67d6a9628f55d205ff5c7a46')})
