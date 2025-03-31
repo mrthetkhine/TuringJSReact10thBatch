@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const ourLogger = require('./middleware/logger');
+const auth = require('./middleware/auth');
 
 const mongoose = require('mongoose');
 const { db } = require('./config/database');
@@ -29,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
-app.use('/api/movies'/*,auth.verifyUserToken*/,movieRouter);
+app.use('/api/movies',auth.verifyUserToken,movieRouter);
 app.use('/api/todos', todosRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

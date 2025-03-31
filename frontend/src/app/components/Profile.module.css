@@ -1,0 +1,9 @@
+.profile
+{
+    display: inline-block;
+    text-align: center;
+}
+.profile-image
+{
+    border-radius: 50%;
+}
