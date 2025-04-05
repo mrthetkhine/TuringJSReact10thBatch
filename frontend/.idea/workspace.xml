@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2889ec7-9877-464c-942e-3173e8924aca" name="Default Changelist" comment="" />
+    <list default="true" id="b2889ec7-9877-464c-942e-3173e8924aca" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/components/Card.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Card.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/PropForward.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/conditional-rendering/AdminDashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/conditional-rendering/Dashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/conditional-rendering/Greeting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/list/Items.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/list/TodoList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/list/TodoList.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -19,7 +32,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="2v5HQ5fvcjyifNkYZAtssTkAg2y" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -43,7 +58,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1743427995425</updated>
-      <workItem from="1743427998278" duration="3463000" />
+      <workItem from="1743427998278" duration="3633000" />
+      <workItem from="1743845445755" duration="6283000" />
     </task>
     <servers />
   </component>

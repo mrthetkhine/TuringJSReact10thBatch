@@ -1,0 +1,8 @@
+.todo-container
+{
+    border:1px solid lightgray;
+    min-height: 40px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 5px;
+}
