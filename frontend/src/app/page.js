@@ -10,6 +10,16 @@ import Greeting from "./components/conditional-rendering/Greeting";
 import AdminDashboard from "./components/conditional-rendering/AdminDashboard";
 import Items from "./components/list/Items";
 import TodoList from "./components/list/TodoList";
+import UITree from "./components/UITree";
+import CounterWithoutState from "./components/CounterWithoutState";
+import Counter from "./components/Counter";
+import Messenger from "./components/Messenger";
+import CounterBatchUpdate from "./components/CounterBatchUpdate";
+import StateArray from "./components/StateArray";
+import StateObject from "./components/StateObject";
+import PassFunction from "./components/PassFunction";
+import EventPropagation from "./components/EventPropagation";
+import Timer from "./components/Timer";
 
 export default function Home() {
     console.log('HelloWorld ',HelloWorld());
@@ -72,7 +82,18 @@ export default function Home() {
         <Greeting show={true}/>*/}
         {/*<AdminDashboard page={'nopage'}/>*/}
        {/* <Items items={items}/>*/}
-        <TodoList todos={todos}/>
+      {/*  <TodoList todos={todos}/>*/}
+       {/* <UITree/>*/}
+       {/* <CounterWithoutState/>*/}
+     {/*   <Counter/>
+        <Counter/>*/}
+       {/* <Messenger/>*/}
+       {/* <CounterBatchUpdate/>*/}
+       {/* <StateArray/>*/}
+       {/* <StateObject/>*/}
+       {/* <PassFunction/>*/}
+       {/* <EventPropagation/>*/}
+        <Timer/>
     </div>
   );
 }

@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2889ec7-9877-464c-942e-3173e8924aca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/components/Card.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/Card.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/PropForward.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/conditional-rendering/AdminDashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/conditional-rendering/Dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/conditional-rendering/Greeting.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/list/Items.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/list/TodoList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/list/TodoList.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
-    </list>
+    <list default="true" id="b2889ec7-9877-464c-942e-3173e8924aca" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,8 +10,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -59,7 +46,8 @@
       <option name="presentableId" value="Default" />
       <updated>1743427995425</updated>
       <workItem from="1743427998278" duration="3633000" />
-      <workItem from="1743845445755" duration="6283000" />
+      <workItem from="1743845445755" duration="6451000" />
+      <workItem from="1743931835377" duration="5105000" />
     </task>
     <servers />
   </component>
