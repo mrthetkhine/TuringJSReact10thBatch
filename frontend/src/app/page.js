@@ -20,6 +20,11 @@ import StateObject from "./components/StateObject";
 import PassFunction from "./components/PassFunction";
 import EventPropagation from "./components/EventPropagation";
 import Timer from "./components/Timer";
+import SimpleForm from "./components/form/SimpleForm";
+import SimpleHookForm from "./components/form/SimpleHookForm";
+import HookFromWithMUI from "./components/form/HookFromWithMUI";
+import SaleForm from "./components/form/SaleForm";
+import SimpleValidation from "./components/form/SimpleValidation";
 
 export default function Home() {
     console.log('HelloWorld ',HelloWorld());
@@ -90,10 +95,15 @@ export default function Home() {
        {/* <Messenger/>*/}
        {/* <CounterBatchUpdate/>*/}
        {/* <StateArray/>*/}
-       {/* <StateObject/>*/}
+      {/*  <StateObject/>*/}
        {/* <PassFunction/>*/}
        {/* <EventPropagation/>*/}
-        <Timer/>
+      {/*  <Timer/>*/}
+      {/*  <SimpleForm/>*/}
+      {/*  <SimpleHookForm/>*/}
+    {/*    <HookFromWithMUI/>
+        <SaleForm/>*/}
+        <SimpleValidation/>
     </div>
   );
 }

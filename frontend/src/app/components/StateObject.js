@@ -8,12 +8,13 @@ export default function StateObject()
         address:'YGN'
     })
     const addressChangeHandler = (event)=>{
-       //profile.address= "Another";
+        //profile.address= "Another";
         console.log('event ',event);
         setProfile({
             ...profile,
             address: 'ANother',
         })
+        //setProfile(profile);
     }
     return (<div>
         <button onClick={addressChangeHandler} type={"button"}>Update</button>
