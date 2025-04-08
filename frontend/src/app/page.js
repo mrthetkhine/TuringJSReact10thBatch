@@ -9,7 +9,7 @@ import Dashboard from "./components/conditional-rendering/Dashboard";
 import Greeting from "./components/conditional-rendering/Greeting";
 import AdminDashboard from "./components/conditional-rendering/AdminDashboard";
 import Items from "./components/list/Items";
-import TodoList from "./components/list/TodoList";
+import TodoList from "./components/TodoList";
 import UITree from "./components/UITree";
 import CounterWithoutState from "./components/CounterWithoutState";
 import Counter from "./components/Counter";
@@ -25,6 +25,9 @@ import SimpleHookForm from "./components/form/SimpleHookForm";
 import HookFromWithMUI from "./components/form/HookFromWithMUI";
 import SaleForm from "./components/form/SaleForm";
 import SimpleValidation from "./components/form/SimpleValidation";
+import YupExample from "./components/form/YupExample";
+import CustomTab from "./components/tab/CustomTab";
+import CounterConditional from "./components/conditional-rendering/CounterConditional";
 
 export default function Home() {
     console.log('HelloWorld ',HelloWorld());
@@ -90,8 +93,7 @@ export default function Home() {
       {/*  <TodoList todos={todos}/>*/}
        {/* <UITree/>*/}
        {/* <CounterWithoutState/>*/}
-     {/*   <Counter/>
-        <Counter/>*/}
+
        {/* <Messenger/>*/}
        {/* <CounterBatchUpdate/>*/}
        {/* <StateArray/>*/}
@@ -103,7 +105,23 @@ export default function Home() {
       {/*  <SimpleHookForm/>*/}
     {/*    <HookFromWithMUI/>
         <SaleForm/>*/}
-        <SimpleValidation/>
+       {/* <SimpleValidation/>*/}
+       {/* <YupExample/>*/}
+      {/*  <TodoList/>*/}
+       {/* <CustomTab headers={["Tab1","Tab2","Tab3"]}>
+            <div>
+                <h3>Page 1</h3>
+            </div>
+            <div>
+                <h3>Page 2</h3>
+            </div>
+            <div>
+                <h3>Page 3</h3>
+            </div>
+        </CustomTab>*/}
+       {/* <Counter/>
+        <Counter/>*/}
+        <CounterConditional/>
     </div>
   );
 }

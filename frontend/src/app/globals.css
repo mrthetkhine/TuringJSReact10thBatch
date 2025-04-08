@@ -40,3 +40,26 @@ a {
     color-scheme: dark;
   }
 }
+.tab-header
+{
+  min-width:200px;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid gray;
+  border-radius: 3px;
+  min-height: 50px;
+  line-height: 50px;
+  cursor: pointer;
+}
+.tab-body
+{
+  min-height: 300px;
+  border-radius: 3px;
+  box-shadow: #cccccc;
+  border: 1px solid gray;
+}
+.tab-header.active
+{
+  border-bottom: 2px solid grey;
+  background: #cccccc;
+}

@@ -27,9 +27,11 @@ export default function Counter()
     console.log('Render CounterWithoutState');
     return (<div>
         Counter {count}&nbsp;
-        Double Counter {count*2}&nbsp;
+       {/* Double Counter {count*2}&nbsp;*/}
         <button type={"button"} onClick={incHandler}>&nbsp; + &nbsp;  </button>
-        <button type={"button"} onClick={updateAnother}>&nbsp; Another Inc &nbsp;  </button>
+       {/*
+       <button type={"button"} onClick={updateAnother}>&nbsp; Another Inc &nbsp;  </button>
         <Child/>
+        */}
     </div>);
 }
