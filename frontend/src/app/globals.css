@@ -63,3 +63,40 @@ a {
   border-bottom: 2px solid grey;
   background: #cccccc;
 }
+.counter
+{
+  border: 1px solid gray;
+  width:150px;
+}
+.fancy:hover
+{
+  border: 3px solid green;
+}
+.item-category
+{
+  padding-left: 50px;
+}
+.item-name-title
+{
+  width:200px;
+  display: inline-block;
+  font-weight: bold;
+}
+.item-price-title
+{
+  width:50px;
+  text-align: right;
+  display: inline-block;
+  font-weight: bold;
+}
+.item-name
+{
+  width:200px;
+  display: inline-block;
+}
+.item-price
+{
+  width:50px;
+  text-align: right;
+  display: inline-block;
+}

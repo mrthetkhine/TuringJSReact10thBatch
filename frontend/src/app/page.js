@@ -1,3 +1,4 @@
+//'use client';
 import Image from "next/image";
 import styles from "./page.module.css";
 import HelloWorld from "./components/HelloWorld";
@@ -28,6 +29,13 @@ import SimpleValidation from "./components/form/SimpleValidation";
 import YupExample from "./components/form/YupExample";
 import CustomTab from "./components/tab/CustomTab";
 import CounterConditional from "./components/conditional-rendering/CounterConditional";
+import CounterFancy from "./components/conditional-rendering/CounterFancy";
+import DifferentComponent from "./components/conditional-rendering/DifferentComponent";
+import DifferentRoot from "./components/conditional-rendering/DifferentRoot";
+import DifferentPosition from "./components/conditional-rendering/DifferentPosition";
+import IndexKeyProblem from "./components/conditional-rendering/IndexKeyProblem";
+import KeyWithIndexProblem from "./components/conditional-rendering/KeyWithIndexProblem";
+import SearchableProductTableDemo from "./components/SearchableProductTableDemo";
 
 export default function Home() {
     console.log('HelloWorld ',HelloWorld());
@@ -121,7 +129,14 @@ export default function Home() {
         </CustomTab>*/}
        {/* <Counter/>
         <Counter/>*/}
-        <CounterConditional/>
+       {/* <CounterConditional/>*/}
+       {/* <CounterFancy/>*/}
+      {/*  <DifferentComponent/>*/}
+       {/* <DifferentRoot/>*/}
+        {/*<DifferentPosition/>*/}
+       {/* <IndexKeyProblem/>*/}
+        {/*<KeyWithIndexProblem/>*/}
+        <SearchableProductTableDemo/>
     </div>
   );
 }
