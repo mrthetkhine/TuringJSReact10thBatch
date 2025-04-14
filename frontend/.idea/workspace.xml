@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2889ec7-9877-464c-942e-3173e8924aca" name="Default Changelist" comment="" />
+    <list default="true" id="b2889ec7-9877-464c-942e-3173e8924aca" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/components/context/TaskListContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/context/TaskListCount.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/context/TaskListDispatcherContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/context/TaskListWithContextReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/context/ThemeContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/context/WithContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/context/WithoutContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/reducer/ReducerCounter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/ref/DatePicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/ref/FocusDemo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/ref/ReactProblem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/ref/WhyRef.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/ref/WithRef.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/task-list/TaskListWithReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +57,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/components/conditional-rendering" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/components/ref" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -48,6 +67,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/components/ref" />
       <recent name="$PROJECT_DIR$/src/app/components/conditional-rendering" />
     </key>
   </component>
@@ -64,7 +84,9 @@
       <workItem from="1743931835377" duration="5343000" />
       <workItem from="1744030652299" duration="5196000" />
       <workItem from="1744117192170" duration="5705000" />
-      <workItem from="1744449883924" duration="5571000" />
+      <workItem from="1744449883924" duration="5708000" />
+      <workItem from="1744536725667" duration="2008000" />
+      <workItem from="1744635414188" duration="5742000" />
     </task>
     <servers />
   </component>

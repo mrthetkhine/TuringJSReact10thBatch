@@ -18,7 +18,9 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.55.0",
-    "yup": "^1.6.1"
+    "yup": "^1.6.1",
+    "jquery": "^3.6.3",
+    "jquery-datepicker": "^1.12.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

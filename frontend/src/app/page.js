@@ -1,4 +1,4 @@
-//'use client';
+
 import Image from "next/image";
 import styles from "./page.module.css";
 import HelloWorld from "./components/HelloWorld";
@@ -36,6 +36,17 @@ import DifferentPosition from "./components/conditional-rendering/DifferentPosit
 import IndexKeyProblem from "./components/conditional-rendering/IndexKeyProblem";
 import KeyWithIndexProblem from "./components/conditional-rendering/KeyWithIndexProblem";
 import SearchableProductTableDemo from "./components/SearchableProductTableDemo";
+import TaskList from "./components/task-list/TaskList";
+import ReducerCounter from "./components/reducer/ReducerCounter";
+import TaskListWithReducer from "./components/task-list/TaskListWithReducer";
+import WithoutContext from "./components/context/WithoutContext";
+import WithContext from "./components/context/WithContext";
+import TaskListWithContextReducer from "./components/context/TaskListWithContextReducer";
+import WhyRef from "./components/ref/WhyRef";
+import WithRef from "./components/ref/WithRef";
+import FocusDemo from "./components/ref/FocusDemo";
+import DatePicker from "./components/ref/DatePicker";
+import ReactProblem from "./components/ref/ReactProblem";
 
 export default function Home() {
     console.log('HelloWorld ',HelloWorld());
@@ -136,7 +147,18 @@ export default function Home() {
         {/*<DifferentPosition/>*/}
        {/* <IndexKeyProblem/>*/}
         {/*<KeyWithIndexProblem/>*/}
-        <SearchableProductTableDemo/>
+       {/* <SearchableProductTableDemo/>*/}
+      {/*  <TaskList/>*/}
+       {/* <ReducerCounter/>*/}
+      {/*  <TaskListWithReducer/>*/}
+      {/*  <WithoutContext/>*/}
+       {/* <WithContext/>*/}
+       {/* <TaskListWithContextReducer/>*/}
+      {/*  <WhyRef/>*/}
+     {/*   <WithRef/>*/}
+     {/*   <FocusDemo/>*/}
+       {/* <DatePicker/>*/}
+        <ReactProblem/>
     </div>
   );
 }
