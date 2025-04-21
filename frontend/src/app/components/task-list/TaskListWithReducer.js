@@ -1,6 +1,7 @@
 'use client';
 import {useReducer, useState} from "react";
 import {TaskEntry, TaskItem} from "./TaskList";
+import useCustomReducer from "../hook/useCustomReducer";
 
 let nextId = 3;
 let initState = [
@@ -32,7 +33,7 @@ function newTask(title)
 }
 export default function TaskListWithReducer()
 {
-    let [tasks,dispatch] = useReducer(taskListReducer,initState);
+    let [tasks,dispatch] = useCustomReducer(taskListReducer,initState);
     const onAddHandler = (text)=>{
         console.log('Parent add task ',text);
         let task= newTask(text);

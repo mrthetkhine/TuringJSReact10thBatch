@@ -17,6 +17,7 @@ export default function SimpleHookForm()
         Simple Hook form
         <form onSubmit={handleSubmit(onSubmit)}>
             {/* register your input into the hook by invoking the "register" function */}
+
             <input defaultValue="test" {...register("example")} />
 
             {/* include validation with required or other standard HTML validation rules */}

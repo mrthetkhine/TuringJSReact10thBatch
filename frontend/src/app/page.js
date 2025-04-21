@@ -47,6 +47,18 @@ import WithRef from "./components/ref/WithRef";
 import FocusDemo from "./components/ref/FocusDemo";
 import DatePicker from "./components/ref/DatePicker";
 import ReactProblem from "./components/ref/ReactProblem";
+import CounterWithEffect from "./components/effect/CounterWithEffect";
+import VideoPlayer from "./components/effect/VideoPlayer";
+import EffectOnlyOnce from "./components/effect/EffectOnlyOnce";
+import TimerWithCleanUp from "./components/effect/TimerWithCleanUp";
+import TodoListWithFetch from "./components/effect/TodoListWithFetch";
+import FetchDemo from "./components/hook/FetchDemo";
+import FetchUser from "./components/hook/FetchUser";
+import MyFormWithCustomHook from "./components/hook/MyFormWithCustomHook";
+import WithLoggerDemo from "./components/pattern/hoc/WithLoggerDemo";
+import AuthDemo from "./components/pattern/hoc/AuthDemo";
+import ComposeDemo from "./components/pattern/hoc/ComposeDemo";
+import RenderPropertyDemo from "./components/pattern/render-property/RenderPropertyDemo";
 
 export default function Home() {
     console.log('HelloWorld ',HelloWorld());
@@ -127,17 +139,7 @@ export default function Home() {
        {/* <SimpleValidation/>*/}
        {/* <YupExample/>*/}
       {/*  <TodoList/>*/}
-       {/* <CustomTab headers={["Tab1","Tab2","Tab3"]}>
-            <div>
-                <h3>Page 1</h3>
-            </div>
-            <div>
-                <h3>Page 2</h3>
-            </div>
-            <div>
-                <h3>Page 3</h3>
-            </div>
-        </CustomTab>*/}
+
        {/* <Counter/>
         <Counter/>*/}
        {/* <CounterConditional/>*/}
@@ -149,16 +151,28 @@ export default function Home() {
         {/*<KeyWithIndexProblem/>*/}
        {/* <SearchableProductTableDemo/>*/}
       {/*  <TaskList/>*/}
-       {/* <ReducerCounter/>*/}
-      {/*  <TaskListWithReducer/>*/}
+     {/*   <ReducerCounter/>*/}
+     {/*   <TaskListWithReducer/>*/}
       {/*  <WithoutContext/>*/}
        {/* <WithContext/>*/}
-       {/* <TaskListWithContextReducer/>*/}
+      {/*  <TaskListWithContextReducer/>*/}
       {/*  <WhyRef/>*/}
      {/*   <WithRef/>*/}
      {/*   <FocusDemo/>*/}
        {/* <DatePicker/>*/}
-        <ReactProblem/>
+   {/*     <ReactProblem/>*/}
+       {/* <CounterWithEffect/>*/}
+       {/* <VideoPlayer/>*/}
+      {/*  <EffectOnlyOnce/>*/}
+       {/* <TimerWithCleanUp/>*/}
+      {/*  <TodoListWithFetch/>*/}
+      {/*  <FetchDemo/>*/}
+      {/*  <FetchUser/>*/}
+      {/*  <MyFormWithCustomHook/>*/}
+      {/*  <WithLoggerDemo/>*/}
+        {/*<AuthDemo/>*/}
+      {/*  <ComposeDemo/>*/}
+        <RenderPropertyDemo/>
     </div>
   );
 }
