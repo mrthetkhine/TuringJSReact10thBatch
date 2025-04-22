@@ -1,0 +1,14 @@
+var a = 10 + 2;
+console.log('type of a ', typeof a);
+var b = 30;
+console.log('type of b ', typeof b);
+var str = "Hello";
+var flag = true;
+var data = {};
+console.log('Typeof data ', typeof data);
+data = "Hello";
+console.log('Typeof data ', typeof data);
+var another;
+another = "Hello";
+another = 3;
+console.log('Typeof another ', typeof another);
