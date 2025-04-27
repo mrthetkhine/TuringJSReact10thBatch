@@ -6,4 +6,4 @@ class Dog {
 }
 let d:Dog ;
 d = new Dog();
-console.log('d ',d);
+console.log('d ',d  );

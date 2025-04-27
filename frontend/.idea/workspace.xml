@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2889ec7-9877-464c-942e-3173e8924aca" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../next-redux-app/app/components/AcceptElementDemo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../next-redux-app/app/components/CallBackDemo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../next-redux-app/app/components/CounterWithReducer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../next-redux-app/app/components/Greeting.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../next-redux-app/app/components/OurCounter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../next-redux-app/app/components/Todo.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../next-redux-app/app/components/TodoList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../next-redux-app/app/components/TodoListDemo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../typescript/private-field.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../typescript/private-field.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +84,7 @@
       <workItem from="1745054502753" duration="226000" />
       <workItem from="1745241097392" duration="5080000" />
       <workItem from="1745326864207" duration="279000" />
+      <workItem from="1745746106902" duration="222000" />
     </task>
     <servers />
   </component>
