@@ -2,7 +2,9 @@
 import Todo from "@/app/components/Todo";
 
 type TodoListProp = {
-    todos:Todo[]
+    todos:Todo[
+
+        ]
 }
 export default function TodoList({todos}:TodoListProp)
 {

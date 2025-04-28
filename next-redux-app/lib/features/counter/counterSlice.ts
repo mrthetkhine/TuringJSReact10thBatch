@@ -86,4 +86,4 @@ export const incrementIfOdd =
     if (currentValue % 2 === 1 || currentValue % 2 === -1) {
       dispatch(incrementByAmount(amount));
     }
-  };
+};

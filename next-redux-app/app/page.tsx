@@ -7,17 +7,20 @@ import OurCounter from "@/app/components/OurCounter";
 import CounterWithReducer from "@/app/components/CounterWithReducer";
 import CallBackDemo from "@/app/components/CallBackDemo";
 import AcceptElementDemo from "@/app/components/AcceptElementDemo";
+import SimpleCounter from "@/app/components/simplecounter/SimpleCounter";
+import TodoListWithRedux from "@/app/components/todo/TodoListWithRedux";
 
 export default function IndexPage() {
   return (<div>
-    {/*<Counter />*/}
+   {/* <Counter />*/}
    {/* <Greeting message={"Hello"}/>*/}
    {/* <OurCounter/>*/}
    {/* <CounterWithReducer/>*/}
    {/* <CallBackDemo/>*/}
-    <AcceptElementDemo/>
+  {/*  <AcceptElementDemo/>*/}
   {/* <TodoListDemo/>*/}
-
+  {/*<SimpleCounter/>*/}
+   <TodoListWithRedux/>
   </div>);
 }
 
