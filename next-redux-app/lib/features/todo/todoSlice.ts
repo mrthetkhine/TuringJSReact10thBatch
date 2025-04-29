@@ -1,5 +1,7 @@
 import {createAppSlice} from "@/lib/createAppSlice";
 import {PayloadAction} from "@reduxjs/toolkit";
+import {fetchCount} from "@/lib/features/counter/counterAPI";
+import {act} from "react-dom/test-utils";
 
 export interface TodoModel{
     id:number,
@@ -37,12 +39,31 @@ export const todoSlice = createAppSlice({
         updateTodo:  create.reducer((state,action:PayloadAction<TodoModel>) => {
             state.todos = state.todos.map(td=>td.id==action.payload.id?action.payload: td);
         }),
+        loadAllTodos: create.asyncThunk(
+            async () => {
+                const response = await fetch('https://jsonplaceholder.typicode.com/todos')
+                let data = response.json();
+                return data;
+            },
+            {
+                pending: (state) => {
+                    //state.status = "loading";
+                },
+                fulfilled: (state, action) => {
+                    console.log('payload ',action.payload);
+                    state.todos = action.payload;
+                },
+                rejected: (state) => {
+                    //state.status = "failed";
+                },
+            },
+        ),
     }),
     selectors:{
         selectTodo: (state) => state.todos,
-
+        selectAllCompleteTodo : (state)=>state.todos.filter(todo=>todo.completed)
     },
 });
-export const { addTodo,deleteTodo,updateTodo } =
+export const { addTodo,deleteTodo,updateTodo,loadAllTodos } =
     todoSlice.actions;
-export const { selectTodo } = todoSlice.selectors;
+export const { selectTodo,selectAllCompleteTodo } = todoSlice.selectors;

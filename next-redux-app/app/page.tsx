@@ -9,6 +9,8 @@ import CallBackDemo from "@/app/components/CallBackDemo";
 import AcceptElementDemo from "@/app/components/AcceptElementDemo";
 import SimpleCounter from "@/app/components/simplecounter/SimpleCounter";
 import TodoListWithRedux from "@/app/components/todo/TodoListWithRedux";
+import CompletedTodoList from "@/app/components/todo/CompletedTodoList";
+import TodoListWithRTKQuery from "@/app/components/todo/TodoListWithRTKQuery";
 
 export default function IndexPage() {
   return (<div>
@@ -20,7 +22,9 @@ export default function IndexPage() {
   {/*  <AcceptElementDemo/>*/}
   {/* <TodoListDemo/>*/}
   {/*<SimpleCounter/>*/}
-   <TodoListWithRedux/>
+  {/* <CompletedTodoList/>
+   <TodoListWithRedux/>*/}
+      <TodoListWithRTKQuery/>
   </div>);
 }
 
