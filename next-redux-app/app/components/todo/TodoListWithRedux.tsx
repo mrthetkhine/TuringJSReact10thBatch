@@ -51,7 +51,7 @@ export function TaskEntry()
 {
     const dispatch = useAppDispatch();
     let [task,setTask] = useState('');
-    const addHandler = (event)=>{
+    const addHandler = ()=>{
         //onAdd(task);
         console.log('on add task ',task);
         let newTodo:TodoModel = {

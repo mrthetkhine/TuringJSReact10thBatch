@@ -22,8 +22,8 @@ export default function IndexPage() {
   {/*  <AcceptElementDemo/>*/}
   {/* <TodoListDemo/>*/}
   {/*<SimpleCounter/>*/}
-  {/* <CompletedTodoList/>
-   <TodoListWithRedux/>*/}
+  {/* <CompletedTodoList/>*/}
+   {/*<TodoListWithRedux/>*/}
       <TodoListWithRTKQuery/>
   </div>);
 }

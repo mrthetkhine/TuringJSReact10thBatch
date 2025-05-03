@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const ourLogger = require('./middleware/logger');
 const auth = require('./middleware/auth');
+var cors = require('cors')
 
 const mongoose = require('mongoose');
 const { db } = require('./config/database');
@@ -14,12 +15,15 @@ var usersRouter = require('./routes/users');
 var todosRouter = require('./routes/todos');
 const movieRouter = require('./routes/movies');
 var app = express();
+app.use(cors());
 mongoose.connect(db).then(() => console.log('MongoDB connected!'))
     .catch(err => console.log(err));
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
 
 app.use(logger('dev'));
 app.use(ourLogger);

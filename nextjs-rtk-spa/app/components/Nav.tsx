@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 
 import styles from "../styles/layout.module.css";
 
+
 export const Nav = () => {
   const pathname = usePathname();
 
@@ -16,6 +17,14 @@ export const Nav = () => {
       >
         Home
       </Link>
+    <Link
+        className={`${styles.link} ${
+            pathname === "/dashboard" ? styles.active : ""
+        }`}
+        href="/dashboard"
+    >
+        Dashboard
+    </Link>
       <Link
         className={`${styles.link} ${
           pathname === "/verify" ? styles.active : ""
@@ -24,14 +33,6 @@ export const Nav = () => {
       >
         Verify
       </Link>
-        <Link
-            className={`${styles.link} ${
-                pathname === "/todocount" ? styles.active : ""
-            }`}
-            href="/todocount"
-        >
-            Todocount
-        </Link>
       <Link
         className={`${styles.link} ${
           pathname === "/quotes" ? styles.active : ""

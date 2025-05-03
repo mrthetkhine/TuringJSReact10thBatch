@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2889ec7-9877-464c-942e-3173e8924aca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../next-redux-app/app/components/todo/CompletedTodoList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../next-redux-app/app/components/todo/TodoListWithRTKQuery.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../next-redux-app/lib/features/todo-api/todoApiSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../next-redux-app/app/components/todo/TodoListWithRedux.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../next-redux-app/app/components/todo/TodoListWithRedux.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../next-redux-app/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../next-redux-app/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../next-redux-app/app/quotes/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../next-redux-app/app/quotes/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../next-redux-app/lib/features/todo/todoSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../next-redux-app/lib/features/todo/todoSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../next-redux-app/lib/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../next-redux-app/lib/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../next-redux-app/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../next-redux-app/next.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../next-redux-app/note.md" beforeDir="false" afterPath="$PROJECT_DIR$/../next-redux-app/note.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../next-redux-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../next-redux-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../next-redux-app/lib/features/todo-api/todoApiSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../next-redux-app/lib/features/todo-api/todoApiSlice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +82,7 @@
       <workItem from="1745746106902" duration="222000" />
       <workItem from="1745847254837" duration="18000" />
       <workItem from="1745931897853" duration="1441000" />
+      <workItem from="1746264648487" duration="309000" />
     </task>
     <servers />
   </component>
