@@ -1,9 +1,6 @@
 import {NextRequest, NextResponse} from "next/server";
 
-interface Context {
-    params: undefined;
-}
-export async function GET(request: NextRequest, context: Context) {
+export async function GET(request: NextRequest) {
     console.log('Todo API routes');
     let todos= [
         {

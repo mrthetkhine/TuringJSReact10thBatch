@@ -40,7 +40,7 @@ export const Nav = () => {
                           Home
                       </Link>
                   </Typography>
-                  <Link
+                  {/*<Link
 
                       href="/dashboard"
                   >
@@ -49,7 +49,7 @@ export const Nav = () => {
                               Dashboard
 
                       </Typography>
-                  </Link>
+                  </Link>*/}
                   <Link
 
                       href="/movies"
@@ -60,7 +60,7 @@ export const Nav = () => {
 
                       </Typography>
                   </Link>
-                  <Link
+                  {/*<Link
 
                       href="/quotes"
                   >
@@ -69,7 +69,17 @@ export const Nav = () => {
                           Quotes
 
                       </Typography>
-                  </Link>
+                  </Link>*/}
+                 {/* <Link
+
+                      href="/blog"
+                  >
+                      <Typography component="div" sx={{ paddingLeft: 1,paddingRight:1 }}>
+
+                          Blog
+
+                      </Typography>
+                  </Link>*/}
                   <Button color="inherit">Login</Button>
               </Toolbar>
           </AppBar>

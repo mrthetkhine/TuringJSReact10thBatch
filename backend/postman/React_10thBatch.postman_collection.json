@@ -1,0 +1,914 @@
+{
+	"info": {
+		"_postman_id": "89704089-de2e-4342-9cde-94972c8ee53f",
+		"name": "React_10thBatch",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5339096",
+		"_collection_link": "https://workulture.postman.co/workspace/React-Workspace~d09f8cbf-4395-49e4-8bff-990056c02477/collection/5339096-89704089-de2e-4342-9cde-94972c8ee53f?action=share&source=collection_link&creator=5339096"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"user\",\n    \"password\":\"user\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/users/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"user\",\n    \"password\":\"user\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/users/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "todos",
+			"item": [
+				{
+					"name": "TodoById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/todos/670bab3ac3c2a4046276d3bf",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"todos",
+								"670bab3ac3c2a4046276d3bf"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/todos/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"todos",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-Ll0B580jPy3DH48Vs76xTV69UNo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Jun 2024 10:33:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"title\": \"Task1\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "DeleteTodo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/todos/670d1c9bcb0c09a83596ad53",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"todos",
+								"670d1c9bcb0c09a83596ad53"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/todos/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"todos",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-Ll0B580jPy3DH48Vs76xTV69UNo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Jun 2024 10:33:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"title\": \"Task1\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "SaveTodo",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Task 3\",\n    \"completed\":true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/todos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateTodo",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Updated task one\",\n    \"completed\": true\n   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/todos/67d824ee29a7b2db484ffc04",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"todos",
+								"67d824ee29a7b2db484ffc04"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllTodo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/todos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "movies",
+			"item": [
+				{
+					"name": "UpdateMovie",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Dark Night\",\n    \"director\": {\n        \"name\": \"Christopher Nolan\",\n        \"phoneNo\": \"09993\"\n        \n    },\n    \"year\": 2500\n   \n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/movies/670d261ad6a1d755eb49d8a9",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"670d261ad6a1d755eb49d8a9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMovies",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NjAzNDVlZWVkZjZlYTM5YmVkNWUxNSIsImlhdCI6MTczNDc3ODY0Mn0.upcjTve-GEMq3M-DcI5bUAtVyWgDAvV14nbAaANDXZI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/movies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetMovies",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/movies",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "318"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13e-vigZAVdKfGrZffP3oSeL0BzUxLU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 Jan 2023 13:59:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"63d7cc2c1fe50102fe39ebb4\",\n        \"title\": \"Titanic\",\n        \"director\": {\n            \"name\": \"Jame Cameron\",\n            \"phoneNo\": \"09993\",\n            \"_id\": \"63d7cc2c1fe50102fe39ebb5\"\n        },\n        \"year\": 1995,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63d7cc841fe50102fe39ebb7\",\n        \"title\": \"Avatar\",\n        \"director\": {\n            \"name\": \"Jame Cameron\",\n            \"phoneNo\": \"09993\",\n            \"_id\": \"63d7cc841fe50102fe39ebb8\"\n        },\n        \"year\": 1995,\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "GetMoviesById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTE1NjFhMTdhNGQ2YjMzMmU0ZTQ5OSIsImlhdCI6MTY4ODM4OTYxMH0.0PoPlaR7BNJisLHcNsUidJuY9Ybde6-UrorquWIfvRA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/movies/670d261ad6a1d755eb49d8a9",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"670d261ad6a1d755eb49d8a9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetMovies",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/movies",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "318"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13e-vigZAVdKfGrZffP3oSeL0BzUxLU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 Jan 2023 13:59:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"63d7cc2c1fe50102fe39ebb4\",\n        \"title\": \"Titanic\",\n        \"director\": {\n            \"name\": \"Jame Cameron\",\n            \"phoneNo\": \"09993\",\n            \"_id\": \"63d7cc2c1fe50102fe39ebb5\"\n        },\n        \"year\": 1995,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63d7cc841fe50102fe39ebb7\",\n        \"title\": \"Avatar\",\n        \"director\": {\n            \"name\": \"Jame Cameron\",\n            \"phoneNo\": \"09993\",\n            \"_id\": \"63d7cc841fe50102fe39ebb8\"\n        },\n        \"year\": 1995,\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "CreateMovie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"title\": \"Avata\",\n    \"director\": {\n        \"name\": \"Jame Cameron\",\n        \"phoneNo\": \"09993\"\n    },\n    \"year\": 2010\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/movies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CreateMovieSuccess",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Avatar\",\n    \"director\": {\n        \"name\": \"Jame Cameron\",\n        \"phoneNo\": \"09993\"\n    },\n    \"year\": 1995\n   \n}"
+								},
+								"url": {
+									"raw": "{{url}}/movies",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "157"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9d-G3QoUELc0Ac1WHIIElhhuSaIEQ8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 Jan 2023 13:56:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"Avatar\",\n    \"director\": {\n        \"name\": \"Jame Cameron\",\n        \"phoneNo\": \"09993\",\n        \"_id\": \"63d7cc841fe50102fe39ebb8\"\n    },\n    \"year\": 1995,\n    \"_id\": \"63d7cc841fe50102fe39ebb7\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "DeleteMovie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/movies/670d2763d9243bdb2a567ee3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"670d2763d9243bdb2a567ee3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMovieByTitle",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGUzYmUwNmU0MWQ5Y2I0N2M0ODg2NCIsImlhdCI6MTY3NTU4OTY4OH0.ZdOIxdwbwQrbsYc4M0BE41HCFHfdKf5Ay2NtSFD0EX0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/movies/title/Avatar",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"title",
+								"Avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMovieByYear",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGUzYmUwNmU0MWQ5Y2I0N2M0ODg2NCIsImlhdCI6MTY3NTU4OTY4OH0.ZdOIxdwbwQrbsYc4M0BE41HCFHfdKf5Ay2NtSFD0EX0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/movies/year/2010",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"year",
+								"2010"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reviews",
+			"item": [
+				{
+					"name": "GetAllReview",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGUzYmUwNmU0MWQ5Y2I0N2M0ODg2NCIsImlhdCI6MTY3NTU4OTY4OH0.ZdOIxdwbwQrbsYc4M0BE41HCFHfdKf5Ay2NtSFD0EX0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/reviews",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetReviewByMovie",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGUzYmUwNmU0MWQ5Y2I0N2M0ODg2NCIsImlhdCI6MTY3NTU4OTY4OH0.ZdOIxdwbwQrbsYc4M0BE41HCFHfdKf5Ay2NtSFD0EX0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/reviews/movies/6756efc1e11e003172007abd",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"reviews",
+								"movies",
+								"6756efc1e11e003172007abd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateReview",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"movie\":\"6756efc1e11e003172007abd\",\n    \"rating\":3,\n    \"review\":\"third review for avatar 1\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/reviews",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateReview",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"movie\": \"670d25c8d6a1d755eb49d8a6\",\n    \"rating\": 5,\n    \"review\": \"Really good movie\"  \n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/reviews/670d2d64e8393749ad8a221e",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"reviews",
+								"670d2d64e8393749ad8a221e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteReview",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/reviews/670d2d64e8393749ad8a221e",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"reviews",
+								"670d2d64e8393749ad8a221e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetReviewById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/reviews/659c05a6db266db6af685e30",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"reviews",
+								"659c05a6db266db6af685e30"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "router",
+			"item": [
+				{
+					"name": "PostDemo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3000/users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TokenVerification",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NjAzNDY2ZWVkZjZlYTM5YmVkNWUxNyIsImlhdCI6MTczNDk1OTkxNn0.YRixYbCYORVGKGuq6rWW24W6HLP7ceVRN2bgtJoRL7w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/verify/verifyToken",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"verify",
+						"verifyToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unknown",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/unknown",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"unknown"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

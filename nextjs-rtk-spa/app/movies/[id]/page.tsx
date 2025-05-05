@@ -1,17 +1,16 @@
 'use client';
-import {redirect} from "next/navigation";
+import {redirect, useParams} from "next/navigation";
+import {useState} from "react";
 
-export default async function MovieDetailsPage({
+export default function MovieDetailsPage({
                                              params,
                                          }: {
                                             params: Promise<{ id: string }>
                                         })
 {
-    const { id } = await params;
-    if (id=='null') {
-        redirect('/movies');
-    }
+    const par = useParams<{ id: string }>()
+
     return (<div>
-        Movie details page id { id}
+        Movie details page id { par.id}
     </div>);
 }
