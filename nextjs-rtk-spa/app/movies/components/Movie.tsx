@@ -1,7 +1,9 @@
 import Image from 'next/image'
 import {Movie} from "@/app/types/movies";
-import {Button, Card, CardHeader} from "@mui/material";
+import {Button, Card, CardHeader, Dialog, DialogActions, DialogContent, DialogTitle} from "@mui/material";
 import {useRouter} from "next/navigation";
+import React, {useEffect, useRef, useState} from "react";
+import ConfirmationDialog from "@/app/components/ConfirmationDialog";
 
 
 interface MovieProp
@@ -10,11 +12,10 @@ interface MovieProp
 }
 export default function Movie({movie}:MovieProp)
 {
-    let router =useRouter();
-    const btnDetailHandler= ()=>{
-        router.push(`/movies/${movie._id}`);
-    }
+
+
     return(<div>
+
         <Card sx={{ pb:2,mt:2,mb:3,p:2 }}>
             <CardHeader
 
@@ -27,7 +28,7 @@ export default function Movie({movie}:MovieProp)
                    alt={"Movie poster image"}
             />
             <div>{movie.year}</div>
-            <Button variant="contained" onClick={btnDetailHandler}>Details</Button>
+
         </Card>
 
 

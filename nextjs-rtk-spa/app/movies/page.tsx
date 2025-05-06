@@ -2,32 +2,35 @@
 import {useRouter} from "next/navigation";
 import MovieList from "@/app/movies/components/MovieList";
 import {Movie} from "@/app/types/movies";
+import {
+    Box,
+    Button,
+    Card,
+    Dialog, DialogActions,
+    DialogContent,
+    DialogContentText,
+    DialogTitle,
+    Modal, TextField,
+    Typography
+} from "@mui/material";
+import {useState} from "react";
+import MovieEntry from "@/app/movies/components/MovieEntry";
+import {useGetAllMovieQuery} from "@/lib/features/movie/movieApiSlice";
 
 let movies:Movie[] =[
-    {
-        "_id": "67ea93a4084313d7bdd11488",
-        "title": "Avata",
-        "director": {
-            "name": "Jame Cameron",
-            "phoneNo": "09993",
-            "_id": "67ea93a4084313d7bdd11489"
-        },
-        "year": 2010,
 
-    },
-    {
-        "_id": "67ea9400084313d7bdd1148b",
-        "title": "Inception",
-        "director": {
-            "name": "Cristhoper Nolan",
-            "phoneNo": "09993",
-            "_id": "67ea9400084313d7bdd1148c"
-        },
-        "year": 2010,
-
-    }
 ]
+
 export default function MoviesPage()
 {
-    return(<MovieList movies={movies}/>);
+    const { data, isError, isLoading, isSuccess,refetch } = useGetAllMovieQuery(undefined,{
+
+    });
+    return(<div>
+        <MovieEntry/>
+
+        {
+            data && !isError && <MovieList movies={data}/>
+        }
+    </div>);
 }
