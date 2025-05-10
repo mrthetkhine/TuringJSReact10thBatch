@@ -33,7 +33,14 @@ async function updateMovieById(id,movie) {
     }
     return Movie.findByIdAndUpdate(id,movie,{new:true});
 }
+async function waitFor(ms)
+{
+    return new Promise((resolve,reject)=>{
+        setTimeout(resolve,ms);
+    });
+}
 async function deleteMovieById(id) {
+    await waitFor(5000);
     let oldMovie = await Movie.findById(id);
     if(!oldMovie)
     {

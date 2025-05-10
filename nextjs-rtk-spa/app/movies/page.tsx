@@ -25,10 +25,17 @@ export default function MoviesPage()
 {
     const { data, isError, isLoading, isSuccess,refetch } = useGetAllMovieQuery(undefined,{
 
+        //pollingInterval: 3000,
+        //skipPollingIfUnfocused: true,
+
     });
+    const btnRefreshHandler =()=>{
+      console.log('Refresh');
+      refetch();
+    };
     return(<div>
         <MovieEntry/>
-
+        <Button onClick={btnRefreshHandler}>Refresh</Button>
         {
             data && !isError && <MovieList movies={data}/>
         }

@@ -16,6 +16,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import {useSaveMovieMutation} from "@/lib/features/movie/movieApiSlice";
 import {Movie} from "@/app/types/movies";
+import MovieDialog from "@/app/movies/components/MovieDialog";
 
 
 const style = {
@@ -29,18 +30,10 @@ const style = {
     boxShadow: 24,
     p: 4,
 };
-const movieSchema = yup.object({
-    title: yup.string().required('Title required'),
-    year: yup.number().positive().integer().required(),
-    director: yup.object().shape({
-        name: yup.string().required('Director name is required'),
-        phoneNo: yup.string().required('Director phoneNo is required')
-    }),
-}).required();
 
 export default function MovieEntry()
 {
-    const [saveMovie, saveMovieResult] = useSaveMovieMutation();
+
     const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
@@ -50,74 +43,11 @@ export default function MovieEntry()
     const handleClose = () => {
         setOpen(false);
     };
-    const { register, handleSubmit, formState:{ errors } } = useForm({
-        resolver: yupResolver(movieSchema)
-    });
-    const onSubmit = (data:any) => {
-        console.log(data);
-        let movie:Movie = data;
-        saveMovie(movie);
-        handleClose();
 
-    }
 
     return(<div>
+        <MovieDialog handleClose={handleClose} open={open}/>
 
-        <Dialog
-            fullWidth
-            open={open}
-            onClose={handleClose}
-
-        >
-            <form onSubmit={handleSubmit(onSubmit)}>
-            <DialogTitle>New Movie</DialogTitle>
-            <DialogContent>
-                <Grid container spacing={2}>
-                    <Grid size={12}>
-                        <TextField
-                            {...register("title")}
-                            label="Title"
-                            variant="standard"
-                            fullWidth
-                            error={!!errors.title}
-                            helperText={errors.title?.message}/>
-                    </Grid>
-                    <Grid size={12}>
-                        <TextField
-                            {...register("year")}
-                            label="Year"
-                            variant="standard"
-                            fullWidth
-                            error={!!errors.year}
-                            helperText={errors.year?.message}/>
-                    </Grid>
-                    <Grid size={12}>
-                        <TextField
-                            {...register("director.name")}
-                            label="Director Name"
-                            variant="standard"
-                            fullWidth
-                            error={!!errors.director?.name}
-                            helperText={errors.director?.name?.message}/>
-                    </Grid>
-                    <Grid size={12}>
-                        <TextField
-                            {...register("director.phoneNo")}
-                            label="Director PhoneNo"
-                            variant="standard"
-                            fullWidth
-                            error={!!errors.director?.phoneNo}
-                            helperText={errors.director?.phoneNo?.message}/>
-                    </Grid>
-
-                </Grid>
-            </DialogContent>
-            <DialogActions>
-                <Button onClick={handleClose}>Cancel</Button>
-                <Button type="submit">Save</Button>
-            </DialogActions>
-            </form>
-        </Dialog>
         <Box component="section" sx={{ p: 2}}>
             <Button variant="contained" onClick={handleClickOpen}>New Movie</Button>
 

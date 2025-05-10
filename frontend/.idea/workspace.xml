@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2889ec7-9877-464c-942e-3173e8924aca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../nextjs-rtk-spa/app/components/ConfirmationDialog.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../nextjs-rtk-spa/app/movies/components/MovieEntry.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../nextjs-rtk-spa/lib/features/movie/movieApiSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../nextjs-rtk-spa/app/movies/components/Movie.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../nextjs-rtk-spa/app/movies/components/Movie.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../nextjs-rtk-spa/app/movies/components/MovieList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../nextjs-rtk-spa/app/movies/components/MovieList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../nextjs-rtk-spa/app/movies/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../nextjs-rtk-spa/app/movies/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../nextjs-rtk-spa/lib/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nextjs-rtk-spa/lib/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../nextjs-rtk-spa/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../nextjs-rtk-spa/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../nextjs-rtk-spa/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../nextjs-rtk-spa/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="b2889ec7-9877-464c-942e-3173e8924aca" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,6 +78,7 @@
       <workItem from="1745931897853" duration="1441000" />
       <workItem from="1746264648487" duration="309000" />
       <workItem from="1746537356737" duration="1494000" />
+      <workItem from="1746869491329" duration="48000" />
     </task>
     <servers />
   </component>
