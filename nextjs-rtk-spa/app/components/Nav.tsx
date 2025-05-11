@@ -31,6 +31,16 @@ export const Nav = () => {
                   >
 
                   </IconButton>
+                  <Link
+
+                      href="/login"
+                  >
+                      <Typography component="div" sx={{ paddingLeft: 1,paddingRight:1 }}>
+
+                          Login
+
+                      </Typography>
+                  </Link>
                   <Typography component="div"
                               sx={{ paddingLeft: 1,paddingRight:1 }}>
                       <Link
@@ -80,7 +90,7 @@ export const Nav = () => {
 
                       </Typography>
                   </Link>*/}
-                  <Button color="inherit">Login</Button>
+
               </Toolbar>
           </AppBar>
       </Box>

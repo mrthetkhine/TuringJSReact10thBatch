@@ -3,6 +3,7 @@ import { combineSlices, configureStore } from "@reduxjs/toolkit";
 import { counterSlice } from "./features/counter/counterSlice";
 import { quotesApiSlice } from "./features/quotes/quotesApiSlice";
 import {movieApiSlice} from "@/lib/features/movie/movieApiSlice";
+import {reviewApiSlice} from "@/lib/features/review/reviewApiSlice";
 
 // `combineSlices` automatically combines the reducers using
 // their `reducerPath`s, therefore we no longer need to call `combineReducers`.
@@ -20,7 +21,9 @@ export const makeStore = () => {
     // Adding the api middleware enables caching, invalidation, polling,
     // and other useful features of `rtk-query`.
     middleware: (getDefaultMiddleware) => {
-      return getDefaultMiddleware().concat(quotesApiSlice.middleware).concat(movieApiSlice.middleware);
+      return getDefaultMiddleware().concat(quotesApiSlice.middleware)
+                                    .concat(movieApiSlice.middleware)
+                                    ;
     },
   });
 };
