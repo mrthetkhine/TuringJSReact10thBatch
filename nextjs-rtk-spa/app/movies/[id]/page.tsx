@@ -9,8 +9,9 @@ import MovieDialog from "@/app/movies/components/MovieDialog";
 import {useGetReviewByMovieIdQuery} from "@/lib/features/review/reviewApiSlice";
 import ReviewList from "@/app/movies/components/ReviewList";
 import ReviewEntry from "@/app/movies/components/ReviewEntry";
+import IsAuth from "@/app/auth/IsAuth";
 
-export default function MovieDetailsPage({
+function MovieDetailsPage({
                                              params,
                                          }: {
                                             params: Promise<{ id: string }>
@@ -64,3 +65,4 @@ export default function MovieDetailsPage({
 
     </div>);
 }
+export default IsAuth(MovieDetailsPage);

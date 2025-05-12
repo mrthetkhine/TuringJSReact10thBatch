@@ -15,7 +15,7 @@ export const reviewApiSlice =  movieApiSlice.injectEndpoints({
             }),
             saveReview:build.mutation<Review,Review>({
                 "query": (review:Review) => ({
-                    "url": `/reviews/`,
+                    "url": `/reviews`,
                     "method": 'POST',
                     "body": review,
                 }),

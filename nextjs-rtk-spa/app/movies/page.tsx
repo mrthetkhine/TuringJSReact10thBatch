@@ -16,12 +16,13 @@ import {
 import {useState} from "react";
 import MovieEntry from "@/app/movies/components/MovieEntry";
 import {useGetAllMovieQuery} from "@/lib/features/movie/movieApiSlice";
+import IsAuth from "@/app/auth/IsAuth";
 
 let movies:Movie[] =[
 
 ]
 
-export default function MoviesPage()
+function MoviesPage()
 {
     const { data, isError, isLoading, isSuccess,refetch } = useGetAllMovieQuery(undefined,{
 
@@ -41,3 +42,4 @@ export default function MoviesPage()
         }
     </div>);
 }
+export default IsAuth(MoviesPage);

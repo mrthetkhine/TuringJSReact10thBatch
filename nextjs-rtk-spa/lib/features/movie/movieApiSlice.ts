@@ -1,8 +1,22 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import {Movie} from "@/app/types/movies";
-
+import {BASE_URL} from "@/lib/Config";
+import {RootState} from "@/lib/store";
 export const movieApiSlice = createApi({
-    baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3000/api" }),
+    baseQuery: fetchBaseQuery({ baseUrl: BASE_URL+"/api" ,
+        prepareHeaders: (headers, {getState}) => {
+            // By default, if we have a token in the store, let's use that for authenticated requests
+            const state = (getState() as RootState);
+            //console.log('prepareHeaders State ', state);
+            if(state.auth.token)
+            {
+                headers.set('Authorization', 'Bearer '+state.auth.token);
+            }
+            return headers;
+
+        }
+        }),
+
     reducerPath: "moviesApi",
     // Tag types are used for caching and invalidation.
     tagTypes: ["Movie"],

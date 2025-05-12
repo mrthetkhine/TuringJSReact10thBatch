@@ -6,8 +6,6 @@ import { usePathname } from "next/navigation";
 import styles from "../styles/layout.module.css";
 
 import {AppBar, Box, Button, IconButton, Toolbar, Typography} from "@mui/material";
-import useAuth from "@/app/auth/useAuth";
-import LinkMenu from "@/app/components/LinkMenu";
 
 
 
@@ -35,19 +33,16 @@ export const Nav = () => {
                   >
 
                   </IconButton>
-                  {
-                      !useAuth() && <LinkMenu url={'/login'} label={"Login"}/>
-                  }
-                  {
-                      useAuth() && <LinkMenu url={'/logout'} label={"Logout"}/>
-                  }
-                  {
-                      useAuth() && <LinkMenu url={'/'} label={"Home"}/>
-                  }
+                  <Link
 
-                  {
-                      useAuth() && <LinkMenu url={'/movies'} label={"Movies"}/>
-                  }
+                      href={'/movies'}
+                  >
+                      <Typography component="div" sx={{paddingLeft: 1, paddingRight: 1}}>
+
+                         Movies
+
+                      </Typography>
+                  </Link>
 
 
                  {/* <Link
