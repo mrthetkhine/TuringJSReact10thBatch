@@ -1,13 +1,33 @@
+import MovieUI from "./components/MovieUI";
+import {Button, Typography} from "@mui/material";
+import Link from "next/link";
+import axiosInstance from "../axiosInstance";
+import {Movie} from "../types/movies";
+import {getAllMovies} from "../api/MovieApi";
+
 export default async function MoviesPage()
 {
-    let url = "http://localhost:3000/api/movies";
-    let resp = await fetch(url);
-    let movies = await resp.json();
+    let movies = await getAllMovies();
     return(<div>
-        Movie Page
+        <Link
+
+            href={`/movies/new`}
+        >
+            <Button variant="contained">New Movie</Button>
+        </Link>
         {
             movies && movies.map(movie=><div key={movie._id}>
-                {movie.title}
+                <MovieUI
+
+                movie={movie}>
+
+            </MovieUI>
+                <Link
+
+                    href={`/movies/${movie._id}`}
+                >
+                    <Button variant="contained">Details</Button>
+                </Link>
             </div>)
         }
     </div>)
