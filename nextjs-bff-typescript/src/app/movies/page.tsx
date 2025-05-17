@@ -4,17 +4,15 @@ import Link from "next/link";
 import axiosInstance from "../axiosInstance";
 import {Movie} from "../types/movies";
 import {getAllMovies} from "../api/MovieApi";
+import MovieForm from "./components/MovieForm";
+import DeleteMovieForm from "./components/DeleteMovieForm";
+import NewMovieForm from "./components/NewMovieForm";
 
 export default async function MoviesPage()
 {
     let movies = await getAllMovies();
     return(<div>
-        <Link
-
-            href={`/movies/new`}
-        >
-            <Button variant="contained">New Movie</Button>
-        </Link>
+        <NewMovieForm/>
         {
             movies && movies.map(movie=><div key={movie._id}>
                 <MovieUI
@@ -22,6 +20,8 @@ export default async function MoviesPage()
                 movie={movie}>
 
             </MovieUI>
+                <DeleteMovieForm movieId={movie._id}/>
+                &nbsp;
                 <Link
 
                     href={`/movies/${movie._id}`}

@@ -10,11 +10,15 @@ export default async function MoviesDetailsPage({params}: { params: Promise<{ id
     let movie = await getMovieById(id);
     return (<div>
             <MovieUI movie={movie}/>
-        <Link
+                <Button variant="contained" type={"button"}>
+                    Edit
+                </Button>
+                &nbsp;
+                <Link
 
-            href={`/movies`}
-        >
-            <Button variant="contained">Back</Button>
-        </Link>
+                    href={`/movies`}
+                >
+                    <Button variant="contained">Back</Button>
+                </Link>
     </div>);
 }
