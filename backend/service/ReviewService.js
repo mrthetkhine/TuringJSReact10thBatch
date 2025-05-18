@@ -1,13 +1,21 @@
 const Reviews = require('../models/Review');
 const mongoose = require("mongoose");
 
+async function waitFor(ms)
+{
+    return new Promise((resolve,reject)=>{
+        setTimeout(resolve,ms);
+    });
+}
 const getAllReviews = async () => {
     return Reviews.find();
 }
 const getReviewById = async(reviewId)=>{
+
     return Reviews.findById(reviewId);//.populate("movie");
 }
 const getReviewByMovieId = async(movieId)=>{
+    await waitFor(5000);
     return Reviews.find({movie:movieId});//.populate("movie");
 }
 const saveReview = async(review)=>{

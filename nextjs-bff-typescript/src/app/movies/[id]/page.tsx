@@ -1,24 +1,30 @@
-import {getMovieById} from "../../api/MovieApi";
-import MovieUI from "../components/MovieUI";
-import {Button} from "@mui/material";
+import { Suspense } from 'react'
+import {Button, CircularProgress} from "@mui/material";
 import Link from "next/link";
+import EditMovieForm from "../components/EditMovieForm";
+import {getAllReviewByMovieId} from "../../api/reviewApi";
+import MovieFeed from "../components/MovieFeed";
+import ReviewFeed from "../components/ReviewFeed";
 
 export default async function MoviesDetailsPage({params}: { params: Promise<{ id: string }> })
 {
     let {id} = await params;
     console.log('Id ',id);
-    let movie = await getMovieById(id);
-    return (<div>
-            <MovieUI movie={movie}/>
-                <Button variant="contained" type={"button"}>
-                    Edit
-                </Button>
-                &nbsp;
+
+    return (<section>
+        <Suspense fallback={<CircularProgress />}>
+            <MovieFeed movieId={id}/>
+        </Suspense>
+        <Suspense fallback={<CircularProgress />}>
+            <ReviewFeed movieId={id} />
+        </Suspense>
+
+              {/*  &nbsp;*/}
                 <Link
 
                     href={`/movies`}
                 >
                     <Button variant="contained">Back</Button>
                 </Link>
-    </div>);
+    </section>);
 }

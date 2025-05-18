@@ -19,6 +19,12 @@ export async function saveMovie(movie:object):Promise<Movie>
     let savedMovie= await moviesResponse.data;
     return savedMovie;
 }
+export async function updateMovie(movie:any):Promise<Movie>
+{
+    const moviesResponse = await axiosInstance.put<Movie>(`/api/movies/${movie._id}`,movie);
+    let updatedMovie= await moviesResponse.data;
+    return updatedMovie;
+}
 export async function deleteMovie(movieId:string):Promise<Movie>
 {
     const moviesResponse = await axiosInstance.delete<Movie>(`/api/movies/${movieId}`);

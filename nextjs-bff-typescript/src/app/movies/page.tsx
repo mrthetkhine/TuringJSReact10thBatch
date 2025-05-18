@@ -3,7 +3,7 @@ import {Button, Typography} from "@mui/material";
 import Link from "next/link";
 import axiosInstance from "../axiosInstance";
 import {Movie} from "../types/movies";
-import {getAllMovies} from "../api/MovieApi";
+import {getAllMovies} from "../api/movieApi";
 import MovieForm from "./components/MovieForm";
 import DeleteMovieForm from "./components/DeleteMovieForm";
 import NewMovieForm from "./components/NewMovieForm";
