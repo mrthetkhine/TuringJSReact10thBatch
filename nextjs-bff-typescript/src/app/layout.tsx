@@ -1,4 +1,4 @@
-'use client';
+
 import Image from "next/image";
 import type { ReactNode } from "react";
 
@@ -7,9 +7,10 @@ import { Nav } from "./components/Nav";
 import "./styles/globals.css";
 import styles from "./styles/layout.module.css";
 
-import theme from "@/app/theme";
+
 import {AppRouterCacheProvider} from "@mui/material-nextjs/v13-appRouter";
 import {ThemeProvider} from "@mui/material";
+import theme from "./theme";
 
 interface Props {
   readonly children: ReactNode;

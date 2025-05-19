@@ -14,17 +14,17 @@ export default async function MoviesPage()
     return(<div>
         <NewMovieForm/>
         {
-            movies && movies.map(movie=><div key={movie._id}>
+            movies && movies.map(movie=><div key={movie._id!}>
                 <MovieUI
 
                 movie={movie}>
 
             </MovieUI>
-                <DeleteMovieForm movieId={movie._id}/>
+                <DeleteMovieForm movieId={movie._id!}/>
                 &nbsp;
                 <Link
 
-                    href={`/movies/${movie._id}`}
+                    href={`/movies/${movie._id!}`}
                 >
                     <Button variant="contained">Details</Button>
                 </Link>

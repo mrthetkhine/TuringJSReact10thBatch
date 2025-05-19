@@ -31,7 +31,7 @@ export default function MovieForm({movieToEdit,show,handleClose}:MovieFormProp)
         defaultValues: {
             _id:movieToEdit?._id??"",
             title:movieToEdit?.title??"",
-            year:movieToEdit?.year??'0',
+            year:movieToEdit?.year??0,
             director: movieToEdit?.director?.name??"",
             phoneNo: movieToEdit?.director?.phoneNo??"",
         },

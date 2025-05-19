@@ -1,18 +1,18 @@
-"use client";
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import styles from "../styles/layout.module.css";
 
 import {AppBar, Box, Button, IconButton, Toolbar, Typography} from "@mui/material";
+import getAuthToken from "../utils/auth";
+import ProtectedRoute from "./ProtectedRoute";
+import NormalRoute from "./NormalRoute";
+import Route from "./Route";
 
 
+export const Nav = async () => {
 
-
-export const Nav = () => {
-  const pathname = usePathname();
-
+  const auth = await getAuthToken();
   return (
 
       <Box  sx={{
@@ -33,28 +33,19 @@ export const Nav = () => {
                   >
 
                   </IconButton>
-                  <Link
+                  <NormalRoute>
+                      <Route link={'/login'} label={'Login'}/>
 
-                      href={'/movies'}
-                  >
-                      <Typography component="div" sx={{paddingLeft: 1, paddingRight: 1}}>
+                  </NormalRoute>
 
-                         Movies
+                  <ProtectedRoute>
+                      <Route link={'/movies'} label={'Movies'}/>
 
-                      </Typography>
-                  </Link>
+                  </ProtectedRoute>
+                   <ProtectedRoute>
+                       <Route link={'/logout'} label={'Logout'}/>
+                   </ProtectedRoute>
 
-
-                 {/* <Link
-
-                      href="/blog"
-                  >
-                      <Typography component="div" sx={{ paddingLeft: 1,paddingRight:1 }}>
-
-                          Blog
-
-                      </Typography>
-                  </Link>*/}
 
               </Toolbar>
           </AppBar>

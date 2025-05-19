@@ -1,6 +1,6 @@
 'use server'
 import {Movie} from "../types/movies";
-import {deleteMovie, saveMovie, updateMovie} from "../api/MovieApi";
+import {deleteMovie, saveMovie, updateMovie} from "../api/movieApi";
 import {revalidatePath} from "next/cache";
 import {z} from "zod";
 import {movieSchema} from "../schema/movieSchema";
@@ -11,19 +11,15 @@ export async function saveOrUpdateMovie(prevState:any, formData: FormData):Promi
     const movieFormData = Object.fromEntries(formData);
     console.log('Movie form data ',movieFormData);
 
-    if(movieFormData['year'])
-    {
-        movieFormData['year'] = (movieFormData['year']??'0');
-    }
 
     const validateMovieForm = movieSchema.safeParse(movieFormData);
 
-    let id = formData.get("_id");
-    let title = formData.get("title")??'';
-    let year = +(formData.get("year")??'0');
-    let director = formData.get("director")??'';
-    let phoneNo = formData.get("phoneNo")??'';
-    let movie = {
+    let id = formData.get("_id") as string;
+    let title = formData.get("title") as string??'';
+    let year = +(formData.get("year") as string ??'0');
+    let director = formData.get("director")as string ??'';
+    let phoneNo = formData.get("phoneNo")as string??'';
+    let movie:Movie = {
         _id:id,
         title,
         year,
@@ -57,7 +53,7 @@ export async function saveOrUpdateMovie(prevState:any, formData: FormData):Promi
         }
         else
         {
-            delete movie['_id'];
+            delete movie._id;
             let savedMovie = await saveMovie(movie);
             console.log('Form data in create movies',movie);
             revalidatePath('/movies');

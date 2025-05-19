@@ -1,20 +1,23 @@
 'use client';
 import {Button, DialogActions} from "@mui/material";
-import ConfirmationDialog from "@/app/components/ConfirmationDialog";
+
 import React, {useState} from "react";
-import {useAppDispatch} from "@/lib/hooks";
-import {logout} from "@/lib/features/auth/authSlice";
+
+
 import {useRouter,redirect} from "next/navigation";
+import ConfirmationDialog from "../components/ConfirmationDialog";
+import {logoutAction} from "../lib/authActions";
 
 export default function LogoutPage()
 {
-    const dispatch = useAppDispatch();
+
     let router =useRouter();
     const [open, setOpen] = useState(false);
     const confirmHandler =()=>{
         console.log('Confirm ');
-        dispatch(logout());
-        redirect('/login');
+
+        logoutAction();
+
 
     };
     const cancelHandler =()=>{

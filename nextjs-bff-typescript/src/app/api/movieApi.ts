@@ -13,13 +13,13 @@ export async function getMovieById(movieId:string):Promise<Movie>
     let movie= await moviesResponse.data;
     return movie;
 }
-export async function saveMovie(movie:object):Promise<Movie>
+export async function saveMovie(movie:Movie):Promise<Movie>
 {
     const moviesResponse = await axiosInstance.post<Movie>(`/api/movies`,movie);
     let savedMovie= await moviesResponse.data;
     return savedMovie;
 }
-export async function updateMovie(movie:any):Promise<Movie>
+export async function updateMovie(movie:Movie):Promise<Movie>
 {
     const moviesResponse = await axiosInstance.put<Movie>(`/api/movies/${movie._id}`,movie);
     let updatedMovie= await moviesResponse.data;

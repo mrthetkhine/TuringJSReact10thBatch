@@ -9,7 +9,7 @@ interface MovieFeedProps
 export default async function MovieFeed({movieId}:MovieFeedProps)
 {
     let movie = await getMovieById(movieId);
-    console.log('Movie done ',movie);
+    //console.log('Movie done ',movie);
     return(<div>
         <MovieUI movie={movie}/>
         <EditMovieForm movie={movie}/>
