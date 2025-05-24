@@ -1,7 +1,9 @@
+'use client';
 import {CounterSlice, CounterState} from "../counter/counter-slice";
 import {StateCreator} from "zustand";
 import {produce} from "immer";
 import {MyState} from "../useBoundStore";
+import { immer } from "zustand/middleware/immer";
 
 export interface Todo
 {
@@ -15,6 +17,7 @@ export interface TodoState
 }
 export interface TodoActions
 {
+    loadAllTodo:(todos:Todo[])=>void;
     addTodo:(todo:Todo)=>void;
     deleteTodo:(todo:Todo)=>void;
     updateTodo:(todo:Todo)=>void;
@@ -36,15 +39,16 @@ export const defaultInitState:TodoState = {
 }
 export const createTodoSlice:StateCreator<
     MyState,
-    [],
+    [['zustand/devtools', never]],
     [],
     TodoSlice
     >= (set)=>({
     ...defaultInitState,
-    addTodo:(todo:Todo)=>set( produce((state: TodoState) => void(state.todos.push(todo)))),
+    loadAllTodo:(todos:Todo[])=>set( produce((state: TodoState) => void(state.todos=todos)),undefined,'todos/loadAllTodo'),
+    addTodo:(todo:Todo)=>set( produce((state: TodoState) => void(state.todos.push(todo))),undefined,'todos/addTodo'),
     deleteTodo: (todo:Todo) => set(produce((state:TodoState) =>
-                            void( state.todos= state.todos.filter(td=>td.id!=todo.id)))),
+                            void( state.todos= state.todos.filter(td=>td.id!=todo.id))),undefined,'todos/deleteTodo'),
     updateTodo: (todo:Todo) => set(produce((state:TodoState) =>{
         state.todos =state.todos.map(td=>td.id==todo.id? todo:td)
-    }))
+    }),undefined,'todos/updateTodo')
 });
