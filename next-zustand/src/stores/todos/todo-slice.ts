@@ -17,6 +17,7 @@ export interface TodoState
 }
 export interface TodoActions
 {
+    fetchTodos:()=>void;
     loadAllTodo:(todos:Todo[])=>void;
     addTodo:(todo:Todo)=>void;
     deleteTodo:(todo:Todo)=>void;
@@ -44,11 +45,30 @@ export const createTodoSlice:StateCreator<
     TodoSlice
     >= (set)=>({
     ...defaultInitState,
-    loadAllTodo:(todos:Todo[])=>set( produce((state: TodoState) => void(state.todos=todos)),undefined,'todos/loadAllTodo'),
-    addTodo:(todo:Todo)=>set( produce((state: TodoState) => void(state.todos.push(todo))),undefined,'todos/addTodo'),
-    deleteTodo: (todo:Todo) => set(produce((state:TodoState) =>
-                            void( state.todos= state.todos.filter(td=>td.id!=todo.id))),undefined,'todos/deleteTodo'),
-    updateTodo: (todo:Todo) => set(produce((state:TodoState) =>{
-        state.todos =state.todos.map(td=>td.id==todo.id? todo:td)
+    fetchTodos: async ()=>{
+        console.log('Fetch todos');
+        let response = await  fetch('https://jsonplaceholder.typicode.com/todos');
+        let json = await response.json();
+        console.log('todos ',json);
+        set( (state: TodoState) =>{
+            state.todos= (json as Todo[])
+            return state;
+        });
+    },
+    loadAllTodo:(todos:Todo[])=>set( (state: TodoState) => {
+        state.todos=todos;
+        return state;
+    },undefined,'todos/loadAllTodo'),
+    addTodo:(todo:Todo)=>set( (state: TodoState) => {
+        state.todos.push(todo);
+        return state;
+    },undefined,'todos/addTodo'),
+    deleteTodo: (todo:Todo) => set((state:TodoState) =>
+    {
+         state.todos= state.todos.filter(td=>td.id!=todo.id);
+         return state;
+    },undefined,'todos/deleteTodo'),
+    updateTodo: (todo:Todo) => set((state:TodoState) =>({
+        todos :state.todos.map(td=>td.id==todo.id? todo:td)
     }),undefined,'todos/updateTodo')
 });

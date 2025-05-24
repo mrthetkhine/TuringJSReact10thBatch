@@ -16,15 +16,16 @@ function newTodo():Todo
 }
 export default function TodoList()
 {
-    const {todos,loadAllTodo,addTodo,deleteTodo} = useBoundStore();
+    const {todos,loadAllTodo,addTodo,deleteTodo,fetchTodos} = useBoundStore();
     //loadAllTodo();
     useEffect(()=>{
-        fetch('https://jsonplaceholder.typicode.com/todos')
+       /* fetch('https://jsonplaceholder.typicode.com/todos')
             .then(resp=>resp.json())
             .then(json=>{
                let todos:Todo[] = (json as Todo[]);
                loadAllTodo(todos);
-            });
+            });*/
+        fetchTodos();
 
     },[]);
     return (<div>

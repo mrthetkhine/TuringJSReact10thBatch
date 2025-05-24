@@ -31,7 +31,13 @@ export const createCounterSlice:StateCreator<
     CounterSlice
     > = (set)=>({
     ...defaultInitState,
-    dec:()=>set( produce((state: CounterState) => void(--state.count))),
-    inc: () => set(produce((state:CounterState) =>void( ++state.count))),
+    dec:()=>set( (state: CounterState) => {
+        --state.count;
+        return state;
+    }),
+    inc: () => set((state:CounterState) => {
+        ++state.count
+        return state;
+    }),
     }
 );

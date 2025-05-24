@@ -20,7 +20,7 @@ export default function Home() {
 
         <div className={styles.page}>
           <main className={styles.main}>
-           {/* <TodoList/>*/}
+            <TodoList/>
             <Count/>
             <CounterUI/>
           </main>
