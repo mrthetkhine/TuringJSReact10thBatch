@@ -1,10 +1,12 @@
 import {Movie} from "../../types/movies";
-import  { AxiosResponse } from 'axios';
 import axiosInstance from "../axiosInstance";
 
 export async function apiLoadAllMovies():Promise<Movie[]>
 {
-    let moviesResponse =  await axiosInstance.get<Movie[]>('/api/movies');
-    let movies=  moviesResponse.data;
-    return movies;
+    const moviesResponse =  await axiosInstance.get<Movie[]>('/api/movies');
+    return moviesResponse.data;
+}
+export async function apiDeleteMovieById(movieId:string):Promise<Movie>{
+    const moviesResponse =  await axiosInstance.delete<Movie>(`/api/movies/${movieId}`);
+    return moviesResponse.data;
 }

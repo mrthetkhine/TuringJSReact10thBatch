@@ -31,6 +31,7 @@ export const Nav = () => {
                   >
 
                   </IconButton>
+                  <LinkMenu url={'/'} label={"Home"}/>
                   <LinkMenu url={'/movies'} label={"Movies"}/>
 
 

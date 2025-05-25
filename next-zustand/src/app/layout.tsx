@@ -7,8 +7,9 @@ import {ThemeProvider} from "@mui/material";
 import theme from "./theme";
 import {Nav} from "./components/Nav";
 import React from "react";
-import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
-
+import { QueryClientProvider} from "@tanstack/react-query";
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import {queryClient} from "@/app/hooks/queryClient";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -31,20 +32,26 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [queryClient] = React.useState(() => new QueryClient())
+  const [qClient] = React.useState(() => queryClient);
   return (
 
     <html lang="en">
+    <body className={`${geistSans.variable} ${geistMono.variable}`}>
     <AppRouterCacheProvider>
       <ThemeProvider theme={theme}>
-        <QueryClientProvider client={queryClient}>
-        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <QueryClientProvider client={qClient}>
+          <ReactQueryDevtools initialIsOpen={false} />
+
+        <section>
           <Nav />
-            {children}
-          </body>
+
+          {children}
+        </section>
+
         </QueryClientProvider>
       </ThemeProvider>
     </AppRouterCacheProvider>
+  </body>
     </html>
   );
 }

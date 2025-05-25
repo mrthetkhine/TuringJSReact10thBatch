@@ -1,4 +1,4 @@
-import {create, StateCreator} from 'zustand'
+import {create} from 'zustand'
 import {CounterSlice, createCounterSlice} from "./counter/counter-slice";
 import {createTodoSlice, TodoSlice} from "./todos/todo-slice";
 import {devtools} from "zustand/middleware";
