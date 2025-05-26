@@ -1,20 +1,20 @@
-import {Review} from "../../../types/movies";
+import {Movie} from "../../../types/movies";
 import axiosInstance from "../../axiosInstance";
 
-export async function apiLoadAllMovies():Promise<Review[]>
+export async function apiLoadAllMovies():Promise<Movie[]>
 {
-    const moviesResponse =  await axiosInstance.get<Review[]>('/api/movies');
+    const moviesResponse =  await axiosInstance.get<Movie[]>('/api/movies');
     return moviesResponse.data;
 }
-export async function apiSaveMovie(movie:Partial<Review>):Promise<Review>{
-    const moviesResponse =  await axiosInstance.post<Review>(`/api/movies`,movie);
+export async function apiSaveMovie(movie:Partial<Movie>):Promise<Movie>{
+    const moviesResponse =  await axiosInstance.post<Movie>(`/api/movies`,movie);
     return moviesResponse.data;
 }
-export async function apiUpdateMovie(movie:Partial<Review>):Promise<Review>{
-    const moviesResponse =  await axiosInstance.put<Review>(`/api/movies/${movie._id}`,movie);
+export async function apiUpdateMovie(movie:Partial<Movie>):Promise<Movie>{
+    const moviesResponse =  await axiosInstance.put<Movie>(`/api/movies/${movie._id}`,movie);
     return moviesResponse.data;
 }
-export async function apiDeleteMovieById(movieId:string):Promise<Review>{
-    const moviesResponse =  await axiosInstance.delete<Review>(`/api/movies/${movieId}`);
+export async function apiDeleteMovieById(movieId:string):Promise<Movie>{
+    const moviesResponse =  await axiosInstance.delete<Movie>(`/api/movies/${movieId}`);
     return moviesResponse.data;
 }

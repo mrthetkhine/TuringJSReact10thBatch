@@ -5,7 +5,7 @@ import React, {useState} from "react";
 import {Button, Card, Grid} from "@mui/material";
 import MovieUI from "@/app/movies/components/MovieUI";
 import {useMovieById, useMovies} from "@/app/hooks/movieHook";
-import {Review} from "@/types/movies";
+import {Movie} from "@/types/movies";
 import MovieDialog from "@/app/movies/components/MovieDialog";
 import ReviewEntry from "@/app/movies/components/ReviewEntry";
 import {useLoadReviewByMovieId} from "@/app/hooks/reviewHook";
@@ -42,12 +42,12 @@ export default function MovieDetailsPage({
 
     return (<div>
         <Grid sx={{ pt:5,mt:2,mb:3,p:2 }}>
-            <MovieDialog handleClose={handleClose} open={open} movieToEdit={movie??{}as Review}/>
+            <MovieDialog handleClose={handleClose} open={open} movieToEdit={movie??{}as Movie}/>
             <Button  variant="contained" onClick={btnEditHandler} sx={{padding:1}}>Edit</Button>
             <Grid>
 
                 <MovieUI
-                    movie={movie??{}as Review}
+                    movie={movie??{}as Movie}
                 />
             </Grid>
             <Grid>

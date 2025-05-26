@@ -4,8 +4,9 @@ import {yupResolver} from "@hookform/resolvers/yup";
 
 import * as yup from "yup";
 
-import {Director, Review} from "@/types/movies";
+import {Director,Movie} from "@/types/movies";
 import {useMutationSaveMovie, useMutationUpdateMovie} from "@/app/hooks/movieHook";
+
 
 const movieSchema = yup.object({
     _id:yup.string().optional(),
@@ -20,7 +21,7 @@ const movieSchema = yup.object({
 interface MovieDialogProps{
     open:boolean,
     handleClose:()=>void,
-    movieToEdit?:Review,
+    movieToEdit?:Movie,
 }
 export default function MovieDialog({open,handleClose,movieToEdit}:MovieDialogProps)
 {
@@ -31,7 +32,7 @@ export default function MovieDialog({open,handleClose,movieToEdit}:MovieDialogPr
         name:'',
         phoneNo:'',
     }
-    const defaultValues : Review = {
+    const defaultValues : Movie = {
         _id:movieToEdit?._id??'',
         title:movieToEdit?.title??'',
         year:movieToEdit?.year??0,
@@ -40,11 +41,11 @@ export default function MovieDialog({open,handleClose,movieToEdit}:MovieDialogPr
 
     const { register, handleSubmit, formState:{ errors } } = useForm({
         defaultValues,
-        resolver: yupResolver(movieSchema)
+        resolver: yupResolver(movieSchema as yup.ObjectSchema<Movie>)
     });
-    const onSubmit = (data:never) => {
+    const onSubmit = (data:Movie) => {
         console.log(data);
-        const movie:Review = data;
+        const movie:Movie = data;
 
         if(!movieToEdit)
         {

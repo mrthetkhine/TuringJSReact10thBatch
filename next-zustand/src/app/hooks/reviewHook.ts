@@ -48,8 +48,8 @@ export const useDeleteReviewById = ()=>{
         onSettled: async () => {
             console.log("I'm onSettled!")
         },
-        onError: (err, review:Review, context:{oldState:Review[]}) => {
-            queryClient.setQueryData(['reviews',review.movie], context.oldState);
+        onError: (err, review:Review, context?:{oldState:Review[]}) => {
+            queryClient.setQueryData(['reviews',review.movie], context?.oldState);
         },
     });
 }

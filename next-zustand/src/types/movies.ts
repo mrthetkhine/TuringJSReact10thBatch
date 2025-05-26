@@ -4,7 +4,7 @@ export interface Director
     name:string;
     phoneNo:string;
 }
-export interface Review {
+export interface Movie {
     _id?:string;
     title:string;
     director:Director;
