@@ -3,12 +3,12 @@ import Image from 'next/image'
 import {Button, Card, CardHeader, Dialog, DialogActions, DialogContent, DialogTitle} from "@mui/material";
 import {useRouter} from "next/navigation";
 import React, {useEffect, useRef, useState} from "react";
-import {Movie} from "../../../types/movies";
+import {Review} from "../../../types/movies";
 
 
 interface MovieProp
 {
-    movie:Movie;
+    movie:Review;
 }
 export default function MovieUI({movie}:MovieProp)
 {

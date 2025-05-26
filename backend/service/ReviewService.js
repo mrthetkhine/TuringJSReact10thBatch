@@ -15,7 +15,7 @@ const getReviewById = async(reviewId)=>{
     return Reviews.findById(reviewId);//.populate("movie");
 }
 const getReviewByMovieId = async(movieId)=>{
-    await waitFor(5000);
+    //await waitFor(5000);
     return Reviews.find({movie:movieId});//.populate("movie");
 }
 const saveReview = async(review)=>{

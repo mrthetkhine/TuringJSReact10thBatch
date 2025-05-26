@@ -40,7 +40,7 @@ async function waitFor(ms)
     });
 }
 async function deleteMovieById(id) {
-    //await waitFor(5000);
+    await waitFor(5000);
     let oldMovie = await Movie.findById(id);
     if(!oldMovie)
     {

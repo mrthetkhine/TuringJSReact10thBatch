@@ -4,8 +4,12 @@ import React, {useState} from "react";
 
 import {Button, Card, Grid} from "@mui/material";
 import MovieUI from "@/app/movies/components/MovieUI";
-import {useMovieById} from "@/app/hooks/movieHook";
-import {Movie} from "@/types/movies";
+import {useMovieById, useMovies} from "@/app/hooks/movieHook";
+import {Review} from "@/types/movies";
+import MovieDialog from "@/app/movies/components/MovieDialog";
+import ReviewEntry from "@/app/movies/components/ReviewEntry";
+import {useLoadReviewByMovieId} from "@/app/hooks/reviewHook";
+import ReviewList from "@/app/movies/components/ReviewList";
 
 export default function MovieDetailsPage({
                                              params,
@@ -14,9 +18,11 @@ export default function MovieDetailsPage({
                                         })
 {
     const {id} = useParams<{ id: string }>();
-    let router =useRouter();
+    const router =useRouter();
     const {movie} = useMovieById(id);
-    console.log('Movie ',movie);
+
+    const { data:reviews, isPending, isFetching,isSuccess } =  useLoadReviewByMovieId(id);
+    console.log('Movie returned from useMovieById ',movie);
     const btnEditHandler=()=>{
         console.log('Edit movie ');
         handleClickOpen();
@@ -36,18 +42,21 @@ export default function MovieDetailsPage({
 
     return (<div>
         <Grid sx={{ pt:5,mt:2,mb:3,p:2 }}>
+            <MovieDialog handleClose={handleClose} open={open} movieToEdit={movie??{}as Review}/>
             <Button  variant="contained" onClick={btnEditHandler} sx={{padding:1}}>Edit</Button>
             <Grid>
 
                 <MovieUI
-                    movie={movie??{}as Movie}
+                    movie={movie??{}as Review}
                 />
             </Grid>
             <Grid>
-
+                <ReviewEntry movieId={movie?._id??''}/>
             </Grid>
             <Grid>
-
+                {
+                    isSuccess && reviews && <ReviewList reviews={reviews}/>
+                }
             </Grid>
             <Button  variant="contained" onClick={btnBackHandler} >Back</Button>
 

@@ -1,23 +1,24 @@
 'use client';
 
-import {Movie} from "../../../types/movies";
+import {Review} from "../../../types/movies";
 import MovieUI from "./MovieUI";
 import {Button, Grid} from "@mui/material";
 import {useRouter} from "next/navigation";
 import ConfirmationDialog from "@/app/components/ConfirmationDialog";
 import {useState} from "react";
 import {useMutationDeleteMovieById} from "@/app/hooks/movieHook";
+import MovieEntry from "@/app/movies/components/MovieEntry";
 interface MovieListProp{
-    movies:Movie[]
+    movies:Review[]
 }
 export default function MovieList({movies}:MovieListProp)
 {
     const router =useRouter();
-    const [movieToDelete,setMovieToDelete] = useState<Movie|null>(null);
+    const [movieToDelete,setMovieToDelete] = useState<Review|null>(null);
     const {mutate:deleteMovieById,isSuccess,isError} = useMutationDeleteMovieById();
 
 
-    const btnDetailHandler= (movie:Movie)=>{
+    const btnDetailHandler= (movie:Review)=>{
         router.push(`/movies/${movie._id}`);
     }
 
@@ -26,13 +27,15 @@ export default function MovieList({movies}:MovieListProp)
 
     const confirmHandler =()=>{
         console.log('Confirm delete ',movieToDelete?._id);
-        deleteMovieById(movieToDelete!);
+        deleteMovieById(movieToDelete!,{
+            onSuccess:(data:Review)=>console.log('Movie deleted',data),
+        });
 
     };
     const cancelHandler =()=>{
         console.log('Cancel');
     }
-    const showConfirmDialog = (movie:Movie) => {
+    const showConfirmDialog = (movie:Review) => {
         setOpen(true);
         setMovieToDelete(movie);
 
@@ -53,6 +56,7 @@ export default function MovieList({movies}:MovieListProp)
             okCallBack={confirmHandler}
             cancelCallBack={cancelHandler}
         />
+        <MovieEntry/>
         <Grid container spacing={2}
               sx={{ flexGrow: 1 }}
               size={{ xs: 6, md: 8 }}>

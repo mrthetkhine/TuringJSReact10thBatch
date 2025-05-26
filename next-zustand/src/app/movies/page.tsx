@@ -1,6 +1,6 @@
 'use client';
 import MovieList from "./components/MovieList";
-import {useMovies} from "../hooks/movieHook";
+import {useMovies} from "@/app/hooks/movieHook";
 
 export default function MoviesPage()
 {
