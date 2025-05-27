@@ -4,10 +4,11 @@ import {queryClient} from "@/app/hooks/queryClient";
 import {Movie} from "@/types/movies";
 
 export const useMovies =()=>{
+    console.log("useMovies");
     return useQuery({
         queryKey:['movies'],
         queryFn:apiLoadAllMovies,
-        refetchOnWindowFocus: false,
+       /* refetchOnWindowFocus: false,*/
     })
 }
 /*

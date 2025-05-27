@@ -1,16 +1,14 @@
 "use client";
 
-import Link from "next/link";
+
 import { usePathname } from "next/navigation";
-
-import styles from "../styles/layout.module.css";
-
-import {AppBar, Box, Button, IconButton, Toolbar, Typography} from "@mui/material";
+import {AppBar, Box,  IconButton, Toolbar} from "@mui/material";
 import LinkMenu from "./LinkMenu";
+import ProtectedRoute from "@/app/components/ProtectedRoute";
+import useAuth from "@/app/hooks/useAuth";
 
 export const Nav = () => {
-  const pathname = usePathname();
-
+  const auth = useAuth();
   return (
 
       <Box  sx={{
@@ -32,10 +30,16 @@ export const Nav = () => {
 
                   </IconButton>
                   <LinkMenu url={'/'} label={"Home"}/>
-                  <LinkMenu url={'/movies'} label={"Movies"}/>
+                  {
+                      !auth &&  <LinkMenu url={'/login'} label={"Login"}/>
+                  }
 
-
-
+                  <ProtectedRoute>
+                      <LinkMenu url={'/movies'} label={"Movies"}/>
+                  </ProtectedRoute>
+                  <ProtectedRoute>
+                    <LinkMenu url={'/logout'} label={"Logout"}/>
+                  </ProtectedRoute>
 
               </Toolbar>
           </AppBar>

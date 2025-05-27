@@ -2,16 +2,17 @@
 import { useParams, useRouter} from "next/navigation";
 import React, {useState} from "react";
 
-import {Button, Card, Grid} from "@mui/material";
+import {Button,  Grid} from "@mui/material";
 import MovieUI from "@/app/movies/components/MovieUI";
-import {useMovieById, useMovies} from "@/app/hooks/movieHook";
+import {useMovieById} from "@/app/hooks/movieHook";
 import {Movie} from "@/types/movies";
 import MovieDialog from "@/app/movies/components/MovieDialog";
 import ReviewEntry from "@/app/movies/components/ReviewEntry";
 import {useLoadReviewByMovieId} from "@/app/hooks/reviewHook";
 import ReviewList from "@/app/movies/components/ReviewList";
+import IsAuth from "@/app/hooks/IsAuth";
 
-export default function MovieDetailsPage({
+ function MovieDetailsPage({
                                              params,
                                          }: {
                                             params: Promise<{ id: string }>
@@ -21,7 +22,7 @@ export default function MovieDetailsPage({
     const router =useRouter();
     const {movie} = useMovieById(id);
 
-    const { data:reviews, isPending, isFetching,isSuccess } =  useLoadReviewByMovieId(id);
+    const { data:reviews,isSuccess } =  useLoadReviewByMovieId(id);
     console.log('Movie returned from useMovieById ',movie);
     const btnEditHandler=()=>{
         console.log('Edit movie ');
@@ -64,3 +65,4 @@ export default function MovieDetailsPage({
 
     </div>);
 }
+export default IsAuth(MovieDetailsPage);

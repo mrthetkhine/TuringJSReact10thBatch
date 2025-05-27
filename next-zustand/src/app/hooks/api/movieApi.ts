@@ -3,7 +3,9 @@ import axiosInstance from "../../axiosInstance";
 
 export async function apiLoadAllMovies():Promise<Movie[]>
 {
+    console.log("apiLoadAllMovies");
     const moviesResponse =  await axiosInstance.get<Movie[]>('/api/movies');
+    console.log('Return ');
     return moviesResponse.data;
 }
 export async function apiSaveMovie(movie:Partial<Movie>):Promise<Movie>{

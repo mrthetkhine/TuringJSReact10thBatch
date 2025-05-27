@@ -37,8 +37,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/verify',auth.verifyUserToken,tokenVerifier);
-app.use('/api/movies',/*auth.verifyUserToken,*/movieRouter);
-app.use('/api/reviews',reviewRouter);
+app.use('/api/movies',auth.verifyUserToken,movieRouter);
+app.use('/api/reviews',auth.verifyUserToken,reviewRouter);
 app.use('/api/todos', todosRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
